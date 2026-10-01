@@ -1,0 +1,38 @@
+<h1 class="page-title">Settings</h1>
+
+<section class="card" aria-labelledby="appearance-h">
+  <div>
+    <h2 id="appearance-h" class="section-title">Theme</h2>
+    <p id="appearance-desc" class="section-desc">System follows your device setting.</p>
+  </div>
+
+  <div class="theme-options" role="radiogroup" aria-labelledby="appearance-h" aria-describedby="appearance-desc">
+    @for (option of themeOptions; track option.value) {
+      <label class="theme-card" [class.selected]="themeService.pref() === option.value">
+        <input
+          class="visually-hidden"
+          type="radio"
+          name="theme"
+          [value]="option.value"
+          [checked]="themeService.pref() === option.value"
+          (change)="themeService.set(option.value)"
+        />
+
+        <span class="preview" aria-hidden="true">
+          @for (t of option.preview; track t) {
+            <span class="preview-pane" [attr.data-theme]="t">
+              <span class="preview-ink"></span>
+              <span class="preview-card"></span>
+              <span class="preview-card"></span>
+            </span>
+          }
+        </span>
+
+        <span class="theme-label">
+          <span class="radio" aria-hidden="true"><span class="radio-dot"></span></span>
+          {{ option.label }}
+        </span>
+      </label>
+    }
+  </div>
+</section>

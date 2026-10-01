@@ -1,0 +1,1105 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&family=Geist+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..24,300..500,0..1,0&display=block" rel="stylesheet">
+<style>
+:root{--bg:oklch(0.982 0.004 275);--surface:oklch(1 0 0);--surface-2:oklch(0.966 0.005 275);--surface-3:oklch(0.935 0.007 275);--sidebar:oklch(0.975 0.005 275);--border:oklch(0.915 0.008 275);--border-strong:oklch(0.86 0.01 275);--fg:oklch(0.23 0.02 275);--fg-2:oklch(0.42 0.02 275);--fg-3:oklch(0.52 0.015 275);--accent:oklch(0.48 0.19 277);--accent-hover:oklch(0.42 0.19 277);--on-accent:oklch(0.99 0.005 277);--accent-soft:oklch(0.955 0.03 277);--accent-soft-strong:oklch(0.88 0.07 277);--accent-text:oklch(0.45 0.19 277);--ring:oklch(0.55 0.2 277);--danger:oklch(0.53 0.19 25);--danger-hover:oklch(0.47 0.19 25);--on-danger:oklch(0.99 0 0);--danger-soft:oklch(0.96 0.025 25);--danger-text:oklch(0.5 0.19 25);--success-text:oklch(0.45 0.12 155);--warn:oklch(0.72 0.15 75);--st-todo-bg:oklch(0.94 0.006 275);--st-todo-fg:oklch(0.4 0.015 275);--st-todo-dot:oklch(0.62 0.012 275);--st-progress-bg:oklch(0.95 0.035 250);--st-progress-fg:oklch(0.43 0.14 252);--st-progress-dot:oklch(0.6 0.15 252);--st-review-bg:oklch(0.96 0.05 85);--st-review-fg:oklch(0.45 0.1 65);--st-review-dot:oklch(0.74 0.15 75);--st-done-bg:oklch(0.95 0.04 155);--st-done-fg:oklch(0.42 0.1 155);--st-done-dot:oklch(0.62 0.13 155);--pr-low-bg:oklch(0.955 0.005 275);--pr-low-fg:oklch(0.45 0.015 275);--pr-medium-bg:oklch(0.955 0.03 220);--pr-medium-fg:oklch(0.43 0.09 225);--pr-high-bg:oklch(0.955 0.035 40);--pr-high-fg:oklch(0.48 0.15 38);--sh-1:0 1px 2px oklch(0.2 0.02 275 / .06),0 1px 3px oklch(0.2 0.02 275 / .04);--sh-2:0 4px 12px oklch(0.2 0.02 275 / .08),0 1px 3px oklch(0.2 0.02 275 / .05);--sh-3:0 16px 40px oklch(0.2 0.02 275 / .16),0 2px 8px oklch(0.2 0.02 275 / .06);--scrim:oklch(0.2 0.02 275 / .38);--live:oklch(0.62 0.15 155);--live-ring:oklch(0.62 0.15 155 / .45);--toast-bg:oklch(0.25 0.02 275);--toast-fg:oklch(0.97 0.005 275);--toast-ok:oklch(0.8 0.14 155);--toast-link:oklch(0.82 0.1 277)}
+[data-theme="dark"]{--bg:oklch(0.165 0.012 275);--surface:oklch(0.205 0.014 275);--surface-2:oklch(0.24 0.015 275);--surface-3:oklch(0.28 0.016 275);--sidebar:oklch(0.185 0.013 275);--border:oklch(0.29 0.015 275);--border-strong:oklch(0.37 0.016 275);--fg:oklch(0.95 0.006 275);--fg-2:oklch(0.78 0.012 275);--fg-3:oklch(0.68 0.012 275);--accent:oklch(0.7 0.15 277);--accent-hover:oklch(0.76 0.13 277);--on-accent:oklch(0.18 0.03 277);--accent-soft:oklch(0.28 0.06 277);--accent-soft-strong:oklch(0.42 0.1 277);--accent-text:oklch(0.8 0.11 277);--ring:oklch(0.74 0.15 277);--danger:oklch(0.68 0.17 25);--danger-hover:oklch(0.74 0.15 25);--on-danger:oklch(0.18 0.02 25);--danger-soft:oklch(0.29 0.06 25);--danger-text:oklch(0.78 0.13 25);--success-text:oklch(0.8 0.12 155);--st-todo-bg:oklch(0.29 0.01 275);--st-todo-fg:oklch(0.84 0.01 275);--st-todo-dot:oklch(0.66 0.01 275);--st-progress-bg:oklch(0.31 0.07 252);--st-progress-fg:oklch(0.85 0.09 252);--st-progress-dot:oklch(0.68 0.14 252);--st-review-bg:oklch(0.33 0.06 75);--st-review-fg:oklch(0.87 0.1 82);--st-review-dot:oklch(0.78 0.14 78);--st-done-bg:oklch(0.31 0.06 155);--st-done-fg:oklch(0.85 0.1 155);--st-done-dot:oklch(0.7 0.13 155);--pr-low-bg:oklch(0.28 0.01 275);--pr-low-fg:oklch(0.82 0.01 275);--pr-medium-bg:oklch(0.31 0.05 225);--pr-medium-fg:oklch(0.85 0.08 225);--pr-high-bg:oklch(0.33 0.07 38);--pr-high-fg:oklch(0.86 0.11 42);--sh-1:0 1px 2px oklch(0 0 0 / .3);--sh-2:0 4px 14px oklch(0 0 0 / .35);--sh-3:0 18px 44px oklch(0 0 0 / .5),0 2px 8px oklch(0 0 0 / .3);--scrim:oklch(0.08 0.01 275 / .6);--toast-bg:oklch(0.33 0.016 275);--toast-fg:oklch(0.97 0.005 275)}
+html,body{margin:0;height:100%;background:var(--bg)}
+*{box-sizing:border-box}
+i{font-family:'Material Symbols Rounded';font-style:normal;font-weight:normal;font-size:20px;line-height:1;letter-spacing:normal;text-transform:none;display:inline-block;white-space:nowrap;direction:ltr;font-feature-settings:'liga';font-variation-settings:'wght' 350,'opsz' 20;user-select:none;flex-shrink:0}
+button,input,select,textarea{font:inherit;color:inherit}
+:focus-visible{outline:2px solid var(--ring);outline-offset:2px}
+a{color:var(--accent-text);text-decoration:none;cursor:pointer}a:hover{text-decoration:underline}
+::placeholder{color:var(--fg-3)}
+@keyframes sb-shimmer{0%,100%{opacity:.5}50%{opacity:1}}
+@keyframes sb-spin{to{transform:rotate(360deg)}}
+@keyframes sb-pulse{0%{box-shadow:0 0 0 0 var(--live-ring)}70%{box-shadow:0 0 0 6px transparent}100%{box-shadow:0 0 0 0 transparent}}
+@keyframes sb-in{from{opacity:0;transform:translateY(-6px)}to{opacity:1;transform:none}}
+@keyframes sb-toast{from{opacity:0;transform:translateY(12px) scale(.98)}to{opacity:1;transform:none}}
+@keyframes sb-panel{from{opacity:0;transform:translateX(24px)}to{opacity:1;transform:none}}
+@keyframes sb-pop{from{opacity:0;transform:scale(.97)}to{opacity:1;transform:none}}
+@keyframes sb-glow{0%{box-shadow:0 0 0 3px var(--accent-soft-strong),var(--sh-2)}100%{box-shadow:var(--sh-1)}}
+</style>
+</helmet>
+<div data-theme="{{ theme }}" style="height:100vh;display:flex;flex-direction:column;background:var(--bg);color:var(--fg);font-family:'Geist',system-ui,sans-serif;font-size:14px;line-height:1.45">
+<sc-if value="{{ showDemo }}" hint-placeholder-val="{{ true }}"><div style="flex:none;min-height:44px;display:flex;align-items:center;gap:16px;padding:6px 14px;background:#14151b;color:#c6c8d4;font-size:12px;overflow-x:auto;white-space:nowrap;border-bottom:1px solid #262833">
+<span style="font-family:'Geist Mono',monospace;font-size:11px;letter-spacing:.08em;color:#8a8ea3">PROTOTYPE</span>
+<label style="display:flex;align-items:center;gap:6px">Jump to
+<select value="" onChange="{{ onJump }}" style="height:28px;border-radius:6px;border:1px solid #33364a;background:#1d1f28;color:#e6e7ee;padding:0 6px;font-size:12px">
+<option value="">Choose a screen or state…</option>
+<optgroup label="Screens"><option value="login">Login</option><option value="dashboard">Dashboard</option><option value="board">Task Board</option><option value="task">Task Detail · SB-142</option><option value="mytasks">My Tasks</option><option value="team">Team</option><option value="member">Member profile · Ali</option><option value="admin">Admin</option><option value="settings">Settings</option></optgroup>
+<optgroup label="States &amp; flows"><option value="search">Search open (typing “login”)</option><option value="create">Create task panel</option><option value="edit">Edit task panel</option><option value="unsaved">Unsaved changes dialog</option><option value="drag">Board · drag-and-drop state</option><option value="denied">Member opens Admin → Access Denied</option></optgroup>
+<optgroup label="System"><option value="404">404 Not Found</option><option value="error">Global error</option></optgroup>
+</select></label>
+<div style="display:flex;align-items:center;gap:6px"><span>Role</span><div style="display:flex;padding:2px;border-radius:7px;background:#1d1f28;border:1px solid #33364a"><sc-for list="{{ roleOpts }}" as="o" hint-placeholder-count="2"><button onClick="{{ o.onClick }}" aria-pressed="{{ o.on }}" style="height:22px;padding:0 9px;border:0;border-radius:5px;font-size:12px;cursor:pointer;background:{{ o.bg }};color:{{ o.fg }}">{{ o.label }}</button></sc-for></div></div>
+<div style="display:flex;align-items:center;gap:6px"><span>Data</span><div style="display:flex;padding:2px;border-radius:7px;background:#1d1f28;border:1px solid #33364a"><sc-for list="{{ dataOpts }}" as="o" hint-placeholder-count="4"><button onClick="{{ o.onClick }}" aria-pressed="{{ o.on }}" style="height:22px;padding:0 9px;border:0;border-radius:5px;font-size:12px;cursor:pointer;background:{{ o.bg }};color:{{ o.fg }}">{{ o.label }}</button></sc-for></div></div>
+<div style="display:flex;align-items:center;gap:6px"><span>Theme</span><div style="display:flex;padding:2px;border-radius:7px;background:#1d1f28;border:1px solid #33364a"><sc-for list="{{ themeOpts }}" as="o" hint-placeholder-count="2"><button onClick="{{ o.onClick }}" aria-pressed="{{ o.on }}" style="height:22px;padding:0 9px;border:0;border-radius:5px;font-size:12px;cursor:pointer;background:{{ o.bg }};color:{{ o.fg }}">{{ o.label }}</button></sc-for></div></div>
+<a href="SprintBoard Design System.dc.html" style="margin-left:auto;color:#b4b8ff">Design system &amp; flow map →</a>
+</div></sc-if>
+<div ref="{{ appRef }}" style="flex:1;min-height:0;position:relative;display:flex;overflow:hidden;background:var(--bg)">
+<sc-if value="{{ isLogin }}" hint-placeholder-val="{{ false }}">
+<div style="flex:1;overflow:auto;display:flex;align-items:center;justify-content:center;padding:40px 16px;background:var(--bg)">
+<div style="width:100%;max-width:400px;display:flex;flex-direction:column;gap:28px">
+<div style="display:flex;align-items:center;gap:10px;justify-content:center"><span style="width:34px;height:34px;border-radius:9px;background:var(--accent);color:var(--on-accent);display:inline-flex;align-items:center;justify-content:center"><i style="font-size:20px">view_kanban</i></span><span style="font-size:18px;font-weight:650;letter-spacing:-.01em">SprintBoard</span></div>
+<div style="background:var(--surface);border:1px solid var(--border);border-radius:12px;box-shadow:var(--sh-2);padding:32px;display:flex;flex-direction:column;gap:20px">
+<div><h1 style="margin:0;font-size:22px;font-weight:620;letter-spacing:-.015em">Sign in to your workspace</h1><p style="margin:6px 0 0;color:var(--fg-2)">Acme Engineering</p></div>
+<sc-if value="{{ lg.error }}" hint-placeholder-val="{{ false }}"><div role="alert" style="display:flex;gap:10px;align-items:flex-start;padding:12px;border-radius:8px;background:var(--danger-soft);color:var(--danger-text);font-size:13.5px"><i style="font-size:18px">error</i><div><strong style="font-weight:600">Incorrect email or password.</strong> Check your details and try again, or reset your password.</div></div></sc-if>
+<form onSubmit="{{ lg.submit }}" novalidate="{{ true }}" style="display:flex;flex-direction:column;gap:16px">
+<div style="display:flex;flex-direction:column;gap:6px"><label for="lg-email" style="font-size:13px;font-weight:550">Work email</label>
+<input id="lg-email" type="email" autoComplete="email" value="{{ lg.email }}" onChange="{{ lg.onEmail }}" aria-invalid="{{ lg.emailInvalid }}" style="height:40px;padding:0 12px;border-radius:8px;border:1px solid {{ lg.emailBorder }};background:var(--surface);font-size:14px;outline:none" style-focus="border-color:var(--accent);box-shadow:0 0 0 3px var(--accent-soft-strong)">
+<sc-if value="{{ lg.emailErr }}"><span style="font-size:12.5px;color:var(--danger-text);display:flex;gap:4px;align-items:center"><i style="font-size:15px">error</i>{{ lg.emailErr }}</span></sc-if></div>
+<div style="display:flex;flex-direction:column;gap:6px"><div style="display:flex;justify-content:space-between;align-items:baseline"><label for="lg-pw" style="font-size:13px;font-weight:550">Password</label><a style="font-size:13px">Forgot password?</a></div>
+<div style="position:relative"><input id="lg-pw" type="{{ lg.pwType }}" autoComplete="current-password" value="{{ lg.password }}" onChange="{{ lg.onPw }}" aria-invalid="{{ lg.pwInvalid }}" placeholder="••••••••" style="width:100%;height:40px;padding:0 40px 0 12px;border-radius:8px;border:1px solid {{ lg.pwBorder }};background:var(--surface);font-size:14px;outline:none" style-focus="border-color:var(--accent);box-shadow:0 0 0 3px var(--accent-soft-strong)">
+<button type="button" onClick="{{ lg.toggleShow }}" aria-label="{{ lg.showLabel }}" style="position:absolute;right:4px;top:4px;width:32px;height:32px;border:0;border-radius:6px;background:transparent;color:var(--fg-3);cursor:pointer;display:flex;align-items:center;justify-content:center" style-hover="background:var(--surface-2)"><i style="font-size:18px">{{ lg.showIcon }}</i></button></div>
+<sc-if value="{{ lg.pwErr }}"><span style="font-size:12.5px;color:var(--danger-text);display:flex;gap:4px;align-items:center"><i style="font-size:15px">error</i>{{ lg.pwErr }}</span></sc-if></div>
+<label style="display:flex;align-items:center;gap:8px;font-size:13.5px;color:var(--fg-2);cursor:pointer"><input type="checkbox" checked="{{ lg.remember }}" onChange="{{ lg.onRemember }}" style="width:16px;height:16px;accent-color:var(--accent);margin:0">Remember me for 30 days</label>
+<button type="submit" disabled="{{ lg.loading }}" style="height:40px;border:0;border-radius:8px;background:var(--accent);color:var(--on-accent);font-weight:560;font-size:14px;cursor:pointer;display:flex;align-items:center;justify-content:center;gap:8px;opacity:{{ lg.btnOpacity }}" style-hover="background:var(--accent-hover)"><sc-if value="{{ lg.loading }}"><span style="width:14px;height:14px;border:2px solid currentColor;border-right-color:transparent;border-radius:50%;animation:sb-spin .7s linear infinite"></span></sc-if>{{ lg.btnLabel }}</button>
+</form>
+</div>
+<p style="margin:0;text-align:center;font-family:'Geist Mono',monospace;font-size:11.5px;color:var(--fg-3)">Demo: any password signs in. Type “wrong” to see the error.</p>
+</div></div>
+</sc-if>
+<sc-if value="{{ isFatal }}" hint-placeholder-val="{{ false }}">
+<div style="flex:1;display:flex;align-items:center;justify-content:center;padding:40px 16px">
+<div style="max-width:440px;display:flex;flex-direction:column;align-items:center;text-align:center;gap:16px">
+<span style="width:56px;height:56px;border-radius:14px;background:var(--danger-soft);color:var(--danger-text);display:flex;align-items:center;justify-content:center"><i style="font-size:28px">cloud_off</i></span>
+<h1 style="margin:0;font-size:24px;font-weight:620;letter-spacing:-.015em">Something went wrong</h1>
+<p style="margin:0;color:var(--fg-2);text-wrap:pretty">SprintBoard couldn’t load your workspace. Your work is saved. Try reloading, and contact support if this keeps happening.</p>
+<code style="font-family:'Geist Mono',monospace;font-size:12px;color:var(--fg-3);background:var(--surface-2);padding:4px 8px;border-radius:6px">Error 503 · Request ID 7f3a-21c9-b04e</code>
+<div style="display:flex;gap:8px;margin-top:4px"><button onClick="{{ reload }}" style="white-space:nowrap;flex:none;display:inline-flex;align-items:center;gap:6px;height:36px;padding:0 14px;border-radius:8px;border:0;background:var(--accent);color:var(--on-accent);font-weight:560;cursor:pointer" style-hover="background:var(--accent-hover)"><i style="font-size:18px">refresh</i>Reload</button><button style="white-space:nowrap;flex:none;height:36px;padding:0 14px;border-radius:8px;border:1px solid var(--border-strong);background:var(--surface);font-weight:520;cursor:pointer" style-hover="background:var(--surface-2)">Contact support</button></div>
+</div></div>
+</sc-if>
+<sc-if value="{{ isShell }}" hint-placeholder-val="{{ false }}">
+<aside aria-label="Main navigation" style="width:{{ sidebarW }};flex:none;display:flex;flex-direction:column;background:var(--sidebar);border-right:1px solid var(--border);transition:width .18s ease;overflow:hidden">
+<div style="height:60px;flex:none;display:flex;align-items:center;gap:10px;padding:0 17px"><span style="width:30px;height:30px;flex:none;border-radius:8px;background:var(--accent);color:var(--on-accent);display:inline-flex;align-items:center;justify-content:center"><i style="font-size:18px">view_kanban</i></span><sc-if value="{{ sidebarOpen }}"><span style="font-size:15.5px;font-weight:650;letter-spacing:-.01em;white-space:nowrap">SprintBoard</span></sc-if></div>
+<nav style="display:flex;flex-direction:column;gap:2px;padding:8px 12px;flex:1">
+<sc-for list="{{ navItems }}" as="n" hint-placeholder-count="6"><button onClick="{{ n.onClick }}" aria-current="{{ n.current }}" title="{{ n.label }}" style="display:flex;align-items:center;gap:12px;height:38px;padding:0 9px;border:0;border-radius:8px;background:{{ n.bg }};color:{{ n.fg }};font-weight:{{ n.fw }};font-size:14px;cursor:pointer;text-align:left;white-space:nowrap" style-hover="background:{{ n.hov }}"><i style="font-size:20px;color:{{ n.ic }}">{{ n.icon }}</i><sc-if value="{{ n.showLabel }}"><span style="flex:1">{{ n.label }}</span></sc-if><sc-if value="{{ n.showCount }}"><span style="font-size:12px;color:var(--fg-3);font-variant-numeric:tabular-nums">{{ n.count }}</span></sc-if></button></sc-for>
+</nav>
+<sc-if value="{{ sidebarOpen }}"><div style="margin:12px;padding:12px;border-radius:10px;background:var(--surface);border:1px solid var(--border);display:flex;flex-direction:column;gap:8px">
+<div style="display:flex;justify-content:space-between;font-size:12.5px"><span style="font-weight:600">Sprint 14</span><span style="color:var(--fg-3)">{{ sprint.daysLeft }}</span></div>
+<div style="height:6px;border-radius:3px;background:var(--surface-3);overflow:hidden"><div style="height:100%;width:{{ sprint.pct }};background:var(--accent);border-radius:3px"></div></div>
+<span style="font-size:12px;color:var(--fg-3)">{{ sprint.doneLabel }}</span></div></sc-if>
+</aside>
+<div style="flex:1;min-width:0;display:flex;flex-direction:column">
+<header style="height:60px;flex:none;display:grid;grid-template-columns:1fr minmax(0,520px) 1fr;align-items:center;gap:16px;padding:0 20px;border-bottom:1px solid var(--border);background:var(--surface);position:relative;z-index:35">
+<div style="display:flex;align-items:center;gap:8px;min-width:0"><button onClick="{{ toggleSidebar }}" aria-label="{{ sidebarToggleLabel }}" title="{{ sidebarToggleLabel }}" style="width:36px;height:36px;display:inline-flex;align-items:center;justify-content:center;border:0;border-radius:8px;background:transparent;color:var(--fg-2);cursor:pointer" style-hover="background:var(--surface-2)"><i>{{ sidebarIcon }}</i></button><span style="font-size:13px;color:var(--fg-3);white-space:nowrap;overflow:hidden;text-overflow:ellipsis">Acme Engineering</span></div>
+<div style="position:relative">
+<i style="position:absolute;left:11px;top:9px;font-size:19px;color:var(--fg-3);pointer-events:none">search</i>
+<input ref="{{ searchRef }}" value="{{ q }}" onChange="{{ onQ }}" onFocus="{{ onQFocus }}" onKeyDown="{{ onQKey }}" role="combobox" aria-expanded="{{ sp.open }}" aria-controls="search-results" aria-label="Search tasks" placeholder="Search tasks by title or ID" style="width:100%;height:38px;padding:0 64px 0 38px;border-radius:9px;border:1px solid var(--border);background:var(--surface-2);font-size:14px;outline:none" style-focus="background:var(--surface);border-color:var(--accent);box-shadow:0 0 0 3px var(--accent-soft-strong)">
+<sc-if value="{{ hasQ }}"><button onClick="{{ clearQ }}" aria-label="Clear search" style="position:absolute;right:6px;top:5px;width:28px;height:28px;border:0;border-radius:6px;background:transparent;color:var(--fg-3);cursor:pointer;display:flex;align-items:center;justify-content:center" style-hover="background:var(--surface-3)"><i style="font-size:18px">close</i></button></sc-if>
+<sc-if value="{{ noQ }}"><kbd style="position:absolute;right:10px;top:9px;font-family:'Geist Mono',monospace;font-size:11px;color:var(--fg-3);border:1px solid var(--border-strong);border-radius:5px;padding:1px 6px;background:var(--surface)">/</kbd></sc-if>
+<sc-if value="{{ sp.open }}" hint-placeholder-val="{{ false }}">
+<div id="search-results" role="listbox" aria-label="Search results" style="position:absolute;top:calc(100% + 8px);left:0;right:0;z-index:40;background:var(--surface);border:1px solid var(--border);border-radius:12px;box-shadow:var(--sh-3);overflow:hidden;animation:sb-pop .14s ease">
+<div style="display:flex;align-items:center;justify-content:space-between;padding:10px 14px 6px;font-size:12px;color:var(--fg-3);font-weight:550;letter-spacing:.02em"><span>{{ sp.header }}</span><sc-if value="{{ sp.loading }}"><span style="display:flex;align-items:center;gap:6px;font-weight:450"><span style="width:12px;height:12px;border:2px solid currentColor;border-right-color:transparent;border-radius:50%;animation:sb-spin .7s linear infinite"></span>Searching…</span></sc-if></div>
+<sc-if value="{{ sp.loading }}"><div aria-hidden="true" style="display:flex;flex-direction:column;padding:4px 6px 8px"><sc-for list="{{ skel3 }}" as="k"><div style="display:flex;align-items:center;gap:12px;padding:10px 8px"><div style="width:22px;height:22px;border-radius:6px;background:var(--surface-3);animation:sb-shimmer 1.4s ease-in-out infinite"></div><div style="flex:1;display:flex;flex-direction:column;gap:6px"><div style="width:62%;height:10px;border-radius:4px;background:var(--surface-3);animation:sb-shimmer 1.4s ease-in-out infinite"></div><div style="width:34%;height:8px;border-radius:4px;background:var(--surface-3);animation:sb-shimmer 1.4s ease-in-out infinite"></div></div><div style="width:24px;height:24px;border-radius:50%;background:var(--surface-3);animation:sb-shimmer 1.4s ease-in-out infinite"></div></div></sc-for></div></sc-if>
+<sc-if value="{{ sp.hasRows }}"><div style="display:flex;flex-direction:column;padding:2px 6px 6px"><sc-for list="{{ sp.rows }}" as="r" hint-placeholder-count="3"><button role="option" aria-selected="{{ r.active }}" onClick="{{ r.open }}" onMouseEnter="{{ r.hover }}" style="display:flex;align-items:center;gap:12px;padding:9px 8px;border:0;border-radius:8px;background:{{ r.bg }};text-align:left;cursor:pointer;width:100%">
+<span title="{{ r.stLabel }}" style="width:24px;height:24px;flex:none;border-radius:6px;display:flex;align-items:center;justify-content:center;background:{{ r.stBg }};color:{{ r.stFg }}"><i style="font-size:16px">{{ r.stIcon }}</i></span>
+<span style="flex:1;min-width:0;display:flex;flex-direction:column;gap:1px"><span style="font-size:14px;color:var(--fg);white-space:nowrap;overflow:hidden;text-overflow:ellipsis">{{ r.pre }}<mark style="background:var(--accent-soft);color:var(--accent-text);border-radius:3px;padding:0 1px">{{ r.match }}</mark>{{ r.post }}</span><span style="font-size:12px;color:var(--fg-3)"><span style="font-family:'Geist Mono',monospace">{{ r.id }}</span> · {{ r.stLabel }} · {{ r.aName }}</span></span>
+<span style="width:24px;height:24px;flex:none;border-radius:50%;display:inline-flex;align-items:center;justify-content:center;font-size:10px;font-weight:600;background:{{ r.avBg }};color:{{ r.avFg }}">{{ r.initials }}</span></button></sc-for></div></sc-if>
+<sc-if value="{{ sp.empty }}"><div style="padding:20px 16px 24px;text-align:center;display:flex;flex-direction:column;align-items:center;gap:6px"><i style="font-size:26px;color:var(--fg-3)">search_off</i><span style="font-weight:550">No tasks match “{{ q }}”</span><span style="font-size:13px;color:var(--fg-3)">Try a different word, or search by task ID like SB-142.</span></div></sc-if>
+<sc-if value="{{ sp.error }}"><div role="alert" style="padding:20px 16px 24px;text-align:center;display:flex;flex-direction:column;align-items:center;gap:8px"><i style="font-size:26px;color:var(--danger-text)">error</i><span style="font-weight:550">Search failed, try again</span><span style="font-size:13px;color:var(--fg-3)">We couldn’t reach the search service.</span><button onClick="{{ sp.retry }}" style="margin-top:4px;display:inline-flex;align-items:center;gap:6px;height:32px;padding:0 12px;border-radius:8px;border:1px solid var(--border-strong);background:var(--surface);font-weight:520;font-size:13px;cursor:pointer" style-hover="background:var(--surface-2)"><i style="font-size:17px">refresh</i>Try again</button></div></sc-if>
+<div style="display:flex;gap:14px;padding:8px 14px;border-top:1px solid var(--border);background:var(--surface-2);font-size:11.5px;color:var(--fg-3)"><span><kbd style="font-family:'Geist Mono',monospace">↑↓</kbd> navigate</span><span><kbd style="font-family:'Geist Mono',monospace">↵</kbd> open</span><span><kbd style="font-family:'Geist Mono',monospace">esc</kbd> close</span></div>
+</div></sc-if>
+</div>
+<div style="display:flex;align-items:center;justify-content:flex-end;gap:4px">
+<button onClick="{{ toggleTheme }}" aria-label="{{ themeLabel }}" title="{{ themeLabel }}" style="width:36px;height:36px;display:inline-flex;align-items:center;justify-content:center;border:0;border-radius:8px;background:transparent;color:var(--fg-2);cursor:pointer" style-hover="background:var(--surface-2)"><i>{{ themeIcon }}</i></button>
+<div style="position:relative"><button onClick="{{ toggleNotif }}" aria-label="{{ notifLabel }}" aria-expanded="{{ notifOpen }}" style="width:36px;height:36px;display:inline-flex;align-items:center;justify-content:center;border:0;border-radius:8px;background:transparent;color:var(--fg-2);cursor:pointer;position:relative" style-hover="background:var(--surface-2)"><i>notifications</i><sc-if value="{{ hasUnread }}"><span style="position:absolute;top:4px;right:3px;min-width:17px;height:17px;padding:0 4px;border-radius:9px;background:var(--danger);color:var(--on-danger);font-size:10.5px;font-weight:650;display:flex;align-items:center;justify-content:center;border:2px solid var(--surface)">{{ unread }}</span></sc-if></button>
+<sc-if value="{{ notifOpen }}" hint-placeholder-val="{{ false }}"><div role="menu" style="position:absolute;top:calc(100% + 8px);right:0;z-index:40;width:360px;background:var(--surface);border:1px solid var(--border);border-radius:12px;box-shadow:var(--sh-3);overflow:hidden;animation:sb-pop .14s ease">
+<div style="display:flex;align-items:center;justify-content:space-between;padding:12px 14px;border-bottom:1px solid var(--border)"><span style="font-weight:600">Notifications</span><button onClick="{{ markAllRead }}" style="border:0;background:transparent;color:var(--accent-text);font-size:13px;cursor:pointer;padding:4px;border-radius:6px">Mark all as read</button></div>
+<sc-for list="{{ notifs }}" as="n" hint-placeholder-count="4"><button role="menuitem" onClick="{{ n.onClick }}" style="display:flex;gap:10px;width:100%;padding:12px 14px;border:0;border-bottom:1px solid var(--border);background:transparent;text-align:left;cursor:pointer" style-hover="background:var(--surface-2)"><span style="width:8px;height:8px;margin-top:6px;border-radius:50%;flex:none;background:{{ n.dot }}"></span><span style="display:flex;flex-direction:column;gap:2px"><span style="font-size:13.5px;color:var(--fg);font-weight:{{ n.fw }};text-wrap:pretty">{{ n.text }}</span><span style="font-size:12px;color:var(--fg-3)">{{ n.time }}{{ n.unreadSr }}</span></span></button></sc-for>
+</div></sc-if></div>
+<div style="position:relative"><button onClick="{{ toggleUser }}" aria-label="Account menu" aria-expanded="{{ userOpen }}" style="display:flex;align-items:center;gap:6px;height:36px;padding:0 6px 0 3px;border:0;border-radius:18px;background:transparent;cursor:pointer;color:var(--fg-2)" style-hover="background:var(--surface-2)"><span style="width:30px;height:30px;border-radius:50%;display:inline-flex;align-items:center;justify-content:center;font-size:11.5px;font-weight:600;background:{{ me.avBg }};color:{{ me.avFg }}">{{ me.initials }}</span><i style="font-size:18px">expand_more</i></button>
+<sc-if value="{{ userOpen }}" hint-placeholder-val="{{ false }}"><div role="menu" style="position:absolute;top:calc(100% + 8px);right:0;z-index:40;width:260px;background:var(--surface);border:1px solid var(--border);border-radius:12px;box-shadow:var(--sh-3);padding:6px;animation:sb-pop .14s ease">
+<div style="padding:10px 10px 12px;border-bottom:1px solid var(--border);margin-bottom:6px;display:flex;flex-direction:column;gap:2px"><span style="font-weight:600">{{ me.name }}</span><span style="font-size:12.5px;color:var(--fg-3)">{{ me.email }}</span><span style="align-self:flex-start;margin-top:6px;font-size:11.5px;font-weight:550;padding:1px 8px;border-radius:999px;background:var(--accent-soft);color:var(--accent-text)">{{ roleLabel }}</span></div>
+<sc-for list="{{ userItems }}" as="u" hint-placeholder-count="4"><button role="menuitem" onClick="{{ u.onClick }}" style="display:flex;align-items:center;gap:10px;width:100%;height:36px;padding:0 10px;border:0;border-radius:6px;background:transparent;color:{{ u.fg }};font-size:14px;cursor:pointer;text-align:left" style-hover="background:var(--surface-2)"><i style="font-size:18px">{{ u.icon }}</i>{{ u.label }}</button></sc-for>
+</div></sc-if></div>
+</div>
+</header>
+<main ref="{{ mainRef }}" style="flex:1;min-height:0;overflow:auto">
+<div style="max-width:1400px;margin:0 auto;padding:28px 32px 48px">
+<sc-if value="{{ isDashboard }}" hint-placeholder-val="{{ false }}">
+<div style="display:flex;flex-direction:column;gap:24px">
+<div style="display:flex;align-items:flex-end;justify-content:space-between;gap:16px;flex-wrap:wrap">
+<div><h1 style="margin:0;font-size:24px;font-weight:620;letter-spacing:-.015em;line-height:1.2">Good morning, Priya</h1><p style="margin:6px 0 0;color:var(--fg-2)">Sprint 14 · Sep 28 – Oct 9, 2026 · {{ sprint.daysLeft }}</p></div>
+<button onClick="{{ openCreate }}" style="white-space:nowrap;flex:none;display:inline-flex;align-items:center;gap:6px;height:36px;padding:0 14px 0 10px;border-radius:8px;border:0;background:var(--accent);color:var(--on-accent);font-weight:560;font-size:14px;cursor:pointer" style-hover="background:var(--accent-hover)"><i>add</i>New Task</button>
+</div>
+<sc-if value="{{ ds.error }}" hint-placeholder-val="{{ false }}"><div role="alert" style="background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:56px 24px;display:flex;flex-direction:column;align-items:center;text-align:center;gap:10px"><span style="width:48px;height:48px;border-radius:12px;background:var(--danger-soft);color:var(--danger-text);display:flex;align-items:center;justify-content:center"><i style="font-size:24px">cloud_off</i></span><h2 style="margin:4px 0 0;font-size:16px;font-weight:600">Couldn’t load the dashboard</h2><p style="margin:0;color:var(--fg-2);max-width:360px">Check your connection and try again. Nothing you’ve saved is affected.</p><button onClick="{{ retry }}" style="margin-top:6px;display:inline-flex;align-items:center;gap:6px;height:36px;padding:0 14px;border-radius:8px;border:1px solid var(--border-strong);background:var(--surface);font-weight:520;cursor:pointer" style-hover="background:var(--surface-2)"><i style="font-size:18px">refresh</i>Try again</button></div></sc-if>
+<sc-if value="{{ ds.notError }}" hint-placeholder-val="{{ true }}">
+<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:16px">
+<sc-if value="{{ ds.loading }}"><sc-for list="{{ skel4 }}" as="k"><div aria-hidden="true" style="background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:18px;display:flex;flex-direction:column;gap:14px;height:118px"><div style="width:50%;height:10px;border-radius:4px;background:var(--surface-3);animation:sb-shimmer 1.4s ease-in-out infinite"></div><div style="width:30%;height:24px;border-radius:6px;background:var(--surface-3);animation:sb-shimmer 1.4s ease-in-out infinite"></div><div style="width:65%;height:8px;border-radius:4px;background:var(--surface-3);animation:sb-shimmer 1.4s ease-in-out infinite"></div></div></sc-for></sc-if>
+<sc-if value="{{ ds.notLoading }}"><sc-for list="{{ stats }}" as="c" hint-placeholder-count="4"><div style="background:var(--surface);border:1px solid var(--border);border-radius:12px;box-shadow:var(--sh-1);padding:18px;display:flex;flex-direction:column;gap:6px">
+<div style="display:flex;align-items:center;justify-content:space-between;color:var(--fg-2);font-size:13px;font-weight:520"><span>{{ c.label }}</span><span style="width:28px;height:28px;border-radius:8px;display:flex;align-items:center;justify-content:center;background:{{ c.iconBg }};color:{{ c.iconFg }}"><i style="font-size:17px">{{ c.icon }}</i></span></div>
+<span style="font-size:30px;font-weight:620;letter-spacing:-.02em;font-variant-numeric:tabular-nums;color:{{ c.valueFg }};line-height:1.15">{{ c.value }}</span>
+<span style="font-size:12.5px;color:var(--fg-3)">{{ c.meta }}</span></div></sc-for></sc-if>
+</div>
+<div style="display:grid;grid-template-columns:minmax(0,1.5fr) minmax(0,1fr);gap:16px;align-items:start">
+<div style="display:flex;flex-direction:column;gap:16px">
+<section aria-labelledby="chart-h" style="background:var(--surface);border:1px solid var(--border);border-radius:12px;box-shadow:var(--sh-1);padding:20px">
+<div style="display:flex;justify-content:space-between;align-items:baseline;margin-bottom:20px"><h2 id="chart-h" style="margin:0;font-size:15px;font-weight:600">Tasks by status</h2><span style="font-size:12.5px;color:var(--fg-3)">{{ chart.caption }}</span></div>
+<sc-if value="{{ chart.loading }}"><div role="status" aria-label="Loading chart" style="height:212px;display:flex;align-items:flex-end;gap:28px;padding:0 12px 34px;border-bottom:1px solid var(--border)"><sc-for list="{{ chart.skel }}" as="b"><div style="flex:1;height:{{ b }};border-radius:6px 6px 0 0;background:var(--surface-3);animation:sb-shimmer 1.4s ease-in-out infinite"></div></sc-for></div></sc-if>
+<sc-if value="{{ chart.empty }}"><div style="height:212px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px;text-align:center"><i style="font-size:28px;color:var(--fg-3)">bar_chart</i><span style="font-weight:550">No tasks in this sprint yet</span><span style="font-size:13px;color:var(--fg-3)">The chart fills in as tasks are added.</span></div></sc-if>
+<sc-if value="{{ chart.ready }}"><div role="img" aria-label="{{ chart.aria }}" style="display:flex;align-items:flex-end;gap:28px;height:212px;padding:0 12px;border-bottom:1px solid var(--border)">
+<sc-for list="{{ chart.bars }}" as="b" hint-placeholder-count="4"><div style="flex:1;height:100%;display:flex;flex-direction:column;justify-content:flex-end;align-items:center;gap:6px;padding-bottom:0"><span style="font-size:15px;font-weight:620;font-variant-numeric:tabular-nums">{{ b.count }}</span><div style="width:100%;max-width:72px;height:{{ b.h }};min-height:4px;border-radius:6px 6px 0 0;background:{{ b.color }};transition:height .5s ease"></div></div></sc-for></div>
+<div style="display:flex;gap:28px;padding:10px 12px 0"><sc-for list="{{ chart.bars }}" as="b" hint-placeholder-count="4"><span style="flex:1;display:flex;align-items:center;justify-content:center;gap:5px;font-size:12.5px;color:var(--fg-2)"><i style="font-size:15px;color:{{ b.fg }}">{{ b.icon }}</i>{{ b.label }}</span></sc-for></div></sc-if>
+</section>
+<section aria-labelledby="sprint-h" style="background:var(--surface);border:1px solid var(--border);border-radius:12px;box-shadow:var(--sh-1);padding:20px;display:flex;flex-direction:column;gap:14px">
+<div style="display:flex;justify-content:space-between;align-items:center;gap:12px"><div style="display:flex;align-items:center;gap:8px"><h2 id="sprint-h" style="margin:0;font-size:15px;font-weight:600">Sprint 14 progress</h2><span style="font-size:11.5px;font-weight:550;padding:1px 8px;border-radius:999px;background:var(--st-progress-bg);color:var(--st-progress-fg)">Active</span></div><span style="font-size:13px;color:var(--fg-2)">{{ sprint.daysLeft }}</span></div>
+<sc-if value="{{ ds.loading }}"><div aria-hidden="true" style="display:flex;flex-direction:column;gap:10px"><div style="height:10px;border-radius:5px;background:var(--surface-3);animation:sb-shimmer 1.4s ease-in-out infinite"></div><div style="width:40%;height:8px;border-radius:4px;background:var(--surface-3);animation:sb-shimmer 1.4s ease-in-out infinite"></div></div></sc-if>
+<sc-if value="{{ ds.notLoading }}">
+<p style="margin:0;color:var(--fg-2);font-size:13.5px">Goal: ship global search and dark mode.</p>
+<div style="position:relative;padding-top:18px">
+<div style="position:absolute;top:0;left:{{ sprint.today }};transform:translateX(-50%);font-size:11px;color:var(--fg-2);font-weight:550">Today</div>
+<div role="progressbar" aria-valuenow="{{ sprint.pctNum }}" aria-valuemin="0" aria-valuemax="100" aria-label="Sprint completion" style="height:10px;border-radius:5px;background:var(--surface-3);overflow:hidden"><div style="height:100%;width:{{ sprint.pct }};background:var(--accent);border-radius:5px;transition:width .4s"></div></div>
+<div style="position:absolute;top:15px;left:{{ sprint.today }};width:2px;height:16px;background:var(--fg-2);border-radius:1px"></div>
+</div>
+<div style="display:flex;justify-content:space-between;font-size:12.5px;color:var(--fg-3);font-family:'Geist Mono',monospace"><span>Sep 28</span><span style="font-family:'Geist',sans-serif;color:var(--fg-2)">{{ sprint.doneLabel }}</span><span>Oct 9</span></div>
+</sc-if>
+</section>
+</div>
+<section aria-labelledby="feed-h" style="background:var(--surface);border:1px solid var(--border);border-radius:12px;box-shadow:var(--sh-1);display:flex;flex-direction:column">
+<div style="display:flex;justify-content:space-between;align-items:center;padding:18px 20px 12px"><h2 id="feed-h" style="margin:0;font-size:15px;font-weight:600">Team activity</h2><span style="display:inline-flex;align-items:center;gap:6px;font-size:12px;font-weight:550;color:var(--success-text);padding:2px 9px 2px 7px;border-radius:999px;background:var(--st-done-bg)"><span style="width:7px;height:7px;border-radius:50%;background:var(--live);animation:sb-pulse 2s infinite"></span>Live</span></div>
+<sc-if value="{{ ds.loading }}"><div aria-hidden="true" style="display:flex;flex-direction:column;padding:0 20px 16px"><sc-for list="{{ skel5 }}" as="k"><div style="display:flex;gap:12px;padding:12px 0;border-top:1px solid var(--border)"><div style="width:28px;height:28px;border-radius:50%;background:var(--surface-3);animation:sb-shimmer 1.4s ease-in-out infinite"></div><div style="flex:1;display:flex;flex-direction:column;gap:7px"><div style="width:85%;height:10px;border-radius:4px;background:var(--surface-3);animation:sb-shimmer 1.4s ease-in-out infinite"></div><div style="width:25%;height:8px;border-radius:4px;background:var(--surface-3);animation:sb-shimmer 1.4s ease-in-out infinite"></div></div></div></sc-for></div></sc-if>
+<sc-if value="{{ feedEmpty }}"><div style="padding:36px 20px 44px;display:flex;flex-direction:column;align-items:center;gap:6px;text-align:center"><i style="font-size:26px;color:var(--fg-3)">history</i><span style="font-weight:550">No activity yet</span><span style="font-size:13px;color:var(--fg-3)">Updates from your team show up here as they happen.</span></div></sc-if>
+<sc-if value="{{ feedHas }}"><ol aria-live="polite" style="list-style:none;margin:0;padding:0 20px 8px">
+<sc-for list="{{ feed }}" as="a" hint-placeholder-count="6"><li style="display:flex;gap:12px;padding:12px 0;border-top:1px solid var(--border);animation:{{ a.anim }}"><span style="width:28px;height:28px;flex:none;border-radius:50%;display:inline-flex;align-items:center;justify-content:center;font-size:10.5px;font-weight:600;background:{{ a.avBg }};color:{{ a.avFg }}">{{ a.initials }}</span><div style="display:flex;flex-direction:column;gap:3px;min-width:0"><span style="font-size:13.5px;color:var(--fg-2);line-height:1.5;text-wrap:pretty"><strong style="color:var(--fg);font-weight:600">{{ a.actor }}</strong> {{ a.verb }} <a onClick="{{ a.open }}" style="color:var(--fg);font-weight:550">{{ a.task }}</a><sc-if value="{{ a.hasTo }}"> to <span style="display:inline-flex;align-items:center;gap:3px;vertical-align:1px;height:20px;padding:0 7px 0 5px;border-radius:6px;font-size:11.5px;font-weight:550;background:{{ a.stBg }};color:{{ a.stFg }}"><i style="font-size:14px">{{ a.stIcon }}</i>{{ a.stLabel }}</span></sc-if></span><span style="font-size:12px;color:var(--fg-3)">{{ a.ago }}</span></div></li></sc-for>
+</ol></sc-if>
+</section>
+</div>
+</sc-if>
+</div>
+</sc-if>
+<sc-if value="{{ isBoard }}" hint-placeholder-val="{{ false }}">
+<div style="display:flex;flex-direction:column;gap:18px">
+<div style="display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap">
+<div style="display:flex;align-items:center;gap:10px"><h1 style="margin:0;font-size:24px;font-weight:620;letter-spacing:-.015em;line-height:1.2">Board</h1><span style="font-size:12.5px;font-weight:550;padding:2px 9px;border-radius:999px;background:var(--surface-2);border:1px solid var(--border);color:var(--fg-2)">Sprint 14 · Sep 28 – Oct 9</span></div>
+<button onClick="{{ openCreate }}" style="white-space:nowrap;flex:none;display:inline-flex;align-items:center;gap:6px;height:36px;padding:0 14px 0 10px;border-radius:8px;border:0;background:var(--accent);color:var(--on-accent);font-weight:560;font-size:14px;cursor:pointer" style-hover="background:var(--accent-hover)"><i>add</i>New Task</button>
+</div>
+<div role="toolbar" aria-label="Board filters" style="display:flex;align-items:center;gap:8px;flex-wrap:wrap">
+<div style="position:relative"><button onClick="{{ fa.toggle }}" aria-haspopup="listbox" aria-expanded="{{ fa.open }}" style="white-space:nowrap;flex:none;display:inline-flex;align-items:center;gap:6px;height:34px;padding:0 8px 0 10px;border-radius:8px;border:1px solid {{ fa.border }};background:{{ fa.bg }};font-size:13.5px;font-weight:520;cursor:pointer;color:var(--fg)" style-hover="background:var(--surface-2)"><i style="font-size:18px;color:var(--fg-3)">person</i>Assignee<sc-if value="{{ fa.has }}"><span style="display:flex;margin-left:2px"><sc-for list="{{ fa.stack }}" as="m"><span style="width:20px;height:20px;margin-left:-5px;border-radius:50%;border:2px solid var(--surface);display:inline-flex;align-items:center;justify-content:center;font-size:8.5px;font-weight:650;background:{{ m.avBg }};color:{{ m.avFg }}">{{ m.initials }}</span></sc-for></span></sc-if><i style="font-size:18px;color:var(--fg-3)">expand_more</i></button>
+<sc-if value="{{ fa.open }}" hint-placeholder-val="{{ false }}"><div role="listbox" aria-multiselectable="true" aria-label="Filter by assignee" style="position:absolute;top:calc(100% + 6px);left:0;z-index:40;width:260px;background:var(--surface);border:1px solid var(--border);border-radius:10px;box-shadow:var(--sh-3);padding:6px;animation:sb-pop .14s ease">
+<sc-for list="{{ fa.opts }}" as="o" hint-placeholder-count="8"><label style="display:flex;align-items:center;gap:10px;height:38px;padding:0 8px;border-radius:6px;cursor:pointer;font-size:14px" style-hover="background:var(--surface-2)"><input type="checkbox" checked="{{ o.checked }}" onChange="{{ o.toggle }}" style="width:16px;height:16px;margin:0;accent-color:var(--accent)"><span style="width:24px;height:24px;border-radius:50%;display:inline-flex;align-items:center;justify-content:center;font-size:10px;font-weight:600;background:{{ o.avBg }};color:{{ o.avFg }}">{{ o.initials }}</span><span style="flex:1">{{ o.name }}</span><span style="font-size:12px;color:var(--fg-3)">{{ o.count }}</span></label></sc-for>
+</div></sc-if></div>
+<div style="position:relative"><button onClick="{{ fp.toggle }}" aria-haspopup="listbox" aria-expanded="{{ fp.open }}" style="white-space:nowrap;flex:none;display:inline-flex;align-items:center;gap:6px;height:34px;padding:0 8px 0 10px;border-radius:8px;border:1px solid {{ fp.border }};background:{{ fp.bg }};font-size:13.5px;font-weight:520;cursor:pointer;color:var(--fg)" style-hover="background:var(--surface-2)"><i style="font-size:18px;color:var(--fg-3)">flag</i>{{ fp.label }}<i style="font-size:18px;color:var(--fg-3)">expand_more</i></button>
+<sc-if value="{{ fp.open }}" hint-placeholder-val="{{ false }}"><div role="listbox" aria-multiselectable="true" aria-label="Filter by priority" style="position:absolute;top:calc(100% + 6px);left:0;z-index:40;width:220px;background:var(--surface);border:1px solid var(--border);border-radius:10px;box-shadow:var(--sh-3);padding:6px;animation:sb-pop .14s ease">
+<sc-for list="{{ fp.opts }}" as="o" hint-placeholder-count="3"><label style="display:flex;align-items:center;gap:10px;height:38px;padding:0 8px;border-radius:6px;cursor:pointer" style-hover="background:var(--surface-2)"><input type="checkbox" checked="{{ o.checked }}" onChange="{{ o.toggle }}" style="width:16px;height:16px;margin:0;accent-color:var(--accent)"><span style="display:inline-flex;align-items:center;gap:2px;height:22px;padding:0 8px 0 4px;border-radius:6px;font-size:12px;font-weight:550;background:{{ o.bg }};color:{{ o.fg }}"><i style="font-size:16px">{{ o.icon }}</i>{{ o.label }}</span><span style="flex:1"></span><span style="font-size:12px;color:var(--fg-3)">{{ o.count }}</span></label></sc-for>
+</div></sc-if></div>
+<button role="switch" aria-checked="{{ mine.on }}" onClick="{{ mine.toggle }}" style="white-space:nowrap;flex:none;display:inline-flex;align-items:center;gap:8px;height:34px;padding:0 12px 0 8px;border-radius:8px;border:1px solid var(--border-strong);background:var(--surface);font-size:13.5px;font-weight:520;cursor:pointer" style-hover="background:var(--surface-2)"><span style="width:30px;height:18px;border-radius:9px;background:{{ mine.track }};position:relative;transition:background .15s"><span style="position:absolute;top:2px;left:2px;width:14px;height:14px;border-radius:50%;background:#fff;box-shadow:0 1px 2px oklch(0 0 0 / .25);transform:{{ mine.thumb }};transition:transform .15s"></span></span>My tasks only</button>
+<sc-if value="{{ hasFilters }}"><button onClick="{{ clearFilters }}" style="white-space:nowrap;flex:none;display:inline-flex;align-items:center;gap:4px;height:34px;padding:0 10px;border-radius:8px;border:0;background:transparent;color:var(--fg-2);font-size:13.5px;font-weight:520;cursor:pointer" style-hover="background:var(--surface-2);color:var(--fg)"><i style="font-size:17px">close</i>Clear filters</button></sc-if>
+<span style="margin-left:auto;font-size:13px;color:var(--fg-3)">{{ boardCount }}</span>
+</div>
+<sc-if value="{{ ds.error }}" hint-placeholder-val="{{ false }}"><div role="alert" style="background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:56px 24px;display:flex;flex-direction:column;align-items:center;text-align:center;gap:10px"><span style="width:48px;height:48px;border-radius:12px;background:var(--danger-soft);color:var(--danger-text);display:flex;align-items:center;justify-content:center"><i style="font-size:24px">cloud_off</i></span><h2 style="margin:4px 0 0;font-size:16px;font-weight:600">Couldn’t load the board</h2><p style="margin:0;color:var(--fg-2);max-width:360px">Something went wrong while fetching Sprint 14. Your tasks are safe.</p><button onClick="{{ retry }}" style="margin-top:6px;display:inline-flex;align-items:center;gap:6px;height:36px;padding:0 14px;border-radius:8px;border:1px solid var(--border-strong);background:var(--surface);font-weight:520;cursor:pointer" style-hover="background:var(--surface-2)"><i style="font-size:18px">refresh</i>Try again</button></div></sc-if>
+<sc-if value="{{ boardEmpty }}" hint-placeholder-val="{{ false }}"><div style="display:flex;align-items:center;gap:16px;padding:16px 20px;border-radius:12px;background:var(--accent-soft);color:var(--fg)"><i style="font-size:24px;color:var(--accent-text)">inventory_2</i><div style="flex:1"><div style="font-weight:600">Sprint 14 has no tasks yet</div><div style="font-size:13.5px;color:var(--fg-2)">Create the first task, or drag work in from the backlog.</div></div><button onClick="{{ openCreate }}" style="white-space:nowrap;flex:none;display:inline-flex;align-items:center;gap:6px;height:34px;padding:0 12px 0 8px;border-radius:8px;border:0;background:var(--accent);color:var(--on-accent);font-weight:560;cursor:pointer" style-hover="background:var(--accent-hover)"><i style="font-size:18px">add</i>New Task</button></div></sc-if>
+<sc-if value="{{ noMatch }}" hint-placeholder-val="{{ false }}"><div style="display:flex;align-items:center;gap:12px;padding:12px 16px;border-radius:10px;border:1px dashed var(--border-strong);color:var(--fg-2);font-size:13.5px"><i style="font-size:20px">filter_alt_off</i><span style="flex:1">No tasks match these filters.</span><button onClick="{{ clearFilters }}" style="border:0;background:transparent;color:var(--accent-text);font-weight:550;cursor:pointer;padding:4px 6px;border-radius:6px">Clear filters</button></div></sc-if>
+<sc-if value="{{ ds.notError }}" hint-placeholder-val="{{ true }}">
+<div style="display:flex;gap:16px;overflow-x:auto;align-items:flex-start;padding-bottom:12px">
+<sc-for list="{{ columns }}" as="c" hint-placeholder-count="4">
+<section aria-label="{{ c.aria }}" style="flex:1 1 0;min-width:262px;display:flex;flex-direction:column;gap:10px">
+<div style="display:flex;align-items:center;gap:8px;padding:0 4px;height:28px"><i style="font-size:18px;color:{{ c.fg }}">{{ c.icon }}</i><h2 style="margin:0;font-size:13.5px;font-weight:600">{{ c.label }}</h2><span style="min-width:22px;height:20px;padding:0 6px;border-radius:10px;background:var(--surface-3);color:var(--fg-2);font-size:12px;font-weight:600;display:inline-flex;align-items:center;justify-content:center;font-variant-numeric:tabular-nums">{{ c.count }}</span><span style="flex:1"></span><button onClick="{{ c.add }}" aria-label="{{ c.addLabel }}" title="{{ c.addLabel }}" style="width:28px;height:28px;border:0;border-radius:6px;background:transparent;color:var(--fg-3);cursor:pointer;display:flex;align-items:center;justify-content:center" style-hover="background:var(--surface-3);color:var(--fg)"><i style="font-size:19px">add</i></button></div>
+<div onDragOver="{{ c.onDragOver }}" onDrop="{{ c.onDrop }}" style="display:flex;flex-direction:column;gap:8px;padding:8px;border-radius:12px;min-height:160px;background:{{ c.zoneBg }};outline:{{ c.zoneOutline }};outline-offset:-2px;transition:background .15s">
+<sc-if value="{{ c.showDrop }}"><div style="height:64px;border-radius:10px;border:2px dashed var(--accent);background:var(--surface);display:flex;align-items:center;justify-content:center;gap:6px;color:var(--accent-text);font-size:13px;font-weight:550"><i style="font-size:18px">south</i>Drop to move to {{ c.label }}</div></sc-if>
+<sc-if value="{{ c.loading }}"><sc-for list="{{ c.skels }}" as="k"><div aria-hidden="true" style="background:var(--surface);border:1px solid var(--border);border-radius:10px;padding:12px;display:flex;flex-direction:column;gap:10px"><div style="display:flex;justify-content:space-between"><div style="width:44px;height:9px;border-radius:4px;background:var(--surface-3);animation:sb-shimmer 1.4s ease-in-out infinite"></div><div style="width:52px;height:18px;border-radius:6px;background:var(--surface-3);animation:sb-shimmer 1.4s ease-in-out infinite"></div></div><div style="width:{{ k }};height:11px;border-radius:4px;background:var(--surface-3);animation:sb-shimmer 1.4s ease-in-out infinite"></div><div style="display:flex;justify-content:space-between;align-items:center"><div style="width:90px;height:9px;border-radius:4px;background:var(--surface-3);animation:sb-shimmer 1.4s ease-in-out infinite"></div><div style="width:24px;height:24px;border-radius:50%;background:var(--surface-3);animation:sb-shimmer 1.4s ease-in-out infinite"></div></div></div></sc-for></sc-if>
+<sc-for list="{{ c.tasks }}" as="t" hint-placeholder-count="3">
+<article draggable="true" onDragStart="{{ t.onDragStart }}" onDragEnd="{{ t.onDragEnd }}" onClick="{{ t.open }}" onKeyDown="{{ t.onKey }}" tabIndex="0" role="button" aria-label="{{ t.aria }}" style="position:relative;z-index:{{ t.cZ }};background:var(--surface);border:1px solid var(--border);border-radius:10px;padding:12px;display:flex;flex-direction:column;gap:10px;cursor:grab;box-shadow:{{ t.cShadow }};transform:{{ t.cTransform }};opacity:{{ t.cOpacity }};animation:{{ t.cAnim }};transition:box-shadow .15s,transform .15s,border-color .15s" style-hover="border-color:var(--border-strong)">
+<div style="display:flex;align-items:center;justify-content:space-between;gap:8px"><span style="font-family:'Geist Mono',monospace;font-size:11.5px;color:var(--fg-3)">{{ t.id }}</span><span style="display:inline-flex;align-items:center;gap:1px;height:20px;padding:0 7px 0 3px;border-radius:6px;font-size:11.5px;font-weight:560;background:{{ t.prBg }};color:{{ t.prFg }}"><i style="font-size:16px">{{ t.prIcon }}</i>{{ t.prLabel }}</span></div>
+<div style="font-size:14px;font-weight:530;line-height:1.4;text-wrap:pretty">{{ t.title }}</div>
+<div style="display:flex;align-items:center;gap:12px;font-size:12.5px;color:var(--fg-2)">
+<span style="display:inline-flex;align-items:center;gap:4px;color:{{ t.dueFg }};font-weight:{{ t.dueFw }}"><i style="font-size:15px">{{ t.dueIcon }}</i>{{ t.dueShort }}</span>
+<sc-if value="{{ t.hasSubs }}"><span title="Subtasks done" style="display:inline-flex;align-items:center;gap:3px;font-variant-numeric:tabular-nums"><i style="font-size:15px;color:var(--fg-3)">checklist</i>{{ t.subLabel }}</span></sc-if>
+<sc-if value="{{ t.hasComments }}"><span title="Comments" style="display:inline-flex;align-items:center;gap:3px"><i style="font-size:15px;color:var(--fg-3)">chat_bubble</i>{{ t.nComments }}</span></sc-if>
+<span style="flex:1"></span>
+<span title="{{ t.aName }}" style="width:24px;height:24px;border-radius:50%;display:inline-flex;align-items:center;justify-content:center;font-size:10px;font-weight:600;background:{{ t.avBg }};color:{{ t.avFg }}">{{ t.initials }}</span>
+</div>
+</article>
+</sc-for>
+<sc-if value="{{ c.empty }}"><div style="flex:1;min-height:140px;border:1.5px dashed var(--border-strong);border-radius:10px;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;gap:4px;padding:16px;color:var(--fg-3)"><i style="font-size:22px">{{ c.emptyIcon }}</i><span style="font-size:13.5px;font-weight:550;color:var(--fg-2)">{{ c.emptyTitle }}</span><span style="font-size:12.5px">{{ c.emptyBody }}</span></div></sc-if>
+</div>
+</section>
+</sc-for>
+</div>
+</sc-if>
+</div>
+</sc-if>
+<sc-if value="{{ isTask }}" hint-placeholder-val="{{ false }}">
+<sc-if value="{{ tv.skeleton }}"><div role="status" aria-label="Loading task" style="display:flex;flex-direction:column;gap:20px">
+<div style="width:140px;height:10px;border-radius:4px;background:var(--surface-3);animation:sb-shimmer 1.4s ease-in-out infinite"></div>
+<div style="width:46%;height:26px;border-radius:6px;background:var(--surface-3);animation:sb-shimmer 1.4s ease-in-out infinite"></div>
+<div style="display:grid;grid-template-columns:minmax(0,1fr) 320px;gap:24px">
+<div style="display:flex;flex-direction:column;gap:16px"><sc-for list="{{ skel3 }}" as="k"><div style="background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:20px;display:flex;flex-direction:column;gap:12px"><div style="width:120px;height:12px;border-radius:4px;background:var(--surface-3);animation:sb-shimmer 1.4s ease-in-out infinite"></div><div style="width:92%;height:9px;border-radius:4px;background:var(--surface-3);animation:sb-shimmer 1.4s ease-in-out infinite"></div><div style="width:78%;height:9px;border-radius:4px;background:var(--surface-3);animation:sb-shimmer 1.4s ease-in-out infinite"></div><div style="width:60%;height:9px;border-radius:4px;background:var(--surface-3);animation:sb-shimmer 1.4s ease-in-out infinite"></div></div></sc-for></div>
+<div style="background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:20px;display:flex;flex-direction:column;gap:18px;height:max-content"><sc-for list="{{ skel5 }}" as="k"><div style="display:flex;gap:16px;align-items:center"><div style="width:70px;height:9px;border-radius:4px;background:var(--surface-3);animation:sb-shimmer 1.4s ease-in-out infinite"></div><div style="flex:1;height:22px;border-radius:6px;background:var(--surface-3);animation:sb-shimmer 1.4s ease-in-out infinite"></div></div></sc-for></div>
+</div></div></sc-if>
+<sc-if value="{{ tv.error }}"><div role="alert" style="background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:56px 24px;display:flex;flex-direction:column;align-items:center;text-align:center;gap:10px"><span style="width:48px;height:48px;border-radius:12px;background:var(--danger-soft);color:var(--danger-text);display:flex;align-items:center;justify-content:center"><i style="font-size:24px">cloud_off</i></span><h2 style="margin:4px 0 0;font-size:16px;font-weight:600">Couldn’t load {{ tv.id }}</h2><p style="margin:0;color:var(--fg-2)">The task may still be there. Try again in a moment.</p><button onClick="{{ retry }}" style="margin-top:6px;display:inline-flex;align-items:center;gap:6px;height:36px;padding:0 14px;border-radius:8px;border:1px solid var(--border-strong);background:var(--surface);font-weight:520;cursor:pointer" style-hover="background:var(--surface-2)"><i style="font-size:18px">refresh</i>Try again</button></div></sc-if>
+<sc-if value="{{ tv.ready }}">
+<div style="display:flex;flex-direction:column;gap:20px">
+<nav aria-label="Breadcrumb" style="display:flex;align-items:center;gap:4px;font-size:13px;color:var(--fg-3)"><a onClick="{{ goBoard }}" style="color:var(--fg-2)">Board</a><i style="font-size:16px">chevron_right</i><span style="font-family:'Geist Mono',monospace">{{ tk.id }}</span></nav>
+<div style="display:flex;align-items:flex-start;justify-content:space-between;gap:16px">
+<h1 style="margin:0;font-size:26px;font-weight:620;letter-spacing:-.018em;line-height:1.25;text-wrap:pretty;max-width:820px">{{ tk.title }}</h1>
+<div style="display:flex;gap:8px;flex:none"><button onClick="{{ tv.copyLink }}" aria-label="Copy link" title="Copy link" style="width:36px;height:36px;display:inline-flex;align-items:center;justify-content:center;border:1px solid var(--border-strong);border-radius:8px;background:var(--surface);color:var(--fg-2);cursor:pointer" style-hover="background:var(--surface-2)"><i style="font-size:18px">link</i></button><button onClick="{{ tv.edit }}" style="white-space:nowrap;flex:none;display:inline-flex;align-items:center;gap:6px;height:36px;padding:0 14px 0 10px;border-radius:8px;border:1px solid var(--border-strong);background:var(--surface);font-weight:520;cursor:pointer" style-hover="background:var(--surface-2)"><i style="font-size:18px">edit</i>Edit</button></div>
+</div>
+<div style="display:grid;grid-template-columns:minmax(0,1fr) 320px;gap:24px;align-items:start">
+<div style="display:flex;flex-direction:column;gap:16px;min-width:0">
+<section aria-labelledby="d-desc" style="background:var(--surface);border:1px solid var(--border);border-radius:12px;box-shadow:var(--sh-1);padding:20px"><h2 id="d-desc" style="margin:0 0 10px;font-size:15px;font-weight:600">Description</h2><div style="color:var(--fg-2);white-space:pre-wrap;line-height:1.6;text-wrap:pretty;max-width:72ch">{{ tk.desc }}</div></section>
+<section aria-labelledby="d-subs" style="background:var(--surface);border:1px solid var(--border);border-radius:12px;box-shadow:var(--sh-1);padding:20px;display:flex;flex-direction:column;gap:12px">
+<div style="display:flex;align-items:center;gap:12px"><h2 id="d-subs" style="margin:0;font-size:15px;font-weight:600">Subtasks</h2><span style="font-size:13px;color:var(--fg-3);font-variant-numeric:tabular-nums">{{ tk.subLabel }}</span><div style="flex:1;max-width:200px;height:6px;border-radius:3px;background:var(--surface-3);overflow:hidden"><div style="height:100%;width:{{ tk.subPct }};background:var(--st-done-dot);border-radius:3px;transition:width .3s"></div></div></div>
+<ul style="list-style:none;margin:0;padding:0;display:flex;flex-direction:column">
+<sc-for list="{{ tk.subRows }}" as="st" hint-placeholder-count="4"><li style="display:flex;align-items:center;gap:10px;min-height:40px;padding:0 6px;border-radius:8px" style-hover="background:var(--surface-2)"><input type="checkbox" id="{{ st.id }}" checked="{{ st.done }}" onChange="{{ st.toggle }}" style="width:17px;height:17px;margin:0;accent-color:var(--accent)"><label for="{{ st.id }}" style="flex:1;cursor:pointer;color:{{ st.fg }};text-decoration:{{ st.deco }}">{{ st.text }}</label><button onClick="{{ st.remove }}" aria-label="{{ st.removeLabel }}" style="width:28px;height:28px;border:0;border-radius:6px;background:transparent;color:var(--fg-3);cursor:pointer;display:flex;align-items:center;justify-content:center" style-hover="background:var(--surface-3);color:var(--danger-text)"><i style="font-size:17px">close</i></button></li></sc-for>
+</ul>
+<form onSubmit="{{ tv.addSub }}" style="display:flex;gap:8px"><input value="{{ tv.newSub }}" onChange="{{ tv.onNewSub }}" aria-label="New subtask" placeholder="Add a subtask" style="flex:1;height:36px;padding:0 12px;border-radius:8px;border:1px solid var(--border-strong);background:var(--surface);outline:none" style-focus="border-color:var(--accent);box-shadow:0 0 0 3px var(--accent-soft-strong)"><button type="submit" style="white-space:nowrap;flex:none;display:inline-flex;align-items:center;gap:4px;height:36px;padding:0 12px 0 8px;border-radius:8px;border:1px solid var(--border-strong);background:var(--surface);font-weight:520;cursor:pointer" style-hover="background:var(--surface-2)"><i style="font-size:18px">add</i>Add</button></form>
+</section>
+<section style="background:var(--surface);border:1px solid var(--border);border-radius:12px;box-shadow:var(--sh-1)">
+<div role="tablist" aria-label="Task conversation" style="display:flex;gap:4px;padding:0 16px;border-bottom:1px solid var(--border)"><sc-for list="{{ tv.tabs }}" as="tb" hint-placeholder-count="2"><button role="tab" aria-selected="{{ tb.on }}" onClick="{{ tb.onClick }}" style="height:46px;padding:0 8px;border:0;background:transparent;cursor:pointer;font-weight:{{ tb.fw }};color:{{ tb.fg }};box-shadow:{{ tb.bar }};font-size:14px">{{ tb.label }}</button></sc-for></div>
+<sc-if value="{{ tv.onComments }}"><div role="tabpanel" style="padding:8px 20px 20px;display:flex;flex-direction:column">
+<sc-if value="{{ tv.noComments }}"><div style="padding:24px 0;text-align:center;color:var(--fg-3);font-size:13.5px">No comments yet. Start the conversation below.</div></sc-if>
+<sc-for list="{{ tk.commentRows }}" as="cm" hint-placeholder-count="3"><div style="display:flex;gap:12px;padding:14px 0;border-bottom:1px solid var(--border)"><span style="width:30px;height:30px;flex:none;border-radius:50%;display:inline-flex;align-items:center;justify-content:center;font-size:11px;font-weight:600;background:{{ cm.avBg }};color:{{ cm.avFg }}">{{ cm.initials }}</span><div style="display:flex;flex-direction:column;gap:3px;min-width:0"><div style="display:flex;gap:8px;align-items:baseline"><span style="font-weight:600;font-size:13.5px">{{ cm.aName }}</span><span style="font-size:12px;color:var(--fg-3)">{{ cm.time }}</span></div><p style="margin:0;color:var(--fg-2);line-height:1.55;text-wrap:pretty">{{ cm.text }}</p></div></div></sc-for>
+<form onSubmit="{{ tv.post }}" style="display:flex;gap:12px;padding-top:16px"><span style="width:30px;height:30px;flex:none;border-radius:50%;display:inline-flex;align-items:center;justify-content:center;font-size:11px;font-weight:600;background:{{ me.avBg }};color:{{ me.avFg }}">{{ me.initials }}</span><div style="flex:1;display:flex;flex-direction:column;gap:8px"><textarea value="{{ tv.draft }}" onChange="{{ tv.onDraft }}" onKeyDown="{{ tv.draftKey }}" aria-label="Write a comment" placeholder="Write a comment… Use @ to mention a teammate" rows="3" style="width:100%;resize:vertical;padding:10px 12px;border-radius:8px;border:1px solid var(--border-strong);background:var(--surface);outline:none;line-height:1.5" style-focus="border-color:var(--accent);box-shadow:0 0 0 3px var(--accent-soft-strong)"></textarea><div style="display:flex;justify-content:space-between;align-items:center"><span style="font-size:12px;color:var(--fg-3)">⌘ + Enter to send</span><button type="submit" disabled="{{ tv.cantPost }}" style="white-space:nowrap;flex:none;height:34px;padding:0 14px;border-radius:8px;border:0;background:var(--accent);color:var(--on-accent);font-weight:560;cursor:pointer;opacity:{{ tv.postOpacity }}" style-hover="background:var(--accent-hover)">Comment</button></div></div></form>
+</div></sc-if>
+<sc-if value="{{ tv.onActivity }}"><ol role="tabpanel" style="list-style:none;margin:0;padding:12px 20px 20px;display:flex;flex-direction:column">
+<sc-for list="{{ tk.activityRows }}" as="h" hint-placeholder-count="4"><li style="display:flex;gap:12px;padding:10px 0;position:relative"><span style="width:24px;height:24px;flex:none;border-radius:50%;display:inline-flex;align-items:center;justify-content:center;font-size:9.5px;font-weight:600;background:{{ h.avBg }};color:{{ h.avFg }}">{{ h.initials }}</span><span style="font-size:13.5px;color:var(--fg-2);padding-top:2px"><strong style="color:var(--fg);font-weight:600">{{ h.actor }}</strong> {{ h.text }} <span style="color:var(--fg-3)">· {{ h.time }}</span></span></li></sc-for>
+</ol></sc-if>
+</section>
+</div>
+<aside aria-label="Task details" style="background:var(--surface);border:1px solid var(--border);border-radius:12px;box-shadow:var(--sh-1);padding:8px 20px;display:flex;flex-direction:column">
+<div style="display:flex;align-items:center;gap:12px;min-height:52px;border-bottom:1px solid var(--border)"><span style="width:84px;font-size:13px;color:var(--fg-3)">Status</span><div style="position:relative"><button onClick="{{ tv.toggleStatus }}" aria-haspopup="listbox" aria-expanded="{{ tv.statusOpen }}" aria-label="{{ tv.statusAria }}" style="display:inline-flex;align-items:center;gap:4px;height:30px;padding:0 6px 0 7px;border-radius:7px;border:0;font-size:13px;font-weight:560;cursor:pointer;background:{{ tk.stBg }};color:{{ tk.stFg }}"><i style="font-size:17px">{{ tk.stIcon }}</i>{{ tk.stLabel }}<i style="font-size:17px">expand_more</i></button>
+<sc-if value="{{ tv.statusOpen }}" hint-placeholder-val="{{ false }}"><div role="listbox" aria-label="Change status" style="position:absolute;top:calc(100% + 6px);left:0;z-index:40;width:200px;background:var(--surface);border:1px solid var(--border);border-radius:10px;box-shadow:var(--sh-3);padding:6px;animation:sb-pop .14s ease"><sc-for list="{{ tv.statusOpts }}" as="o" hint-placeholder-count="4"><button role="option" aria-selected="{{ o.on }}" onClick="{{ o.onClick }}" style="display:flex;align-items:center;gap:8px;width:100%;height:36px;padding:0 8px;border:0;border-radius:6px;background:transparent;cursor:pointer;text-align:left" style-hover="background:var(--surface-2)"><span style="display:inline-flex;align-items:center;gap:3px;height:22px;padding:0 8px 0 5px;border-radius:6px;font-size:12.5px;font-weight:550;background:{{ o.bg }};color:{{ o.fg }}"><i style="font-size:15px">{{ o.icon }}</i>{{ o.label }}</span><span style="flex:1"></span><sc-if value="{{ o.on }}"><i style="font-size:18px;color:var(--accent-text)">check</i></sc-if></button></sc-for></div></sc-if></div></div>
+<sc-for list="{{ tk.meta }}" as="r" hint-placeholder-count="6"><div style="display:flex;align-items:center;gap:12px;min-height:48px;border-bottom:{{ r.border }}"><span style="width:84px;flex:none;font-size:13px;color:var(--fg-3)">{{ r.label }}</span><span style="display:flex;align-items:center;gap:8px;font-size:13.5px;color:{{ r.fg }};font-weight:{{ r.fw }}"><sc-if value="{{ r.avatar }}"><span style="width:24px;height:24px;border-radius:50%;display:inline-flex;align-items:center;justify-content:center;font-size:10px;font-weight:600;background:{{ r.avBg }};color:{{ r.avFg }}">{{ r.initials }}</span></sc-if><sc-if value="{{ r.chip }}"><span style="display:inline-flex;align-items:center;gap:1px;height:22px;padding:0 8px 0 4px;border-radius:6px;font-size:12px;font-weight:560;background:{{ r.chipBg }};color:{{ r.chipFg }}"><i style="font-size:16px">{{ r.icon }}</i>{{ r.value }}</span></sc-if><sc-if value="{{ r.iconOnly }}"><i style="font-size:17px">{{ r.icon }}</i></sc-if><sc-if value="{{ r.plain }}">{{ r.value }}</sc-if></span></div></sc-for>
+</aside>
+</div>
+</div>
+</sc-if>
+<sc-if value="{{ tv.missing }}"><div style="min-height:60vh;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;gap:10px"><span style="font-family:'Geist Mono',monospace;font-size:44px;font-weight:500;color:var(--fg-3)">404</span><h1 style="margin:0;font-size:20px;font-weight:620">Task {{ tv.id }} doesn’t exist</h1><p style="margin:0;color:var(--fg-2)">It may have been deleted or moved to another sprint.</p><button onClick="{{ goBoard }}" style="margin-top:6px;height:36px;padding:0 14px;border-radius:8px;border:0;background:var(--accent);color:var(--on-accent);font-weight:560;cursor:pointer">Back to board</button></div></sc-if>
+</sc-if>
+<sc-if value="{{ isMy }}" hint-placeholder-val="{{ false }}">
+<div style="display:flex;flex-direction:column;gap:20px">
+<div style="display:flex;align-items:flex-end;justify-content:space-between;gap:16px;flex-wrap:wrap">
+<div><h1 style="margin:0;font-size:24px;font-weight:620;letter-spacing:-.015em;line-height:1.2">My Tasks</h1><p style="margin:6px 0 0;color:var(--fg-2)">{{ my.sub }}</p></div>
+<div style="display:flex;align-items:center;gap:8px"><span style="font-size:13px;color:var(--fg-3)">Sort by</span><div role="radiogroup" aria-label="Sort by" style="display:flex;padding:3px;border-radius:9px;background:var(--surface-2);border:1px solid var(--border)"><sc-for list="{{ my.sorts }}" as="o" hint-placeholder-count="2"><button role="radio" aria-checked="{{ o.on }}" onClick="{{ o.onClick }}" style="display:inline-flex;align-items:center;gap:4px;height:28px;padding:0 10px;border:0;border-radius:6px;font-size:13px;font-weight:{{ o.fw }};cursor:pointer;background:{{ o.bg }};color:{{ o.fg }};box-shadow:{{ o.sh }}">{{ o.label }}<sc-if value="{{ o.on }}"><i style="font-size:16px">{{ o.dirIcon }}</i></sc-if></button></sc-for></div></div>
+</div>
+<sc-if value="{{ ds.error }}"><div role="alert" style="background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:48px 24px;display:flex;flex-direction:column;align-items:center;text-align:center;gap:10px"><i style="font-size:28px;color:var(--danger-text)">cloud_off</i><h2 style="margin:0;font-size:16px;font-weight:600">Couldn’t load your tasks</h2><button onClick="{{ retry }}" style="white-space:nowrap;flex:none;height:36px;padding:0 14px;border-radius:8px;border:1px solid var(--border-strong);background:var(--surface);font-weight:520;cursor:pointer">Try again</button></div></sc-if>
+<sc-if value="{{ my.empty }}"><div style="background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:56px 24px;display:flex;flex-direction:column;align-items:center;text-align:center;gap:8px"><span style="width:48px;height:48px;border-radius:12px;background:var(--surface-2);color:var(--fg-3);display:flex;align-items:center;justify-content:center"><i style="font-size:24px">task_alt</i></span><h2 style="margin:4px 0 0;font-size:16px;font-weight:600">Nothing assigned to you</h2><p style="margin:0;color:var(--fg-2)">Tasks assigned to you in Sprint 14 will appear here.</p><button onClick="{{ goBoard }}" style="margin-top:6px;height:36px;padding:0 14px;border-radius:8px;border:1px solid var(--border-strong);background:var(--surface);font-weight:520;cursor:pointer" style-hover="background:var(--surface-2)">Browse the board</button></div></sc-if>
+<sc-if value="{{ ds.notError }}"><sc-if value="{{ my.hasTable }}">
+<div role="table" aria-label="My tasks" style="background:var(--surface);border:1px solid var(--border);border-radius:12px;box-shadow:var(--sh-1);overflow:hidden">
+<div role="row" style="display:grid;grid-template-columns:minmax(0,1fr) 130px 160px 110px 36px;gap:16px;align-items:center;height:40px;padding:0 20px;background:var(--surface-2);border-bottom:1px solid var(--border);font-size:12px;font-weight:600;color:var(--fg-3);letter-spacing:.02em">
+<span role="columnheader">TASK</span><button role="columnheader" onClick="{{ my.sortPriority }}" aria-sort="{{ my.ariaPr }}" style="display:flex;align-items:center;gap:2px;border:0;background:transparent;padding:0;font:inherit;color:{{ my.prHdFg }};cursor:pointer;letter-spacing:.02em">PRIORITY<i style="font-size:15px">{{ my.prHdIcon }}</i></button><button role="columnheader" onClick="{{ my.sortDue }}" aria-sort="{{ my.ariaDue }}" style="display:flex;align-items:center;gap:2px;border:0;background:transparent;padding:0;font:inherit;color:{{ my.dueHdFg }};cursor:pointer;letter-spacing:.02em">DUE DATE<i style="font-size:15px">{{ my.dueHdIcon }}</i></button><span role="columnheader">SUBTASKS</span><span></span></div>
+<sc-if value="{{ ds.loading }}"><sc-for list="{{ skel5 }}" as="k"><div aria-hidden="true" style="display:grid;grid-template-columns:minmax(0,1fr) 130px 160px 110px 36px;gap:16px;align-items:center;height:52px;padding:0 20px;border-bottom:1px solid var(--border)"><div style="width:60%;height:10px;border-radius:4px;background:var(--surface-3);animation:sb-shimmer 1.4s ease-in-out infinite"></div><div style="width:64px;height:20px;border-radius:6px;background:var(--surface-3);animation:sb-shimmer 1.4s ease-in-out infinite"></div><div style="width:70px;height:10px;border-radius:4px;background:var(--surface-3);animation:sb-shimmer 1.4s ease-in-out infinite"></div><div style="width:40px;height:10px;border-radius:4px;background:var(--surface-3);animation:sb-shimmer 1.4s ease-in-out infinite"></div><span></span></div></sc-for></sc-if>
+<sc-for list="{{ my.groups }}" as="g" hint-placeholder-count="3"><div role="rowgroup">
+<button onClick="{{ g.toggle }}" aria-expanded="{{ g.open }}" style="display:flex;align-items:center;gap:8px;width:100%;height:44px;padding:0 16px;border:0;border-bottom:1px solid var(--border);background:var(--surface);cursor:pointer;text-align:left"><i style="font-size:18px;color:var(--fg-3)">{{ g.chev }}</i><span style="display:inline-flex;align-items:center;gap:3px;height:22px;padding:0 8px 0 5px;border-radius:6px;font-size:12.5px;font-weight:560;background:{{ g.bg }};color:{{ g.fg }}"><i style="font-size:15px">{{ g.icon }}</i>{{ g.label }}</span><span style="font-size:12.5px;color:var(--fg-3)">{{ g.count }}</span></button>
+<sc-if value="{{ g.open }}"><sc-for list="{{ g.rows }}" as="t"><div role="row" tabIndex="0" onClick="{{ t.open }}" onKeyDown="{{ t.onKey }}" style="display:grid;grid-template-columns:minmax(0,1fr) 130px 160px 110px 36px;gap:16px;align-items:center;min-height:52px;padding:0 20px 0 42px;border-bottom:1px solid var(--border);cursor:pointer" style-hover="background:var(--surface-2)">
+<span role="cell" style="display:flex;align-items:center;gap:10px;min-width:0"><span style="font-family:'Geist Mono',monospace;font-size:12px;color:var(--fg-3);flex:none">{{ t.id }}</span><span style="font-weight:520;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">{{ t.title }}</span></span>
+<span role="cell"><span style="display:inline-flex;align-items:center;gap:1px;height:22px;padding:0 8px 0 4px;border-radius:6px;font-size:12px;font-weight:560;background:{{ t.prBg }};color:{{ t.prFg }}"><i style="font-size:16px">{{ t.prIcon }}</i>{{ t.prLabel }}</span></span>
+<span role="cell" style="display:inline-flex;align-items:center;gap:5px;font-size:13px;color:{{ t.dueFg }};font-weight:{{ t.dueFw }}"><i style="font-size:15px">{{ t.dueIcon }}</i>{{ t.dueLong }}</span>
+<span role="cell" style="display:flex;align-items:center;gap:8px;font-size:12.5px;color:var(--fg-2);font-variant-numeric:tabular-nums">{{ t.subLabel }}<span style="flex:1;max-width:50px;height:4px;border-radius:2px;background:var(--surface-3);overflow:hidden"><span style="display:block;height:100%;width:{{ t.subPct }};background:var(--st-done-dot)"></span></span></span>
+<i role="cell" style="font-size:18px;color:var(--fg-3)">chevron_right</i></div></sc-for></sc-if>
+</div></sc-for>
+</div>
+</sc-if></sc-if>
+</div>
+</sc-if>
+<sc-if value="{{ isTeam }}" hint-placeholder-val="{{ false }}">
+<div style="display:flex;flex-direction:column;gap:20px">
+<div style="display:flex;align-items:flex-end;justify-content:space-between;gap:16px"><div><h1 style="margin:0;font-size:24px;font-weight:620;letter-spacing:-.015em;line-height:1.2">Team</h1><p style="margin:6px 0 0;color:var(--fg-2)">{{ team.sub }}</p></div><sc-if value="{{ isAdminRole }}"><button onClick="{{ team.manage }}" style="white-space:nowrap;flex:none;display:inline-flex;align-items:center;gap:6px;height:36px;padding:0 14px 0 10px;border-radius:8px;border:1px solid var(--border-strong);background:var(--surface);font-weight:520;cursor:pointer" style-hover="background:var(--surface-2)"><i style="font-size:18px">manage_accounts</i>Manage members</button></sc-if></div>
+<sc-if value="{{ ds.error }}"><div role="alert" style="background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:48px 24px;display:flex;flex-direction:column;align-items:center;text-align:center;gap:10px"><i style="font-size:28px;color:var(--danger-text)">cloud_off</i><h2 style="margin:0;font-size:16px;font-weight:600">Couldn’t load the team</h2><button onClick="{{ retry }}" style="white-space:nowrap;flex:none;height:36px;padding:0 14px;border-radius:8px;border:1px solid var(--border-strong);background:var(--surface);font-weight:520;cursor:pointer">Try again</button></div></sc-if>
+<sc-if value="{{ team.empty }}"><div style="background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:56px 24px;display:flex;flex-direction:column;align-items:center;text-align:center;gap:8px"><i style="font-size:28px;color:var(--fg-3)">group_add</i><h2 style="margin:0;font-size:16px;font-weight:600">You’re the only one here</h2><p style="margin:0;color:var(--fg-2)">Invite teammates to start planning sprints together.</p><button onClick="{{ team.manage }}" style="margin-top:6px;height:36px;padding:0 14px;border-radius:8px;border:0;background:var(--accent);color:var(--on-accent);font-weight:560;cursor:pointer">Invite teammates</button></div></sc-if>
+<div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:16px">
+<sc-if value="{{ ds.loading }}"><sc-for list="{{ skel4 }}" as="k"><div aria-hidden="true" style="background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:20px;display:flex;flex-direction:column;gap:12px"><div style="width:48px;height:48px;border-radius:50%;background:var(--surface-3);animation:sb-shimmer 1.4s ease-in-out infinite"></div><div style="width:60%;height:12px;border-radius:4px;background:var(--surface-3);animation:sb-shimmer 1.4s ease-in-out infinite"></div><div style="width:40%;height:9px;border-radius:4px;background:var(--surface-3);animation:sb-shimmer 1.4s ease-in-out infinite"></div></div></sc-for></sc-if>
+<sc-for list="{{ team.cards }}" as="m" hint-placeholder-count="8"><button onClick="{{ m.open }}" style="background:var(--surface);border:1px solid var(--border);border-radius:12px;box-shadow:var(--sh-1);padding:20px;display:flex;flex-direction:column;gap:14px;text-align:left;cursor:pointer;transition:box-shadow .15s,border-color .15s" style-hover="box-shadow:var(--sh-2);border-color:var(--border-strong)">
+<div style="display:flex;justify-content:space-between;align-items:flex-start;width:100%"><span style="width:48px;height:48px;border-radius:50%;display:inline-flex;align-items:center;justify-content:center;font-size:16px;font-weight:600;background:{{ m.avBg }};color:{{ m.avFg }}">{{ m.initials }}</span><span style="font-size:11.5px;font-weight:550;padding:1px 8px;border-radius:999px;background:{{ m.roleBg }};color:{{ m.roleFg }}">{{ m.role }}</span></div>
+<div style="display:flex;flex-direction:column;gap:2px"><span style="font-size:15px;font-weight:600;color:var(--fg)">{{ m.name }}</span><span style="font-size:13px;color:var(--fg-2)">{{ m.title }}</span></div>
+<div style="display:flex;align-items:center;gap:6px;padding-top:12px;border-top:1px solid var(--border);width:100%;font-size:13px;color:var(--fg-2)"><i style="font-size:17px;color:var(--fg-3)">assignment</i><strong style="color:var(--fg);font-weight:600;font-variant-numeric:tabular-nums">{{ m.active }}</strong> {{ m.activeLabel }}</div>
+</button></sc-for>
+</div>
+</div>
+</sc-if>
+<sc-if value="{{ isMember }}" hint-placeholder-val="{{ false }}">
+<div style="display:flex;flex-direction:column;gap:20px">
+<nav aria-label="Breadcrumb" style="display:flex;align-items:center;gap:4px;font-size:13px;color:var(--fg-3)"><a onClick="{{ goTeam }}" style="color:var(--fg-2)">Team</a><i style="font-size:16px">chevron_right</i><span>{{ mp.name }}</span></nav>
+<div style="display:grid;grid-template-columns:320px minmax(0,1fr);gap:24px;align-items:start">
+<section style="background:var(--surface);border:1px solid var(--border);border-radius:12px;box-shadow:var(--sh-1);padding:24px;display:flex;flex-direction:column;gap:18px">
+<span style="width:72px;height:72px;border-radius:50%;display:inline-flex;align-items:center;justify-content:center;font-size:24px;font-weight:600;background:{{ mp.avBg }};color:{{ mp.avFg }}">{{ mp.initials }}</span>
+<div style="display:flex;flex-direction:column;gap:4px"><h1 style="margin:0;font-size:20px;font-weight:620">{{ mp.name }}</h1><span style="color:var(--fg-2)">{{ mp.title }}</span></div>
+<dl style="margin:0;display:grid;grid-template-columns:72px 1fr;gap:10px 12px;font-size:13.5px"><dt style="color:var(--fg-3)">Role</dt><dd style="margin:0">{{ mp.role }}</dd><dt style="color:var(--fg-3)">Email</dt><dd style="margin:0"><a>{{ mp.email }}</a></dd><dt style="color:var(--fg-3)">Joined</dt><dd style="margin:0">{{ mp.joined }}</dd></dl>
+<div style="display:grid;grid-template-columns:repeat(3,1fr);gap:8px;padding-top:16px;border-top:1px solid var(--border)"><sc-for list="{{ mp.stats }}" as="x" hint-placeholder-count="3"><div style="display:flex;flex-direction:column;gap:2px"><span style="font-size:20px;font-weight:620;font-variant-numeric:tabular-nums">{{ x.v }}</span><span style="font-size:12px;color:var(--fg-3)">{{ x.l }}</span></div></sc-for></div>
+</section>
+<section aria-labelledby="mp-h" style="background:var(--surface);border:1px solid var(--border);border-radius:12px;box-shadow:var(--sh-1)">
+<h2 id="mp-h" style="margin:0;padding:18px 20px;font-size:15px;font-weight:600;border-bottom:1px solid var(--border)">Current tasks</h2>
+<sc-if value="{{ mp.none }}"><div style="padding:40px 20px;text-align:center;color:var(--fg-3)">No active tasks in Sprint 14.</div></sc-if>
+<sc-for list="{{ mp.tasks }}" as="t" hint-placeholder-count="3"><div tabIndex="0" role="link" onClick="{{ t.open }}" onKeyDown="{{ t.onKey }}" style="display:flex;align-items:center;gap:14px;min-height:56px;padding:0 20px;border-bottom:1px solid var(--border);cursor:pointer" style-hover="background:var(--surface-2)"><span style="display:inline-flex;align-items:center;gap:3px;height:22px;padding:0 8px 0 5px;border-radius:6px;font-size:12px;font-weight:560;background:{{ t.stBg }};color:{{ t.stFg }};flex:none"><i style="font-size:15px">{{ t.stIcon }}</i>{{ t.stLabel }}</span><span style="font-family:'Geist Mono',monospace;font-size:12px;color:var(--fg-3)">{{ t.id }}</span><span style="flex:1;min-width:0;font-weight:520;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">{{ t.title }}</span><span style="display:inline-flex;align-items:center;gap:1px;height:22px;padding:0 8px 0 4px;border-radius:6px;font-size:12px;font-weight:560;background:{{ t.prBg }};color:{{ t.prFg }}"><i style="font-size:16px">{{ t.prIcon }}</i>{{ t.prLabel }}</span><span style="width:110px;display:inline-flex;align-items:center;gap:4px;font-size:13px;color:{{ t.dueFg }};font-weight:{{ t.dueFw }}"><i style="font-size:15px">{{ t.dueIcon }}</i>{{ t.dueShort }}</span></div></sc-for>
+</section>
+</div>
+</div>
+</sc-if>
+<sc-if value="{{ isAdmin }}" hint-placeholder-val="{{ false }}">
+<div style="display:flex;flex-direction:column;gap:20px">
+<div><h1 style="margin:0;font-size:24px;font-weight:620;letter-spacing:-.015em;line-height:1.2">Admin</h1><p style="margin:6px 0 0;color:var(--fg-2)">Manage members and sprints for Acme Engineering.</p></div>
+<div role="tablist" aria-label="Admin sections" style="display:flex;gap:4px;border-bottom:1px solid var(--border)"><sc-for list="{{ ad.tabs }}" as="tb" hint-placeholder-count="2"><button role="tab" aria-selected="{{ tb.on }}" onClick="{{ tb.onClick }}" style="height:42px;padding:0 10px;border:0;background:transparent;cursor:pointer;font-weight:{{ tb.fw }};color:{{ tb.fg }};box-shadow:{{ tb.bar }};font-size:14px;display:flex;align-items:center;gap:6px"><i style="font-size:18px">{{ tb.icon }}</i>{{ tb.label }}</button></sc-for></div>
+<sc-if value="{{ ad.onMembers }}">
+<div style="display:flex;align-items:center;justify-content:space-between"><span style="color:var(--fg-2);font-size:13.5px">{{ ad.count }}</span><button onClick="{{ ad.openInvite }}" style="white-space:nowrap;flex:none;display:inline-flex;align-items:center;gap:6px;height:36px;padding:0 14px 0 10px;border-radius:8px;border:0;background:var(--accent);color:var(--on-accent);font-weight:560;cursor:pointer" style-hover="background:var(--accent-hover)"><i style="font-size:18px">person_add</i>Invite member</button></div>
+<div role="table" aria-label="Members" style="background:var(--surface);border:1px solid var(--border);border-radius:12px;box-shadow:var(--sh-1);overflow:hidden">
+<div role="row" style="display:grid;grid-template-columns:minmax(0,2fr) 150px 120px 120px 48px;gap:16px;align-items:center;height:40px;padding:0 20px;background:var(--surface-2);border-bottom:1px solid var(--border);font-size:12px;font-weight:600;color:var(--fg-3);letter-spacing:.02em"><span role="columnheader">MEMBER</span><span role="columnheader">ROLE</span><span role="columnheader">ACTIVE TASKS</span><span role="columnheader">JOINED</span><span></span></div>
+<sc-if value="{{ ds.loading }}"><sc-for list="{{ skel5 }}" as="k"><div aria-hidden="true" style="display:grid;grid-template-columns:minmax(0,2fr) 150px 120px 120px 48px;gap:16px;align-items:center;height:60px;padding:0 20px;border-bottom:1px solid var(--border)"><div style="display:flex;gap:10px;align-items:center"><div style="width:32px;height:32px;border-radius:50%;background:var(--surface-3);animation:sb-shimmer 1.4s ease-in-out infinite"></div><div style="width:140px;height:10px;border-radius:4px;background:var(--surface-3);animation:sb-shimmer 1.4s ease-in-out infinite"></div></div><div style="width:100px;height:28px;border-radius:6px;background:var(--surface-3);animation:sb-shimmer 1.4s ease-in-out infinite"></div><div style="width:24px;height:10px;border-radius:4px;background:var(--surface-3);animation:sb-shimmer 1.4s ease-in-out infinite"></div><div style="width:60px;height:10px;border-radius:4px;background:var(--surface-3);animation:sb-shimmer 1.4s ease-in-out infinite"></div><span></span></div></sc-for></sc-if>
+<sc-if value="{{ ds.error }}"><div role="alert" style="padding:40px 20px;display:flex;flex-direction:column;align-items:center;gap:8px;text-align:center"><i style="font-size:26px;color:var(--danger-text)">cloud_off</i><span style="font-weight:550">Couldn’t load members</span><button onClick="{{ retry }}" style="white-space:nowrap;flex:none;height:32px;padding:0 12px;border-radius:8px;border:1px solid var(--border-strong);background:var(--surface);font-weight:520;cursor:pointer">Try again</button></div></sc-if>
+<sc-for list="{{ ad.rows }}" as="m" hint-placeholder-count="8"><div role="row" style="display:grid;grid-template-columns:minmax(0,2fr) 150px 120px 120px 48px;gap:16px;align-items:center;min-height:60px;padding:0 20px;border-bottom:1px solid var(--border)">
+<span role="cell" style="display:flex;align-items:center;gap:10px;min-width:0"><span style="width:32px;height:32px;flex:none;border-radius:50%;display:inline-flex;align-items:center;justify-content:center;font-size:11.5px;font-weight:600;background:{{ m.avBg }};color:{{ m.avFg }}">{{ m.initials }}</span><span style="display:flex;flex-direction:column;min-width:0"><span style="font-weight:550">{{ m.name }}</span><span style="font-size:12.5px;color:var(--fg-3)">{{ m.email }}</span></span></span>
+<span role="cell"><select value="{{ m.role }}" onChange="{{ m.onRole }}" disabled="{{ m.isMe }}" aria-label="{{ m.roleAria }}" title="{{ m.roleTitle }}" style="height:32px;padding:0 8px;border-radius:7px;border:1px solid var(--border-strong);background:var(--surface);font-size:13.5px;cursor:pointer;opacity:{{ m.selOpacity }}"><option value="Admin">Admin</option><option value="Member">Member</option></select></span>
+<span role="cell" style="font-variant-numeric:tabular-nums">{{ m.active }}</span>
+<span role="cell" style="color:var(--fg-2);font-size:13.5px">{{ m.joined }}</span>
+<span role="cell"><sc-if value="{{ m.canRemove }}"><button onClick="{{ m.remove }}" aria-label="{{ m.removeAria }}" title="Remove member" style="width:32px;height:32px;border:0;border-radius:7px;background:transparent;color:var(--fg-3);cursor:pointer;display:flex;align-items:center;justify-content:center" style-hover="background:var(--danger-soft);color:var(--danger-text)"><i style="font-size:18px">person_remove</i></button></sc-if></span>
+</div></sc-for>
+<sc-for list="{{ ad.invites }}" as="iv" hint-placeholder-count="1"><div role="row" style="display:grid;grid-template-columns:minmax(0,2fr) 150px 120px 120px 48px;gap:16px;align-items:center;min-height:60px;padding:0 20px;border-bottom:1px solid var(--border);background:var(--surface-2)">
+<span role="cell" style="display:flex;align-items:center;gap:10px;min-width:0"><span style="width:32px;height:32px;flex:none;border-radius:50%;display:inline-flex;align-items:center;justify-content:center;border:1.5px dashed var(--border-strong);color:var(--fg-3)"><i style="font-size:16px">mail</i></span><span style="display:flex;flex-direction:column;min-width:0"><span style="font-weight:550">{{ iv.email }}</span><span style="font-size:12.5px;color:var(--fg-3)">Invited {{ iv.sent }}</span></span></span>
+<span role="cell"><span style="display:inline-flex;align-items:center;gap:4px;height:22px;padding:0 8px 0 6px;border-radius:6px;font-size:12px;font-weight:560;background:var(--st-review-bg);color:var(--st-review-fg)"><i style="font-size:14px">schedule</i>Pending · {{ iv.role }}</span></span>
+<span role="cell" style="color:var(--fg-3)">—</span><span role="cell"><button onClick="{{ iv.resend }}" style="border:0;background:transparent;color:var(--accent-text);font-weight:550;font-size:13px;cursor:pointer;padding:4px 0">Resend</button></span>
+<span role="cell"><button onClick="{{ iv.revoke }}" aria-label="Revoke invite" title="Revoke invite" style="width:32px;height:32px;border:0;border-radius:7px;background:transparent;color:var(--fg-3);cursor:pointer;display:flex;align-items:center;justify-content:center" style-hover="background:var(--danger-soft);color:var(--danger-text)"><i style="font-size:18px">close</i></button></span>
+</div></sc-for>
+</div>
+</sc-if>
+<sc-if value="{{ ad.onSprints }}">
+<div style="display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:16px;align-items:start">
+<div style="display:flex;flex-direction:column;gap:16px">
+<section aria-labelledby="cs-h" style="background:var(--surface);border:1px solid var(--border);border-radius:12px;box-shadow:var(--sh-1);padding:20px;display:flex;flex-direction:column;gap:14px">
+<sc-if value="{{ ad.sprintActive }}">
+<div style="display:flex;align-items:center;gap:8px"><h2 id="cs-h" style="margin:0;font-size:15px;font-weight:600">Sprint 14</h2><span style="font-size:11.5px;font-weight:550;padding:1px 8px;border-radius:999px;background:var(--st-progress-bg);color:var(--st-progress-fg)">Active</span><span style="flex:1"></span><span style="font-size:13px;color:var(--fg-2)">7 days left</span></div>
+<dl style="margin:0;display:grid;grid-template-columns:72px 1fr;gap:8px 12px;font-size:13.5px"><dt style="color:var(--fg-3)">Dates</dt><dd style="margin:0">Sep 28 – Oct 9, 2026</dd><dt style="color:var(--fg-3)">Goal</dt><dd style="margin:0">Ship global search and dark mode</dd><dt style="color:var(--fg-3)">Progress</dt><dd style="margin:0">{{ sprint.doneLabel }}</dd></dl>
+<div style="height:8px;border-radius:4px;background:var(--surface-3);overflow:hidden"><div style="height:100%;width:{{ sprint.pct }};background:var(--accent)"></div></div>
+<div style="display:flex;gap:8px;justify-content:flex-end"><button onClick="{{ ad.closeSprint }}" style="white-space:nowrap;flex:none;display:inline-flex;align-items:center;gap:6px;height:36px;padding:0 14px 0 10px;border-radius:8px;border:1px solid var(--danger);background:var(--surface);color:var(--danger-text);font-weight:560;cursor:pointer" style-hover="background:var(--danger-soft)"><i style="font-size:18px">flag</i>Close sprint</button></div>
+</sc-if>
+<sc-if value="{{ ad.sprintClosed }}"><div style="padding:16px 0;text-align:center;display:flex;flex-direction:column;align-items:center;gap:6px"><i style="font-size:26px;color:var(--fg-3)">event_busy</i><h2 id="cs-h" style="margin:0;font-size:15px;font-weight:600">No active sprint</h2><span style="font-size:13px;color:var(--fg-3)">Sprint 14 was closed. Create the next sprint to keep planning.</span></div></sc-if>
+</section>
+<section aria-labelledby="ps-h" style="background:var(--surface);border:1px solid var(--border);border-radius:12px;box-shadow:var(--sh-1)">
+<h2 id="ps-h" style="margin:0;padding:16px 20px;font-size:15px;font-weight:600;border-bottom:1px solid var(--border)">Sprints</h2>
+<sc-for list="{{ ad.sprints }}" as="sp" hint-placeholder-count="3"><div style="display:flex;align-items:center;gap:12px;min-height:52px;padding:0 20px;border-bottom:1px solid var(--border)"><span style="font-weight:550;width:84px">{{ sp.name }}</span><span style="flex:1;font-size:13px;color:var(--fg-2)">{{ sp.dates }}</span><span style="font-size:12.5px;color:var(--fg-3)">{{ sp.meta }}</span><span style="font-size:11.5px;font-weight:550;padding:1px 8px;border-radius:999px;background:{{ sp.bg }};color:{{ sp.fg }}">{{ sp.state }}</span></div></sc-for>
+</section>
+</div>
+<form onSubmit="{{ ad.createSprint }}" aria-labelledby="ns-h" style="background:var(--surface);border:1px solid var(--border);border-radius:12px;box-shadow:var(--sh-1);padding:20px;display:flex;flex-direction:column;gap:16px">
+<h2 id="ns-h" style="margin:0;font-size:15px;font-weight:600">Create sprint</h2>
+<label style="display:flex;flex-direction:column;gap:6px;font-size:13px;font-weight:560">Name<input value="{{ ad.sf.name }}" onChange="{{ ad.onName }}" style="height:40px;padding:0 12px;border-radius:8px;border:1px solid var(--border-strong);background:var(--surface);font-size:14px;font-weight:400;outline:none" style-focus="border-color:var(--accent);box-shadow:0 0 0 3px var(--accent-soft-strong)"></label>
+<div style="display:grid;grid-template-columns:1fr 1fr;gap:12px"><label style="display:flex;flex-direction:column;gap:6px;font-size:13px;font-weight:560">Start date<input type="date" value="{{ ad.sf.start }}" onChange="{{ ad.onStart }}" style="height:40px;padding:0 10px;border-radius:8px;border:1px solid var(--border-strong);background:var(--surface);font-size:14px;font-weight:400;outline:none;color-scheme:{{ theme }}" style-focus="border-color:var(--accent);box-shadow:0 0 0 3px var(--accent-soft-strong)"></label><label style="display:flex;flex-direction:column;gap:6px;font-size:13px;font-weight:560">End date<input type="date" value="{{ ad.sf.end }}" onChange="{{ ad.onEnd }}" aria-invalid="{{ ad.hasErr }}" style="height:40px;padding:0 10px;border-radius:8px;border:1px solid {{ ad.endBorder }};background:var(--surface);font-size:14px;font-weight:400;outline:none;color-scheme:{{ theme }}" style-focus="border-color:var(--accent);box-shadow:0 0 0 3px var(--accent-soft-strong)"></label></div>
+<sc-if value="{{ ad.hasErr }}"><span role="alert" style="font-size:12.5px;color:var(--danger-text);display:flex;align-items:center;gap:4px;margin-top:-8px"><i style="font-size:15px">error</i>{{ ad.sf.error }}</span></sc-if>
+<label style="display:flex;flex-direction:column;gap:6px;font-size:13px;font-weight:560">Sprint goal <span style="font-weight:400;color:var(--fg-3);font-size:12.5px;margin-top:-4px">Optional</span><textarea value="{{ ad.sf.goal }}" onChange="{{ ad.onGoal }}" rows="3" placeholder="What should this sprint deliver?" style="padding:10px 12px;border-radius:8px;border:1px solid var(--border-strong);background:var(--surface);font-size:14px;font-weight:400;outline:none;resize:vertical" style-focus="border-color:var(--accent);box-shadow:0 0 0 3px var(--accent-soft-strong)"></textarea></label>
+<div style="display:flex;justify-content:flex-end"><button type="submit" style="white-space:nowrap;flex:none;height:36px;padding:0 16px;border-radius:8px;border:0;background:var(--accent);color:var(--on-accent);font-weight:560;cursor:pointer" style-hover="background:var(--accent-hover)">Create sprint</button></div>
+</form>
+</div>
+</sc-if>
+</div>
+</sc-if>
+<sc-if value="{{ isSettings }}" hint-placeholder-val="{{ false }}">
+<div style="display:flex;flex-direction:column;gap:20px">
+<h1 style="margin:0;font-size:24px;font-weight:620;letter-spacing:-.015em;line-height:1.2">Settings</h1>
+<div style="display:grid;grid-template-columns:200px minmax(0,720px);gap:32px;align-items:start">
+<div role="tablist" aria-orientation="vertical" aria-label="Settings sections" style="display:flex;flex-direction:column;gap:2px"><sc-for list="{{ se.tabs }}" as="tb" hint-placeholder-count="3"><button role="tab" aria-selected="{{ tb.on }}" onClick="{{ tb.onClick }}" style="display:flex;align-items:center;gap:10px;height:38px;padding:0 10px;border:0;border-radius:8px;background:{{ tb.bg }};color:{{ tb.fg }};font-weight:{{ tb.fw }};font-size:14px;cursor:pointer;text-align:left" style-hover="background:{{ tb.hov }}"><i style="font-size:19px">{{ tb.icon }}</i>{{ tb.label }}</button></sc-for></div>
+<div>
+<sc-if value="{{ se.onProfile }}"><section aria-labelledby="pf-h" style="background:var(--surface);border:1px solid var(--border);border-radius:12px;box-shadow:var(--sh-1)">
+<div style="padding:20px 24px;border-bottom:1px solid var(--border)"><h2 id="pf-h" style="margin:0;font-size:15px;font-weight:600">Profile</h2><p style="margin:4px 0 0;font-size:13.5px;color:var(--fg-2)">How you appear to your team.</p></div>
+<div style="padding:24px;display:flex;flex-direction:column;gap:18px">
+<div style="display:flex;align-items:center;gap:16px"><span style="width:64px;height:64px;border-radius:50%;display:inline-flex;align-items:center;justify-content:center;font-size:22px;font-weight:600;background:{{ me.avBg }};color:{{ me.avFg }}">{{ me.initials }}</span><button style="white-space:nowrap;flex:none;height:34px;padding:0 12px;border-radius:8px;border:1px solid var(--border-strong);background:var(--surface);font-weight:520;cursor:pointer" style-hover="background:var(--surface-2)">Change photo</button><button style="white-space:nowrap;flex:none;height:34px;padding:0 10px;border-radius:8px;border:0;background:transparent;color:var(--fg-2);cursor:pointer" style-hover="background:var(--surface-2)">Remove</button></div>
+<div style="display:grid;grid-template-columns:1fr 1fr;gap:16px">
+<label style="display:flex;flex-direction:column;gap:6px;font-size:13px;font-weight:560">Full name<input value="{{ se.p.name }}" onChange="{{ se.onName }}" style="height:40px;padding:0 12px;border-radius:8px;border:1px solid var(--border-strong);background:var(--surface);font-size:14px;font-weight:400;outline:none" style-focus="border-color:var(--accent);box-shadow:0 0 0 3px var(--accent-soft-strong)"></label>
+<label style="display:flex;flex-direction:column;gap:6px;font-size:13px;font-weight:560">Job title<input value="{{ se.p.title }}" onChange="{{ se.onTitle }}" style="height:40px;padding:0 12px;border-radius:8px;border:1px solid var(--border-strong);background:var(--surface);font-size:14px;font-weight:400;outline:none" style-focus="border-color:var(--accent);box-shadow:0 0 0 3px var(--accent-soft-strong)"></label>
+</div>
+<label style="display:flex;flex-direction:column;gap:6px;font-size:13px;font-weight:560">Email<input type="email" value="{{ se.p.email }}" onChange="{{ se.onEmail }}" style="height:40px;padding:0 12px;border-radius:8px;border:1px solid var(--border-strong);background:var(--surface);font-size:14px;font-weight:400;outline:none" style-focus="border-color:var(--accent);box-shadow:0 0 0 3px var(--accent-soft-strong)"><span style="font-size:12.5px;font-weight:400;color:var(--fg-3)">Used for sign-in and email notifications.</span></label>
+<label style="display:flex;flex-direction:column;gap:6px;font-size:13px;font-weight:560;max-width:340px">Time zone<select value="{{ se.p.tz }}" onChange="{{ se.onTz }}" style="height:40px;padding:0 10px;border-radius:8px;border:1px solid var(--border-strong);background:var(--surface);font-size:14px;font-weight:400"><option value="Europe/London">London (GMT+1)</option><option value="Europe/Berlin">Berlin (GMT+2)</option><option value="America/New_York">New York (GMT−4)</option><option value="Asia/Kolkata">Kolkata (GMT+5:30)</option></select></label>
+</div>
+<div style="display:flex;justify-content:flex-end;gap:8px;padding:14px 24px;border-top:1px solid var(--border)"><button onClick="{{ se.reset }}" disabled="{{ se.clean }}" style="white-space:nowrap;flex:none;height:36px;padding:0 14px;border-radius:8px;border:0;background:transparent;color:var(--fg-2);font-weight:520;cursor:pointer;opacity:{{ se.btnOpacity }}">Discard</button><button onClick="{{ se.save }}" disabled="{{ se.saveDisabled }}" style="white-space:nowrap;flex:none;display:inline-flex;align-items:center;gap:8px;height:36px;padding:0 16px;border-radius:8px;border:0;background:var(--accent);color:var(--on-accent);font-weight:560;cursor:pointer;opacity:{{ se.btnOpacity }}"><sc-if value="{{ se.saving }}"><span style="width:14px;height:14px;border:2px solid currentColor;border-right-color:transparent;border-radius:50%;animation:sb-spin .7s linear infinite"></span></sc-if>{{ se.saveLabel }}</button></div>
+</section></sc-if>
+<sc-if value="{{ se.onAppearance }}"><section aria-labelledby="ap-h" style="background:var(--surface);border:1px solid var(--border);border-radius:12px;box-shadow:var(--sh-1);padding:24px;display:flex;flex-direction:column;gap:18px">
+<div><h2 id="ap-h" style="margin:0;font-size:15px;font-weight:600">Theme</h2><p style="margin:4px 0 0;font-size:13.5px;color:var(--fg-2)">System follows your device setting.</p></div>
+<div role="radiogroup" aria-labelledby="ap-h" style="display:grid;grid-template-columns:repeat(3,1fr);gap:12px"><sc-for list="{{ se.themes }}" as="o" hint-placeholder-count="3"><button role="radio" aria-checked="{{ o.on }}" onClick="{{ o.pick }}" style="display:flex;flex-direction:column;gap:10px;padding:10px;border-radius:12px;border:2px solid {{ o.border }};background:var(--surface);cursor:pointer;text-align:left">
+<span aria-hidden="true" style="display:flex;height:88px;border-radius:8px;overflow:hidden;border:1px solid var(--border)"><span style="flex:1;background:{{ o.a }};display:flex;flex-direction:column;gap:6px;padding:10px"><span style="width:60%;height:6px;border-radius:3px;background:{{ o.ink }}"></span><span style="width:80%;height:18px;border-radius:4px;background:{{ o.card }}"></span><span style="width:80%;height:18px;border-radius:4px;background:{{ o.card }}"></span></span><span style="flex:{{ o.split }};background:{{ o.b }};display:flex;flex-direction:column;gap:6px;padding:10px"><span style="width:60%;height:6px;border-radius:3px;background:{{ o.ink2 }}"></span><span style="width:80%;height:18px;border-radius:4px;background:{{ o.card2 }}"></span></span></span>
+<span style="display:flex;align-items:center;gap:8px;font-weight:550;color:var(--fg)"><span style="width:16px;height:16px;border-radius:50%;border:2px solid {{ o.radio }};display:flex;align-items:center;justify-content:center"><span style="width:8px;height:8px;border-radius:50%;background:{{ o.dot }}"></span></span>{{ o.label }}</span></button></sc-for></div>
+</section></sc-if>
+<sc-if value="{{ se.onNotif }}"><section aria-labelledby="nt-h" style="background:var(--surface);border:1px solid var(--border);border-radius:12px;box-shadow:var(--sh-1)">
+<div style="padding:20px 24px;border-bottom:1px solid var(--border)"><h2 id="nt-h" style="margin:0;font-size:15px;font-weight:600">Notifications</h2><p style="margin:4px 0 0;font-size:13.5px;color:var(--fg-2)">Choose what you hear about. Changes save automatically.</p></div>
+<sc-for list="{{ se.prefs }}" as="o" hint-placeholder-count="6"><div style="display:flex;align-items:center;gap:16px;padding:14px 24px;border-bottom:1px solid var(--border)"><div style="flex:1;display:flex;flex-direction:column;gap:2px"><span id="{{ o.id }}" style="font-weight:550">{{ o.label }}</span><span style="font-size:13px;color:var(--fg-3)">{{ o.desc }}</span></div><button role="switch" aria-checked="{{ o.on }}" aria-labelledby="{{ o.id }}" onClick="{{ o.toggle }}" style="width:40px;height:24px;flex:none;border:0;border-radius:12px;background:{{ o.track }};position:relative;cursor:pointer;transition:background .15s;padding:0"><span style="position:absolute;top:3px;left:3px;width:18px;height:18px;border-radius:50%;background:#fff;box-shadow:0 1px 2px oklch(0 0 0 / .25);transform:{{ o.thumb }};transition:transform .15s"></span></button></div></sc-for>
+</section></sc-if>
+</div>
+</div>
+</div>
+</sc-if>
+<sc-if value="{{ is404 }}" hint-placeholder-val="{{ false }}"><div style="min-height:64vh;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;gap:12px"><span style="font-family:'Geist Mono',monospace;font-size:56px;font-weight:500;color:var(--fg-3);letter-spacing:-.02em">404</span><h1 style="margin:0;font-size:22px;font-weight:620">Page not found</h1><p style="margin:0;color:var(--fg-2);max-width:380px">The page you’re looking for doesn’t exist or was moved. Check the address, or head back to your dashboard.</p><div style="display:flex;gap:8px;margin-top:6px"><button onClick="{{ goDashboard }}" style="white-space:nowrap;flex:none;height:36px;padding:0 14px;border-radius:8px;border:0;background:var(--accent);color:var(--on-accent);font-weight:560;cursor:pointer" style-hover="background:var(--accent-hover)">Go to dashboard</button><button onClick="{{ goBoard }}" style="white-space:nowrap;flex:none;height:36px;padding:0 14px;border-radius:8px;border:1px solid var(--border-strong);background:var(--surface);font-weight:520;cursor:pointer" style-hover="background:var(--surface-2)">Open board</button></div></div></sc-if>
+<sc-if value="{{ isDenied }}" hint-placeholder-val="{{ false }}"><div style="min-height:64vh;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;gap:12px"><span style="width:56px;height:56px;border-radius:14px;background:var(--surface-2);border:1px solid var(--border);color:var(--fg-2);display:flex;align-items:center;justify-content:center"><i style="font-size:28px">lock</i></span><h1 style="margin:0;font-size:22px;font-weight:620">You don’t have access to Admin</h1><p style="margin:0;color:var(--fg-2);max-width:400px;text-wrap:pretty">Admin is only available to team admins. Ask Maya Chen or another admin to change your role.</p><div style="display:flex;gap:8px;margin-top:6px"><button onClick="{{ goDashboard }}" style="white-space:nowrap;flex:none;height:36px;padding:0 14px;border-radius:8px;border:0;background:var(--accent);color:var(--on-accent);font-weight:560;cursor:pointer" style-hover="background:var(--accent-hover)">Back to dashboard</button><button onClick="{{ requestAccess }}" style="white-space:nowrap;flex:none;height:36px;padding:0 14px;border-radius:8px;border:1px solid var(--border-strong);background:var(--surface);font-weight:520;cursor:pointer" style-hover="background:var(--surface-2)">Request access</button></div></div></sc-if>
+</div>
+</main>
+</div>
+</sc-if>
+<sc-if value="{{ catcher }}" hint-placeholder-val="{{ false }}"><div onClick="{{ closeMenus }}" style="position:fixed;inset:0;z-index:30"></div></sc-if>
+<sc-if value="{{ pn.open }}" hint-placeholder-val="{{ false }}">
+<div onClick="{{ pn.close }}" style="position:absolute;inset:0;background:var(--scrim);z-index:55"></div>
+<aside role="dialog" aria-modal="true" aria-labelledby="pn-title" style="position:absolute;top:0;right:0;bottom:0;width:540px;max-width:100%;z-index:60;background:var(--surface);border-left:1px solid var(--border);box-shadow:var(--sh-3);display:flex;flex-direction:column;animation:sb-panel .2s ease">
+<div style="height:60px;flex:none;display:flex;align-items:center;gap:10px;padding:0 16px 0 24px;border-bottom:1px solid var(--border)"><h2 id="pn-title" style="margin:0;font-size:16px;font-weight:620">{{ pn.heading }}</h2><sc-if value="{{ pn.isEdit }}"><span style="white-space:nowrap;flex:none;font-family:'Geist Mono',monospace;font-size:12px;color:var(--fg-3);padding:1px 6px;border-radius:5px;background:var(--surface-2)">{{ pn.id }}</span></sc-if><span style="flex:1"></span><button onClick="{{ pn.close }}" aria-label="Close panel" style="width:34px;height:34px;border:0;border-radius:8px;background:transparent;color:var(--fg-2);cursor:pointer;display:flex;align-items:center;justify-content:center" style-hover="background:var(--surface-2)"><i>close</i></button></div>
+<div style="flex:1;overflow:auto;padding:24px;display:flex;flex-direction:column;gap:22px">
+<div style="display:flex;flex-direction:column;gap:6px">
+<label for="f-title" style="font-size:13px;font-weight:560">Title <span aria-hidden="true" style="color:var(--danger-text)">*</span></label>
+<div style="position:relative"><input id="f-title" autoFocus="{{ true }}" value="{{ pn.title }}" onChange="{{ pn.onTitle }}" aria-invalid="{{ pn.titleInvalid }}" aria-describedby="f-title-help" aria-required="true" placeholder="e.g. Fix login redirect bug" style="width:100%;height:40px;padding:0 38px 0 12px;border-radius:8px;border:1px solid {{ pn.titleBorder }};background:var(--surface);font-size:14px;outline:none" style-focus="border-color:var(--accent);box-shadow:0 0 0 3px var(--accent-soft-strong)">
+<span style="position:absolute;right:12px;top:11px;display:flex"><sc-if value="{{ pn.checking }}"><span aria-hidden="true" style="width:16px;height:16px;border:2px solid var(--fg-3);border-right-color:transparent;border-radius:50%;animation:sb-spin .7s linear infinite"></span></sc-if><sc-if value="{{ pn.titleOk }}"><i style="font-size:18px;color:var(--success-text)">check_circle</i></sc-if><sc-if value="{{ pn.titleBad }}"><i style="font-size:18px;color:var(--danger-text)">error</i></sc-if></span></div>
+<div id="f-title-help" aria-live="polite" style="font-size:12.5px;color:{{ pn.helpFg }};display:flex;align-items:center;gap:6px">{{ pn.help }}<sc-if value="{{ pn.dupLink }}"><a onClick="{{ pn.openDup }}" style="font-family:'Geist Mono',monospace;font-size:12px">{{ pn.dupId }}</a></sc-if></div>
+</div>
+<div style="display:flex;flex-direction:column;gap:6px"><label for="f-desc" style="font-size:13px;font-weight:560">Description</label><textarea id="f-desc" value="{{ pn.desc }}" onChange="{{ pn.onDesc }}" rows="5" placeholder="What needs to happen, and how will we know it’s done?" style="width:100%;resize:vertical;padding:10px 12px;border-radius:8px;border:1px solid var(--border-strong);background:var(--surface);outline:none;line-height:1.55" style-focus="border-color:var(--accent);box-shadow:0 0 0 3px var(--accent-soft-strong)"></textarea><span style="font-size:12.5px;color:var(--fg-3)">Markdown is supported.</span></div>
+<div style="display:grid;grid-template-columns:1fr 1fr;gap:16px">
+<div style="display:flex;flex-direction:column;gap:6px;position:relative"><span id="f-as-l" style="font-size:13px;font-weight:560">Assignee</span>
+<button onClick="{{ pn.toggleAssignee }}" aria-haspopup="listbox" aria-expanded="{{ pn.assigneeOpen }}" aria-labelledby="f-as-l" style="display:flex;align-items:center;gap:8px;height:40px;padding:0 8px 0 8px;border-radius:8px;border:1px solid var(--border-strong);background:var(--surface);cursor:pointer;text-align:left" style-hover="border-color:var(--fg-3)"><span style="width:24px;height:24px;border-radius:50%;display:inline-flex;align-items:center;justify-content:center;font-size:10px;font-weight:600;background:{{ pn.as.avBg }};color:{{ pn.as.avFg }}">{{ pn.as.initials }}</span><span style="flex:1;font-size:14px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis">{{ pn.as.aName }}</span><i style="font-size:18px;color:var(--fg-3)">expand_more</i></button>
+<sc-if value="{{ pn.assigneeOpen }}" hint-placeholder-val="{{ false }}"><div role="listbox" aria-label="Assignee" style="position:absolute;top:calc(100% + 6px);left:0;z-index:40;width:280px;max-height:300px;overflow:auto;background:var(--surface);border:1px solid var(--border);border-radius:10px;box-shadow:var(--sh-3);padding:6px;animation:sb-pop .14s ease"><sc-for list="{{ pn.assigneeOpts }}" as="o" hint-placeholder-count="8"><button role="option" aria-selected="{{ o.on }}" onClick="{{ o.pick }}" style="display:flex;align-items:center;gap:10px;width:100%;height:44px;padding:0 8px;border:0;border-radius:6px;background:{{ o.bg }};cursor:pointer;text-align:left" style-hover="background:var(--surface-2)"><span style="width:26px;height:26px;border-radius:50%;display:inline-flex;align-items:center;justify-content:center;font-size:10.5px;font-weight:600;background:{{ o.avBg }};color:{{ o.avFg }}">{{ o.initials }}</span><span style="flex:1;display:flex;flex-direction:column"><span style="font-size:13.5px;color:var(--fg)">{{ o.name }}</span><span style="font-size:12px;color:var(--fg-3)">{{ o.title }}</span></span><sc-if value="{{ o.on }}"><i style="font-size:18px;color:var(--accent-text)">check</i></sc-if></button></sc-for></div></sc-if>
+</div>
+<div style="display:flex;flex-direction:column;gap:6px;position:relative"><span id="f-due-l" style="font-size:13px;font-weight:560">Due date</span>
+<button onClick="{{ pn.toggleDate }}" aria-haspopup="dialog" aria-expanded="{{ pn.dateOpen }}" aria-labelledby="f-due-l" aria-invalid="{{ pn.dueInvalid }}" style="display:flex;align-items:center;gap:8px;height:40px;padding:0 10px;border-radius:8px;border:1px solid {{ pn.dueBorder }};background:var(--surface);cursor:pointer;text-align:left" style-hover="border-color:var(--fg-3)"><i style="font-size:18px;color:var(--fg-3)">calendar_today</i><span style="flex:1;font-size:14px;color:{{ pn.dueFg }}">{{ pn.dueLabel }}</span><i style="font-size:18px;color:var(--fg-3)">expand_more</i></button>
+<sc-if value="{{ pn.dueErr }}"><span role="alert" style="font-size:12.5px;color:var(--danger-text);display:flex;align-items:center;gap:4px"><i style="font-size:15px">error</i>{{ pn.dueErr }}</span></sc-if>
+<sc-if value="{{ pn.dateOpen }}" hint-placeholder-val="{{ false }}"><div role="dialog" aria-label="Choose due date" style="position:absolute;top:70px;right:0;z-index:40;width:292px;background:var(--surface);border:1px solid var(--border);border-radius:12px;box-shadow:var(--sh-3);padding:12px;animation:sb-pop .14s ease">
+<div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:8px"><button onClick="{{ pn.cal.prev }}" aria-label="Previous month" style="width:30px;height:30px;border:0;border-radius:6px;background:transparent;color:var(--fg-2);cursor:pointer;display:flex;align-items:center;justify-content:center" style-hover="background:var(--surface-2)"><i style="font-size:18px">chevron_left</i></button><span style="font-weight:600;font-size:14px">{{ pn.cal.label }}</span><button onClick="{{ pn.cal.next }}" aria-label="Next month" style="width:30px;height:30px;border:0;border-radius:6px;background:transparent;color:var(--fg-2);cursor:pointer;display:flex;align-items:center;justify-content:center" style-hover="background:var(--surface-2)"><i style="font-size:18px">chevron_right</i></button></div>
+<div style="display:grid;grid-template-columns:repeat(7,1fr);gap:2px;text-align:center"><sc-for list="{{ pn.cal.dow }}" as="w"><span style="font-size:11.5px;color:var(--fg-3);height:26px;line-height:26px;font-weight:550">{{ w }}</span></sc-for>
+<sc-for list="{{ pn.cal.days }}" as="d" hint-placeholder-count="35"><button onClick="{{ d.onClick }}" aria-label="{{ d.aria }}" aria-pressed="{{ d.sel }}" style="height:36px;border:0;border-radius:8px;cursor:pointer;font-size:13px;font-variant-numeric:tabular-nums;background:{{ d.bg }};color:{{ d.fg }};box-shadow:{{ d.ring }};font-weight:{{ d.fw }};opacity:{{ d.op }}" style-hover="background:{{ d.hov }}">{{ d.n }}</button></sc-for></div>
+<div style="display:flex;justify-content:space-between;margin-top:8px;padding-top:8px;border-top:1px solid var(--border)"><button onClick="{{ pn.cal.today }}" style="border:0;background:transparent;color:var(--accent-text);font-weight:550;font-size:13px;cursor:pointer;padding:6px 8px;border-radius:6px" style-hover="background:var(--surface-2)">Today</button><button onClick="{{ pn.cal.clear }}" style="border:0;background:transparent;color:var(--fg-2);font-size:13px;cursor:pointer;padding:6px 8px;border-radius:6px" style-hover="background:var(--surface-2)">Clear</button></div>
+</div></sc-if>
+</div>
+</div>
+<div role="radiogroup" aria-labelledby="f-pr-l" style="display:flex;flex-direction:column;gap:8px"><span id="f-pr-l" style="font-size:13px;font-weight:560">Priority</span><div style="display:flex;gap:8px"><sc-for list="{{ pn.prOpts }}" as="o" hint-placeholder-count="3"><button role="radio" aria-checked="{{ o.on }}" onClick="{{ o.pick }}" style="white-space:nowrap;flex:none;display:inline-flex;align-items:center;gap:4px;height:36px;padding:0 14px 0 10px;border-radius:8px;cursor:pointer;font-size:13.5px;font-weight:{{ o.fw }};border:1.5px solid {{ o.border }};background:{{ o.bg }};color:{{ o.fg }}"><i style="font-size:18px">{{ o.icon }}</i>{{ o.label }}<sc-if value="{{ o.on }}"><i style="font-size:16px;margin-left:2px">check</i></sc-if></button></sc-for></div></div>
+<div style="display:flex;flex-direction:column;gap:8px"><div style="display:flex;align-items:baseline;gap:8px"><span style="font-size:13px;font-weight:560">Subtasks</span><span style="font-size:12.5px;color:var(--fg-3)">{{ pn.subCount }}</span></div>
+<sc-if value="{{ pn.hasSubs }}"><ul style="list-style:none;margin:0;padding:4px;display:flex;flex-direction:column;border:1px solid var(--border);border-radius:10px"><sc-for list="{{ pn.subs }}" as="st" hint-placeholder-count="3"><li style="display:flex;align-items:center;gap:10px;min-height:38px;padding:0 4px 0 8px;border-radius:6px" style-hover="background:var(--surface-2)"><input type="checkbox" id="{{ st.fid }}" checked="{{ st.done }}" onChange="{{ st.toggle }}" style="width:16px;height:16px;margin:0;accent-color:var(--accent)"><label for="{{ st.fid }}" style="flex:1;font-size:13.5px;cursor:pointer;color:{{ st.fg }};text-decoration:{{ st.deco }}">{{ st.text }}</label><button onClick="{{ st.remove }}" aria-label="{{ st.removeLabel }}" title="Remove" style="width:28px;height:28px;border:0;border-radius:6px;background:transparent;color:var(--fg-3);cursor:pointer;display:flex;align-items:center;justify-content:center" style-hover="background:var(--danger-soft);color:var(--danger-text)"><i style="font-size:17px">delete</i></button></li></sc-for></ul></sc-if>
+<div style="display:flex;gap:8px"><input value="{{ pn.newSub }}" onChange="{{ pn.onNewSub }}" onKeyDown="{{ pn.newSubKey }}" aria-label="New subtask" placeholder="Add a subtask and press Enter" style="flex:1;height:36px;padding:0 12px;border-radius:8px;border:1px solid var(--border-strong);background:var(--surface);outline:none;font-size:13.5px" style-focus="border-color:var(--accent);box-shadow:0 0 0 3px var(--accent-soft-strong)"><button onClick="{{ pn.addSub }}" style="white-space:nowrap;flex:none;display:inline-flex;align-items:center;gap:4px;height:36px;padding:0 12px 0 8px;border-radius:8px;border:1px solid var(--border-strong);background:var(--surface);font-weight:520;cursor:pointer;font-size:13.5px" style-hover="background:var(--surface-2)"><i style="font-size:18px">add</i>Add</button></div>
+</div>
+</div>
+<div style="flex:none;display:flex;align-items:center;gap:8px;padding:14px 24px;border-top:1px solid var(--border);background:var(--surface)">
+<sc-if value="{{ pn.dirty }}"><span style="display:inline-flex;align-items:center;gap:6px;font-size:12.5px;color:var(--fg-2)"><span style="width:7px;height:7px;border-radius:50%;background:var(--warn)"></span>Unsaved changes</span></sc-if>
+<span style="flex:1"></span>
+<button onClick="{{ pn.close }}" style="white-space:nowrap;flex:none;height:36px;padding:0 14px;border-radius:8px;border:0;background:transparent;color:var(--fg-2);font-weight:520;cursor:pointer" style-hover="background:var(--surface-2);color:var(--fg)">Cancel</button>
+<button onClick="{{ pn.save }}" disabled="{{ pn.saveDisabled }}" aria-busy="{{ pn.saving }}" style="white-space:nowrap;flex:none;display:inline-flex;align-items:center;gap:8px;height:36px;padding:0 16px;border-radius:8px;border:0;background:var(--accent);color:var(--on-accent);font-weight:560;cursor:{{ pn.saveCursor }};opacity:{{ pn.saveOpacity }}" style-hover="background:var(--accent-hover)"><sc-if value="{{ pn.saving }}"><span style="width:14px;height:14px;border:2px solid currentColor;border-right-color:transparent;border-radius:50%;animation:sb-spin .7s linear infinite"></span></sc-if>{{ pn.saveLabel }}</button>
+</div>
+</aside>
+</sc-if>
+<sc-if value="{{ cf.open }}" hint-placeholder-val="{{ false }}"><div onClick="{{ cf.cancel }}" style="position:absolute;inset:0;z-index:80;background:var(--scrim);display:flex;align-items:center;justify-content:center;padding:16px">
+<div role="alertdialog" aria-modal="true" aria-labelledby="cf-t" aria-describedby="cf-b" onClick="{{ stop }}" style="width:100%;max-width:440px;background:var(--surface);border:1px solid var(--border);border-radius:14px;box-shadow:var(--sh-3);padding:24px;display:flex;flex-direction:column;gap:20px;animation:sb-pop .16s ease">
+<div style="display:flex;gap:14px"><span style="width:40px;height:40px;flex:none;border-radius:10px;display:flex;align-items:center;justify-content:center;background:{{ cf.iconBg }};color:{{ cf.iconFg }}"><i>{{ cf.icon }}</i></span><div style="display:flex;flex-direction:column;gap:6px"><h2 id="cf-t" style="margin:0;font-size:16px;font-weight:620">{{ cf.title }}</h2><p id="cf-b" style="margin:0;color:var(--fg-2);text-wrap:pretty">{{ cf.body }}</p></div></div>
+<div style="display:flex;justify-content:flex-end;gap:8px"><button autoFocus="{{ true }}" onClick="{{ cf.cancel }}" style="white-space:nowrap;flex:none;height:36px;padding:0 14px;border-radius:8px;border:1px solid var(--border-strong);background:var(--surface);font-weight:520;cursor:pointer" style-hover="background:var(--surface-2)">{{ cf.cancelLabel }}</button><button onClick="{{ cf.confirm }}" style="white-space:nowrap;flex:none;height:36px;padding:0 14px;border-radius:8px;border:0;background:{{ cf.btnBg }};color:{{ cf.btnFg }};font-weight:560;cursor:pointer">{{ cf.confirmLabel }}</button></div>
+</div></div></sc-if>
+<sc-if value="{{ inv.open }}" hint-placeholder-val="{{ false }}"><div onClick="{{ inv.cancel }}" style="position:absolute;inset:0;z-index:80;background:var(--scrim);display:flex;align-items:center;justify-content:center;padding:16px">
+<form role="dialog" aria-modal="true" aria-labelledby="inv-t" onClick="{{ stop }}" onSubmit="{{ inv.send }}" style="width:100%;max-width:440px;background:var(--surface);border:1px solid var(--border);border-radius:14px;box-shadow:var(--sh-3);padding:24px;display:flex;flex-direction:column;gap:18px;animation:sb-pop .16s ease">
+<div><h2 id="inv-t" style="margin:0;font-size:16px;font-weight:620">Invite a teammate</h2><p style="margin:6px 0 0;color:var(--fg-2)">They’ll get an email with a link to join Acme Engineering.</p></div>
+<label style="display:flex;flex-direction:column;gap:6px;font-size:13px;font-weight:560">Email<input type="email" autoFocus="{{ true }}" value="{{ inv.email }}" onChange="{{ inv.onEmail }}" aria-invalid="{{ inv.hasErr }}" placeholder="name@acme.dev" style="height:40px;padding:0 12px;border-radius:8px;border:1px solid {{ inv.border }};background:var(--surface);font-size:14px;font-weight:400;outline:none" style-focus="border-color:var(--accent);box-shadow:0 0 0 3px var(--accent-soft-strong)"><sc-if value="{{ inv.hasErr }}"><span role="alert" style="font-size:12.5px;font-weight:400;color:var(--danger-text);display:flex;align-items:center;gap:4px"><i style="font-size:15px">error</i>{{ inv.error }}</span></sc-if></label>
+<label style="display:flex;flex-direction:column;gap:6px;font-size:13px;font-weight:560">Role<select value="{{ inv.role }}" onChange="{{ inv.onRole }}" style="height:40px;padding:0 10px;border-radius:8px;border:1px solid var(--border-strong);background:var(--surface);font-size:14px;font-weight:400"><option value="Member">Member · works on tasks</option><option value="Admin">Admin · manages team and sprints</option></select></label>
+<div style="display:flex;justify-content:flex-end;gap:8px"><button type="button" onClick="{{ inv.cancel }}" style="white-space:nowrap;flex:none;height:36px;padding:0 14px;border-radius:8px;border:1px solid var(--border-strong);background:var(--surface);font-weight:520;cursor:pointer" style-hover="background:var(--surface-2)">Cancel</button><button type="submit" style="white-space:nowrap;flex:none;display:inline-flex;align-items:center;gap:6px;height:36px;padding:0 14px 0 10px;border-radius:8px;border:0;background:var(--accent);color:var(--on-accent);font-weight:560;cursor:pointer" style-hover="background:var(--accent-hover)"><i style="font-size:18px">send</i>Send invite</button></div>
+</form></div></sc-if>
+<div aria-live="polite" style="position:absolute;z-index:90;right:24px;bottom:24px;display:flex;flex-direction:column;gap:8px;align-items:flex-end;pointer-events:none">
+<sc-for list="{{ toasts }}" as="t" hint-placeholder-count="0"><div role="status" style="pointer-events:auto;width:360px;display:flex;align-items:center;gap:10px;padding:12px 8px 12px 14px;background:var(--toast-bg);color:var(--toast-fg);border-radius:10px;box-shadow:var(--sh-3);animation:sb-toast .22s ease"><i style="font-size:20px;color:{{ t.iconFg }}">{{ t.icon }}</i><span style="flex:1;font-size:13.5px;line-height:1.4">{{ t.msg }}</span><sc-if value="{{ t.hasAction }}"><button onClick="{{ t.act }}" style="border:0;background:transparent;color:var(--toast-link);font-weight:600;font-size:13.5px;cursor:pointer;padding:4px 8px;border-radius:6px">{{ t.actionLabel }}</button></sc-if><button onClick="{{ t.close }}" aria-label="Dismiss notification" style="width:28px;height:28px;border:0;border-radius:6px;background:transparent;color:var(--toast-fg);opacity:.7;cursor:pointer;display:flex;align-items:center;justify-content:center"><i style="font-size:18px">close</i></button></div></sc-for>
+</div>
+</div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+const TODAY = new Date(2026, 9, 2), ME = 'priya';
+const MON = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
+const MONF = ['January','February','March','April','May','June','July','August','September','October','November','December'];
+const pd = s => { const [a,b,c] = s.split('-').map(Number); return new Date(a, b-1, c); };
+const iso = d => d.getFullYear()+'-'+String(d.getMonth()+1).padStart(2,'0')+'-'+String(d.getDate()).padStart(2,'0');
+const fmt = s => { const d = pd(s); return MON[d.getMonth()]+' '+d.getDate(); };
+const diff = s => Math.round((pd(s) - TODAY) / 864e5);
+const ST = { todo:{label:'To Do',icon:'radio_button_unchecked'}, progress:{label:'In Progress',icon:'timelapse'}, review:{label:'Review',icon:'rate_review'}, done:{label:'Done',icon:'check_circle'} };
+const ORDER = ['todo','progress','review','done'];
+const PR = { low:{label:'Low',icon:'keyboard_arrow_down',rank:1}, medium:{label:'Medium',icon:'drag_handle',rank:2}, high:{label:'High',icon:'keyboard_double_arrow_up',rank:3} };
+const MEMBERS = [
+ ['priya','Priya Nair','Frontend Engineer','Admin',300,'Mar 2024'],
+ ['maya','Maya Chen','Engineering Lead','Admin',25,'Jan 2023'],
+ ['ali','Ali Hassan','Backend Engineer','Member',210,'Aug 2023'],
+ ['tomas','Tomás Ruiz','Backend Engineer','Member',145,'Feb 2024'],
+ ['sofia','Sofia Lindqvist','Product Designer','Member',350,'Nov 2023'],
+ ['kenji','Kenji Watanabe','DevOps Engineer','Member',250,'May 2023'],
+ ['amara','Amara Okafor','QA Engineer','Member',80,'Jun 2024'],
+ ['daniel','Daniel Brooks','Full-stack Engineer','Member',180,'Apr 2024'],
+].map(([id,name,title,role,hue,joined]) => ({ id, name, title, role, hue, joined, email: id + '@acme.dev' }));
+const av = m => m ? ({ avBg:`oklch(0.8 0.09 ${m.hue})`, avFg:`oklch(0.3 0.08 ${m.hue})`, initials: m.name.split(' ').map(w => w[0]).join(''), aName: m.name }) : ({ avBg:'var(--surface-3)', avFg:'var(--fg-3)', initials:'?', aName:'Unassigned' });
+const POOL = ['Picked this up, will update by end of day.','Left a few notes on the PR.','Looks good to me. Approving.','Can we split this into two tickets?','Blocked on the staging deploy, will retry tomorrow.','Added screenshots to the description.','Moved the due date after standup.','Pairing on this with Kenji this afternoon.'];
+const AGO = ['3 days ago','2 days ago','Yesterday','5 h ago','1 h ago','20 min ago'];
+const THREAD = [
+ ['ali','Reproduced on Safari 17. After the SSO callback we drop the next param and land on /dashboard.','2 days ago'],
+ ['maya','Could this be the SameSite cookie change from last week?','2 days ago'],
+ ['ali','Likely. The session cookie isn’t set yet when the redirect fires. Storing the return URL server-side instead.','Yesterday'],
+ ['amara','I can run the regression suite on staging once there’s a build.','Yesterday'],
+ ['priya','Onboarding depends on this too, so I’d like it in before Sprint 14 closes.','5 h ago'],
+ ['ali','PR is up. Two subtasks left: regression test and staging check.','1 h ago'],
+];
+const T = (id,title,status,priority,assignee,due,nc,desc,subs) => ({ id, title, status, priority, assignee, due, desc, history: [],
+ subs: subs.map((s,i) => ({ id: id+'-'+i, text: s.replace(/^\+/,''), done: s[0] === '+' })),
+ comments: id === 'SB-142' ? THREAD.map(([who,text,time]) => ({who,text,time})) : Array.from({length:nc}, (_,i) => ({ who: MEMBERS[(i*3 + Number(id.slice(3))) % 8].id, text: POOL[(i + Number(id.slice(3))) % POOL.length], time: AGO[Math.min(AGO.length-1, i + 6 - nc < 0 ? 0 : i + 6 - nc)] })) });
+const SEED = [
+ T('SB-142','Fix login redirect bug','progress','high','ali','2026-10-01',6,'After signing in through SSO, users who opened a deep link (for example a task URL) land on the dashboard instead of the page they asked for. The return URL is lost during the callback.\n\nExpected: users return to the original URL after sign-in. Happens on Safari and Firefox; Chrome works because of cached session state.',['+Reproduce on Safari and Firefox','+Trace redirect after SSO callback','Preserve return URL in session','Add regression test','Verify on staging']),
+ T('SB-138','Design onboarding flow','review','medium','maya','2026-10-06',3,'Three-step setup for new workspaces: name the team, invite teammates, create the first sprint.',['+Map current drop-off points','+Wireframe 3-step setup','+Prototype invite teammates step','Review with product']),
+ T('SB-145','Add rate limiting to public API','todo','high','tomas','2026-10-07',1,'Protect public endpoints from bursts. Limits per API key, with Retry-After headers.',['Pick limits per endpoint','Implement token bucket middleware','Return Retry-After headers']),
+ T('SB-131','Migrate CI pipeline to new runners','done','medium','kenji','2026-09-30',2,'Move all build and test jobs to the new self-hosted runners.',['+Provision runners','+Port build jobs','+Cache dependencies','+Decommission old runners']),
+ T('SB-147','Write release notes for v2.4','todo','low','sofia','2026-10-08',0,'Customer-facing notes covering search, dark mode and API limits.',['Collect merged PRs','Draft notes']),
+ T('SB-139','Dark mode for settings page','progress','medium','priya','2026-10-05',4,'Settings still uses hard-coded colors. Move it to theme tokens and add the theme picker.',['+Audit hard-coded colors','+Swap to theme tokens','+Theme picker in settings','Persist preference','Respect system setting','QA in both themes']),
+ T('SB-150','Empty states for board columns','todo','low','priya','2026-10-09',0,'Each column needs a short empty message and a shortcut to add a task.',['Copy for each column','Add-task shortcut in empty column','Design review']),
+ T('SB-133','Flaky test in checkout suite','review','high','amara','2026-09-30',8,'checkout.spec fails about 1 in 12 runs on CI. Suspected race in the payment mock.',['+Isolate failing spec','+Fix race in payment mock']),
+ T('SB-136','Search results pagination','progress','medium','tomas','2026-10-03',2,'Return results in pages of 20 with a cursor, and load more on scroll.',['+Cursor-based API','Infinite scroll in results','Loading state','Keyboard navigation']),
+ T('SB-128','Upgrade Postgres to 16','done','high','kenji','2026-09-29',3,'Upgrade the primary and replicas with a short maintenance window.',['+Test restore on staging','+Update extensions','+Schedule maintenance window','+Run upgrade','+Monitor query latency']),
+ T('SB-144','Audit color contrast in app shell','review','medium','priya','2026-10-02',1,'Check every text and icon color in the shell against WCAG AA in both themes.',['+Sidebar','+Top bar','+Status badges','+Focus rings','Dark theme pass']),
+ T('SB-129','Remove legacy feature flags','done','low','daniel','2026-09-28',0,'Delete flags that have been at 100% for more than 30 days.',['+List stale flags','+Remove from code','+Delete from config']),
+ T('SB-146','Notification preferences API','todo','medium','ali','2026-10-08',0,'Endpoints to read and update per-user notification settings.',['Schema for preferences','GET and PUT endpoints','Defaults for new users','Docs']),
+ T('SB-134','Profile avatar upload','done','medium','sofia','2026-09-30',5,'Let members upload and crop a profile photo.',['+Upload endpoint','+Crop dialog','+Resize on server']),
+ T('SB-148','Investigate memory leak in worker','progress','high','daniel','2026-10-04',3,'The export worker grows by about 200 MB a day until it restarts.',['+Capture heap snapshots','Compare allocations over 24 h','Patch and verify']),
+ T('SB-151','Keyboard shortcuts for board','todo','medium','priya','2026-10-09',0,'Shortcuts for new task, search and moving cards between columns.',['Shortcut map','Help overlay']),
+ T('SB-132','Fix avatar crop on retina screens','done','low','priya','2026-09-30',1,'Cropped avatars look blurry on 2x displays.',['+Reproduce on 2x display','+Use devicePixelRatio for canvas']),
+];
+const FEED = [
+ {who:'amara',verb:'moved',task:'Flaky test in checkout suite',to:'review',ago:'2 min ago'},
+ {who:'ali',verb:'commented on',task:'Fix login redirect bug',ago:'14 min ago'},
+ {who:'priya',verb:'completed a subtask in',task:'Audit color contrast in app shell',ago:'38 min ago'},
+ {who:'kenji',verb:'moved',task:'Upgrade Postgres to 16',to:'done',ago:'1 h ago'},
+ {who:'maya',verb:'moved',task:'Design onboarding flow',to:'review',ago:'2 h ago'},
+ {who:'maya',verb:'created',task:'Add rate limiting to public API',ago:'3 h ago'},
+ {who:'daniel',verb:'picked up',task:'Investigate memory leak in worker',ago:'4 h ago'},
+];
+const LIVE = [
+ {who:'tomas',verb:'commented on',task:'Search results pagination'},
+ {who:'sofia',verb:'attached a file to',task:'Design onboarding flow'},
+ {who:'maya',verb:'approved',task:'Flaky test in checkout suite'},
+ {who:'daniel',verb:'completed a subtask in',task:'Investigate memory leak in worker'},
+ {who:'tomas',verb:'moved',task:'Search results pagination',to:'review'},
+ {who:'amara',verb:'commented on',task:'Audit color contrast in app shell'},
+];
+const NOTIFS = [
+ {id:1,text:'Ali Hassan mentioned you in “Fix login redirect bug”',time:'14 min ago',task:'SB-142',unread:true},
+ {id:2,text:'Maya Chen assigned you “Keyboard shortcuts for board”',time:'2 h ago',task:'SB-151',unread:true},
+ {id:3,text:'“Audit color contrast in app shell” is due today',time:'6 h ago',task:'SB-144',unread:true},
+ {id:4,text:'Sofia Lindqvist commented on “Dark mode for settings page”',time:'Yesterday',task:'SB-139',unread:false},
+];
+const SCREENS = ['login','dashboard','board','task','mytasks','team','member','admin','settings','denied','404','error'];
+
+class Component extends DCLogic {
+ appRef = React.createRef(); mainRef = React.createRef(); searchRef = React.createRef();
+ state = {
+  screen:'login', taskId:'SB-142', memberId:'ali', role:'admin', data:'populated', theme:'light', themePref:'light',
+  collapsed:false, tasks:SEED, feed:FEED, notifs:NOTIFS, menu:null,
+  filters:{assignees:[],priorities:[],mine:false}, drag:{id:null,over:null,demo:false}, newId:null,
+  q:'', searchOpen:false, searchState:'idle', results:[], activeIdx:0,
+  panel:null, confirm:null, invite:null, toasts:[],
+  login:{email:'priya@acme.dev',password:'',remember:true,loading:false,error:false,emailErr:'',pwErr:'',show:false},
+  chartReady:false, taskLoading:false, detailTab:'comments', draft:'', newSub:'',
+  collapsedGroups:{}, sortBy:'due', sortDir:'asc',
+  adminTab:'members', members:MEMBERS.map(m => ({...m})), invites:[{email:'lena.fischer@acme.dev',role:'Member',sent:'Sep 30'}],
+  sprintForm:{name:'Sprint 15',start:'2026-10-12',end:'2026-10-23',goal:'',error:''}, sprintClosed:false, upcoming:[],
+  settingsTab:'profile', profile:{name:'Priya Nair',title:'Frontend Engineer',email:'priya@acme.dev',tz:'Europe/London'}, profileSaved:JSON.stringify({name:'Priya Nair',title:'Frontend Engineer',email:'priya@acme.dev',tz:'Europe/London'}), profileSaving:false,
+  prefs:{assigned:true,mentions:true,status:true,due:true,weekly:false,desktop:false},
+ };
+
+ componentDidMount() {
+  const [hp, hq] = (location.hash || '').replace(/^#\/?/, '').split('?');
+  const qp = new URLSearchParams(hq || '');
+  if (qp.get('theme') === 'dark') this.setState({theme:'dark', themePref:'dark'});
+  if (qp.get('embed')) this.setState({embed:true});
+  if (qp.get('state')) this.setState({data:qp.get('state')});
+  const h = hp.split('/');
+  if (h[0] && SCREENS.includes(h[0])) {
+   const extra = h[0] === 'task' && h[1] ? {taskId:h[1]} : h[0] === 'member' && h[1] ? {memberId:h[1]} : {};
+   this.go(h[0], extra);
+  }
+  this.onKey = e => this.handleKey(e);
+  document.addEventListener('keydown', this.onKey);
+  this.liveIdx = 0;
+  this.liveTimer = setInterval(() => {
+   if (this.state.screen !== 'dashboard' || this.state.data !== 'populated') return;
+   const ev = LIVE[this.liveIdx++ % LIVE.length];
+   this.setState(s => ({ feed: [{...ev, ago:'just now', fresh:Date.now()}, ...s.feed.map(f => ({...f, ago: f.ago === 'just now' ? '1 min ago' : f.ago}))].slice(0, 9) }));
+  }, 9000);
+ }
+ componentWillUnmount() { document.removeEventListener('keydown', this.onKey); clearInterval(this.liveTimer); }
+
+ handleKey(e) {
+  const typing = /INPUT|TEXTAREA|SELECT/.test(document.activeElement && document.activeElement.tagName);
+  if (e.key === 'Escape') {
+   if (this.state.confirm) return this.setState({confirm:null});
+   if (this.state.invite) return this.setState({invite:null});
+   if (this.state.menu) return this.setState({menu:null});
+   if (this.state.searchOpen) { this.setState({searchOpen:false}); this.searchRef.current && this.searchRef.current.blur(); return; }
+   if (this.state.panel) return this.closePanel();
+  }
+  if (!typing && e.key === '/' && this.state.screen !== 'login') { e.preventDefault(); this.searchRef.current && this.searchRef.current.focus(); }
+ }
+
+ mem(id) { return this.state.members.find(m => m.id === id) || MEMBERS.find(m => m.id === id); }
+ toast(msg, kind, action) {
+  const id = Date.now() + Math.random();
+  this.setState(s => ({ toasts: [...s.toasts, {id, msg, kind: kind || 'success', action}].slice(-3) }));
+  setTimeout(() => this.setState(s => ({ toasts: s.toasts.filter(t => t.id !== id) })), 5000);
+ }
+ ask(cfg) { this.setState({confirm: cfg, menu:null}); }
+ syncHash() { const s = this.state; const h = s.screen === 'task' ? 'task/' + s.taskId : s.screen === 'member' ? 'member/' + s.memberId : s.screen; try { history.replaceState(null, '', '#/' + h); } catch (e) {} }
+ dirty(p) { return p && JSON.stringify(this.formPick(p)) !== p.initial; }
+ formPick(p) { return {t:p.title,d:p.desc,a:p.assignee,due:p.due,pr:p.priority,s:p.subs.map(x => x.text + x.done)}; }
+ guard(fn) {
+  const p = this.state.panel;
+  if (p && this.dirty(p)) this.ask({ title:'Unsaved changes', body:'You have unsaved changes to this task. Leave anyway? Your edits will be lost.', confirmLabel:'Leave anyway', cancelLabel:'Keep editing', danger:true, icon:'edit_off', onConfirm: () => this.setState({panel:null, confirm:null}, fn) });
+  else { if (p) this.setState({panel:null}); fn(); }
+ }
+ go(screen, extra) {
+  this.guard(() => {
+   let target = screen;
+   if (screen === 'admin' && this.state.role !== 'admin') target = 'denied';
+   this.setState({ screen: target, menu:null, searchOpen:false, drag:{id:null,over:null,demo:false}, ...(extra || {}) }, () => {
+    this.syncHash();
+    if (this.mainRef.current) this.mainRef.current.scrollTop = 0;
+    if (target === 'dashboard') { this.setState({chartReady:false}); clearTimeout(this.ct); this.ct = setTimeout(() => this.setState({chartReady:true}), 1300); }
+    if (target === 'task') { this.setState({taskLoading:true, detailTab:'comments', draft:'', newSub:''}); clearTimeout(this.tt); this.tt = setTimeout(() => this.setState({taskLoading:false}), 700); }
+   });
+  });
+ }
+ openTask(id) { this.go('task', {taskId:id}); }
+ setData(v) { this.setState({data:v}); if (v === 'populated' && this.state.screen === 'dashboard') { this.setState({chartReady:false}); clearTimeout(this.ct); this.ct = setTimeout(() => this.setState({chartReady:true}), 1300); } }
+ retry() { this.setState({data:'loading'}); setTimeout(() => this.setData('populated'), 900); }
+ pushFeed(ev) { this.setState(s => ({ feed: [{who:ME, ...ev, ago:'just now', fresh:Date.now()}, ...s.feed].slice(0, 9) })); }
+ updTask(id, fn) { this.setState(s => ({ tasks: s.tasks.map(t => t.id === id ? fn(t) : t) })); }
+ moveTask(id, to, silent) {
+  const t = this.state.tasks.find(x => x.id === id); if (!t || t.status === to) return;
+  const from = t.status;
+  this.updTask(id, x => ({...x, status:to, history:[...x.history, {who:ME, text:'moved it to ' + ST[to].label, time:'Just now'}]}));
+  this.pushFeed({verb:'moved', task:t.title, to});
+  if (!silent) this.toast('Moved “' + t.title + '” to ' + ST[to].label, 'success', {label:'Undo', fn: () => this.updTask(id, x => ({...x, status:from}))});
+ }
+
+ // ---------- search
+ runSearch(q) {
+  clearTimeout(this.st);
+  if (!q.trim()) return this.setState({searchState:'idle', activeIdx:0});
+  this.setState({searchState:'searching'});
+  this.st = setTimeout(() => {
+   if (this.state.data === 'error') return this.setState({searchState:'error'});
+   const ql = q.trim().toLowerCase();
+   const res = this.state.tasks.filter(t => t.title.toLowerCase().includes(ql) || t.id.toLowerCase().includes(ql)).slice(0, 6).map(t => t.id);
+   this.setState({searchState: res.length ? 'results' : 'empty', results: res, activeIdx:0});
+  }, 550);
+ }
+
+ // ---------- panel
+ openCreate(status) {
+  const p = { mode:'create', status: status || 'todo', title:'', desc:'', assignee:ME, due:'', priority:'medium', subs:[], newSub:'', titleCheck:'idle', dupId:null, errors:{}, saving:false, calY:2026, calM:9 };
+  p.initial = JSON.stringify(this.formPick(p));
+  this.setState({panel:p, menu:null, searchOpen:false});
+ }
+ openEdit(id) {
+  const t = this.state.tasks.find(x => x.id === id);
+  const p = { mode:'edit', id, status:t.status, title:t.title, desc:t.desc, assignee:t.assignee, due:t.due, priority:t.priority, subs:t.subs.map(s => ({...s})), newSub:'', titleCheck:'idle', dupId:null, errors:{}, saving:false, calY:2026, calM:9 };
+  p.initial = JSON.stringify(this.formPick(p));
+  this.setState({panel:p, menu:null});
+ }
+ setP(patch) { this.setState(s => ({ panel: s.panel ? {...s.panel, ...(typeof patch === 'function' ? patch(s.panel) : patch)} : null })); }
+ closePanel() { this.guard(() => {}); }
+ onTitle(v) {
+  this.setP(p => ({ title:v, titleCheck: v.trim() ? 'checking' : 'idle', dupId:null, errors:{...p.errors, title:null} }));
+  clearTimeout(this.tc);
+  if (!v.trim()) return;
+  this.tc = setTimeout(() => {
+   const p = this.state.panel; if (!p) return;
+   const dup = this.state.tasks.find(t => t.title.toLowerCase() === p.title.trim().toLowerCase() && t.id !== p.id);
+   this.setP({ titleCheck: dup ? 'taken' : 'ok', dupId: dup ? dup.id : null });
+  }, 800);
+ }
+ pickDue(s) { this.setP(p => ({ due:s, errors:{...p.errors, due: s && diff(s) < 0 ? 'Due date can’t be in the past' : null} })); this.setState({menu:null}); }
+ addSub() { const p = this.state.panel; if (!p.newSub.trim()) return; this.setP({ subs:[...p.subs, {id:'n'+Date.now(), text:p.newSub.trim(), done:false}], newSub:'' }); }
+ save() {
+  const p = this.state.panel; const errors = {};
+  if (!p.title.trim()) errors.title = 'Title is required';
+  if (p.due && diff(p.due) < 0) errors.due = 'Due date can’t be in the past';
+  if (Object.keys(errors).length || p.titleCheck === 'taken') return this.setP({errors});
+  this.setP({saving:true});
+  setTimeout(() => {
+   const p = this.state.panel; if (!p) return;
+   if (p.mode === 'create') {
+    const n = Math.max(...this.state.tasks.map(t => Number(t.id.slice(3)))) + 1, id = 'SB-' + n;
+    const t = { id, title:p.title.trim(), status:p.status, priority:p.priority, assignee:p.assignee, due:p.due, desc:p.desc, subs:p.subs, comments:[], history:[{who:ME,text:'created this task',time:'Just now'}] };
+    this.setState(s => ({ tasks:[t, ...s.tasks], panel:null, newId:id, screen:'board', filters:{assignees:[],priorities:[],mine:false}, data: s.data === 'populated' ? s.data : 'populated' }), () => this.syncHash());
+    this.pushFeed({verb:'created', task:t.title});
+    this.toast('Task created', 'success', {label:'View', fn: () => this.openTask(id)});
+    setTimeout(() => this.setState({newId:null}), 2600);
+   } else {
+    this.updTask(p.id, t => ({...t, title:p.title.trim(), desc:p.desc, assignee:p.assignee, due:p.due, priority:p.priority, subs:p.subs, history:[...t.history, {who:ME,text:'edited the task',time:'Just now'}]}));
+    this.setState({panel:null});
+    this.toast('Changes saved');
+   }
+  }, 900);
+ }
+
+ // ---------- view builders
+ deco(t) {
+  const a = av(this.mem(t.assignee)), dd = t.due ? diff(t.due) : null, overdue = dd !== null && dd < 0 && t.status !== 'done';
+  const sd = t.subs.filter(s => s.done).length;
+  const s = this.state, dg = s.drag;
+  const lifted = dg.demo && dg.id === t.id, ghost = !dg.demo && dg.id === t.id, fresh = s.newId === t.id;
+  return { ...t, ...a, stLabel:ST[t.status].label, stIcon:ST[t.status].icon, stBg:`var(--st-${t.status}-bg)`, stFg:`var(--st-${t.status}-fg)`,
+   prLabel:PR[t.priority].label, prIcon:PR[t.priority].icon, prBg:`var(--pr-${t.priority}-bg)`, prFg:`var(--pr-${t.priority}-fg)`,
+   dueShort: !t.due ? 'No date' : dd === 0 ? 'Today' : dd === 1 ? 'Tomorrow' : fmt(t.due),
+   dueLong: !t.due ? 'No due date' : (dd === 0 ? 'Today' : fmt(t.due) + ', 2026') + (overdue ? ' · Overdue' : ''),
+   dueIcon: overdue ? 'error' : 'calendar_today', dueFg: overdue ? 'var(--danger-text)' : dd === 0 && t.status !== 'done' ? 'var(--st-review-fg)' : 'var(--fg-2)', dueFw: overdue ? '600' : '450', overdue,
+   hasSubs: t.subs.length > 0, subLabel: sd + '/' + t.subs.length, subPct: t.subs.length ? Math.round(sd / t.subs.length * 100) + '%' : '0%',
+   nComments: t.comments.length, hasComments: t.comments.length > 0,
+   aria: `${t.id} ${t.title}. ${ST[t.status].label}, ${PR[t.priority].label} priority, assigned to ${a.aName}${overdue ? ', overdue' : ''}`,
+   open: () => this.openTask(t.id),
+   onKey: e => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); this.openTask(t.id); } },
+   onDragStart: e => { e.dataTransfer.setData('text/plain', t.id); e.dataTransfer.effectAllowed = 'move'; setTimeout(() => this.setState({drag:{id:t.id, over:null, demo:false}}), 0); },
+   onDragEnd: () => this.setState({drag:{id:null, over:null, demo:false}}),
+   cShadow: lifted ? '0 0 0 2px var(--accent), var(--sh-3)' : 'var(--sh-1)',
+   cTransform: lifted ? 'rotate(-2.5deg) translateY(-4px) scale(1.02)' : 'none',
+   cOpacity: ghost ? '.4' : '1', cAnim: fresh ? 'sb-glow 2.4s ease-out' : 'none', cZ: lifted ? '2' : 'auto',
+  };
+ }
+
+ renderVals() {
+  const s = this.state, isAdminRole = s.role === 'admin';
+  const D = { loading: s.data === 'loading', empty: s.data === 'empty', error: s.data === 'error' };
+  D.notError = !D.error; D.notLoading = !D.loading; D.ready = !D.loading && !D.error; D.populated = s.data === 'populated';
+  const seg = (opts, cur, fn) => opts.map(([v, label]) => ({ label, on: cur === v, bg: cur === v ? '#3a3d52' : 'transparent', fg: cur === v ? '#fff' : '#a6a9bb', onClick: () => fn(v) }));
+  const me = { ...av(this.mem(ME)), name:s.profile.name, email:s.profile.email };
+  const tasks = s.tasks.map(t => this.deco(t));
+  const byId = Object.fromEntries(tasks.map(t => [t.id, t]));
+  const sc = s.screen;
+  const v = { showDemo: !s.embed,
+   theme: s.theme, appRef: this.appRef, mainRef: this.mainRef, searchRef: this.searchRef,
+   onJump: e => this.jump(e.target.value),
+   roleOpts: seg([['admin','Admin'],['member','Member']], s.role, r => this.setState({role:r}, () => { if (r === 'member' && s.screen === 'admin') this.go('denied'); })),
+   dataOpts: seg([['populated','Populated'],['loading','Loading'],['empty','Empty'],['error','Error']], s.data, d => this.setData(d)),
+   themeOpts: seg([['light','Light'],['dark','Dark']], s.theme, t => this.setState({theme:t, themePref:t})),
+   isLogin: sc === 'login', isFatal: sc === 'error', isShell: sc !== 'login' && sc !== 'error',
+   isDashboard: sc === 'dashboard', isBoard: sc === 'board', isTask: sc === 'task', isMy: sc === 'mytasks', isTeam: sc === 'team', isMember: sc === 'member',
+   isAdmin: sc === 'admin', isSettings: sc === 'settings', is404: sc === '404', isDenied: sc === 'denied',
+   ds: D, retry: () => this.retry(), me, roleLabel: isAdminRole ? 'Admin' : 'Member', isAdminRole,
+   skel3: [1,2,3], skel4: [1,2,3,4], skel5: [1,2,3,4,5],
+   openCreate: () => this.openCreate(), goDashboard: () => this.go('dashboard'), goBoard: () => this.go('board'), goTeam: () => this.go('team'), goBack: () => history.length > 1 ? this.go('dashboard') : this.go('dashboard'),
+   requestAccess: () => this.toast('Access request sent to Maya Chen', 'info'),
+   reload: () => this.go('dashboard'),
+   stop: e => e.stopPropagation(),
+  };
+  Object.assign(v, this.vLogin(), this.vShell(me, isAdminRole), this.vDash(tasks, D), this.vBoard(tasks, D), this.vSearch(byId), this.vTask(byId), this.vMy(tasks, D), this.vTeam(tasks, D), this.vAdmin(tasks, D), this.vSettings(), this.vPanel(), this.vOverlays());
+  return v;
+ }
+
+ jump(val) {
+  if (!val) return;
+  const s = this.state;
+  const doIt = () => {
+   if (val === 'search') { this.go(s.screen === 'login' || s.screen === 'error' ? 'board' : s.screen); setTimeout(() => { this.setState({q:'login', searchOpen:true}); this.runSearch('login'); this.searchRef.current && this.searchRef.current.focus(); }, 50); }
+   else if (val === 'create') { if (['login','error'].includes(s.screen)) this.go('board'); setTimeout(() => this.openCreate(), 30); }
+   else if (val === 'edit') { this.go('task', {taskId:'SB-142'}); setTimeout(() => this.openEdit('SB-142'), 760); }
+   else if (val === 'unsaved') { this.go('task', {taskId:'SB-142'}); setTimeout(() => { this.openEdit('SB-142'); setTimeout(() => { this.setP({desc: this.state.panel.desc + '\n\nAlso affects magic-link sign-in.'}); setTimeout(() => this.closePanel(), 60); }, 60); }, 760); }
+   else if (val === 'drag') { this.go('board', {data:'populated', filters:{assignees:[],priorities:[],mine:false}}); setTimeout(() => this.setState({drag:{id:'SB-136', over:'review', demo:true}}), 30); }
+   else if (val === 'denied') { this.setState({role:'member'}, () => this.go('admin')); }
+   else if (val === 'task') this.go('task', {taskId:'SB-142'});
+   else if (val === 'member') this.go('member', {memberId:'ali'});
+   else this.go(val);
+  };
+  if (s.panel && !['unsaved','edit'].includes(val)) this.guard(doIt); else { if (s.panel) this.setState({panel:null}); doIt(); }
+ }
+
+ vLogin() {
+  const L = this.state.login, set = p => this.setState(s => ({login:{...s.login, ...p}}));
+  return { lg: { ...L, emailInvalid: !!L.emailErr, pwInvalid: !!L.pwErr,
+   emailBorder: L.emailErr || L.error ? 'var(--danger)' : 'var(--border-strong)', pwBorder: L.pwErr || L.error ? 'var(--danger)' : 'var(--border-strong)',
+   pwType: L.show ? 'text' : 'password', showIcon: L.show ? 'visibility_off' : 'visibility', showLabel: L.show ? 'Hide password' : 'Show password',
+   btnLabel: L.loading ? 'Signing in…' : 'Sign in', btnOpacity: L.loading ? '.75' : '1',
+   onEmail: e => set({email:e.target.value, emailErr:'', error:false}), onPw: e => set({password:e.target.value, pwErr:'', error:false}),
+   onRemember: e => set({remember:e.target.checked}), toggleShow: () => set({show:!L.show}),
+   submit: e => { e.preventDefault(); const emailErr = /.+@.+\..+/.test(L.email) ? '' : 'Enter a valid email address', pwErr = L.password ? '' : 'Enter your password';
+    if (emailErr || pwErr) return set({emailErr, pwErr});
+    set({loading:true, error:false});
+    setTimeout(() => { if (this.state.login.password === 'wrong') set({loading:false, error:true}); else { set({loading:false}); this.go('dashboard'); } }, 1000); } } };
+ }
+ vShell(me, isAdminRole) {
+  const s = this.state, open = !s.collapsed;
+  const counts = { board: s.tasks.length, mytasks: s.tasks.filter(t => t.assignee === ME && t.status !== 'done').length };
+  const items = [['dashboard','Dashboard','space_dashboard'],['board','Board','view_kanban'],['mytasks','My Tasks','task_alt'],['team','Team','group'],...(isAdminRole ? [['admin','Admin','admin_panel_settings']] : []),['settings','Settings','settings']];
+  const activeKey = s.screen === 'task' ? 'board' : s.screen === 'member' ? 'team' : s.screen;
+  const unread = s.notifs.filter(n => n.unread).length;
+  const menu = m => () => this.setState({menu: s.menu === m ? null : m});
+  return {
+   sidebarOpen: open, sidebarW: open ? '240px' : '68px', sidebarIcon: open ? 'left_panel_close' : 'left_panel_open', sidebarToggleLabel: open ? 'Collapse sidebar' : 'Expand sidebar',
+   toggleSidebar: () => this.setState({collapsed: open}),
+   navItems: items.map(([k,label,icon]) => { const a = activeKey === k; return { label, icon, current: a ? 'page' : undefined, showLabel: open, showCount: open && counts[k] != null && s.data !== 'empty', count: counts[k],
+    bg: a ? 'var(--accent-soft)' : 'transparent', hov: a ? 'var(--accent-soft)' : 'var(--surface-2)', fg: a ? 'var(--accent-text)' : 'var(--fg-2)', ic: a ? 'var(--accent-text)' : 'var(--fg-3)', fw: a ? '600' : '480', onClick: () => this.go(k) }; }),
+   themeIcon: s.theme === 'dark' ? 'light_mode' : 'dark_mode', themeLabel: s.theme === 'dark' ? 'Switch to light theme' : 'Switch to dark theme',
+   toggleTheme: () => { const t = s.theme === 'dark' ? 'light' : 'dark'; this.setState({theme:t, themePref:t}); },
+   unread, hasUnread: unread > 0, notifLabel: `Notifications, ${unread} unread`,
+   notifOpen: s.menu === 'notif', userOpen: s.menu === 'user', toggleNotif: menu('notif'), toggleUser: menu('user'),
+   notifs: s.notifs.map(n => ({ ...n, dot: n.unread ? 'var(--accent)' : 'transparent', fw: n.unread ? '550' : '420', unreadSr: n.unread ? ' · Unread' : '',
+    onClick: () => { this.setState(st => ({notifs: st.notifs.map(x => x.id === n.id ? {...x, unread:false} : x)})); this.openTask(n.task); } })),
+   markAllRead: () => this.setState(st => ({notifs: st.notifs.map(x => ({...x, unread:false}))})),
+   userItems: [
+    {label:'Profile', icon:'person', fg:'var(--fg)', onClick: () => this.go('settings', {settingsTab:'profile'})},
+    {label:'Settings', icon:'settings', fg:'var(--fg)', onClick: () => this.go('settings')},
+    {label: isAdminRole ? 'View as member (demo)' : 'View as admin (demo)', icon:'swap_horiz', fg:'var(--fg)', onClick: () => this.setState({role: isAdminRole ? 'member' : 'admin', menu:null}, () => { if (this.state.screen === 'admin') this.go('denied'); })},
+    {label:'Sign out', icon:'logout', fg:'var(--danger-text)', onClick: () => this.guard(() => this.setState(st => ({screen:'login', menu:null, login:{...st.login, password:'', error:false}}), () => this.syncHash()))},
+   ],
+  };
+ }
+ vDash(tasks, D) {
+  const s = this.state, list = D.empty ? [] : tasks;
+  const cnt = k => list.filter(t => t.status === k).length;
+  const done = cnt('done'), total = list.length, overdue = list.filter(t => t.overdue).length;
+  const pct = total ? Math.round(done / total * 100) : 0, max = Math.max(1, ...ORDER.map(cnt));
+  const chartReady = D.ready && !D.empty && s.chartReady;
+  return {
+   sprint: { daysLeft: '7 days left', pct: pct + '%', pctNum: pct, today: '42%', doneLabel: `${done} of ${total} tasks done · ${pct}%` },
+   stats: [
+    {label:'Total tasks', value: total, meta:'In Sprint 14', icon:'stacks', iconBg:'var(--accent-soft)', iconFg:'var(--accent-text)', valueFg:'var(--fg)'},
+    {label:'In progress', value: cnt('progress'), meta: `${cnt('review')} waiting for review`, icon:'timelapse', iconBg:'var(--st-progress-bg)', iconFg:'var(--st-progress-fg)', valueFg:'var(--fg)'},
+    {label:'Overdue', value: overdue, meta: overdue ? 'Past due and not done' : 'Nothing overdue', icon:'error', iconBg:'var(--danger-soft)', iconFg:'var(--danger-text)', valueFg: overdue ? 'var(--danger-text)' : 'var(--fg)'},
+    {label:'Completed this sprint', value: done, meta: `${pct}% of sprint scope`, icon:'check_circle', iconBg:'var(--st-done-bg)', iconFg:'var(--st-done-fg)', valueFg:'var(--fg)'},
+   ],
+   chart: { loading: D.loading || (D.ready && !D.empty && !s.chartReady), empty: D.ready && D.empty, ready: chartReady, skel: ['55%','80%','40%','65%'],
+    caption: chartReady ? `${total} tasks` : '', aria: ORDER.map(k => `${ST[k].label}: ${cnt(k)}`).join(', '),
+    bars: ORDER.map(k => ({ label: ST[k].label, icon: ST[k].icon, count: cnt(k), h: Math.round(cnt(k) / max * 150) + 'px', color: `var(--st-${k}-dot)`, fg: `var(--st-${k}-fg)` })) },
+   feedEmpty: D.ready && D.empty, feedHas: D.ready && !D.empty,
+   feed: s.feed.map(f => { const m = this.mem(f.who), t = s.tasks.find(x => x.title === f.task);
+    return { ...av(m), actor: f.who === ME ? 'You' : m.name, verb: f.verb, task: f.task, ago: f.ago, hasTo: !!f.to, stLabel: f.to && ST[f.to].label, stIcon: f.to && ST[f.to].icon, stBg: `var(--st-${f.to}-bg)`, stFg: `var(--st-${f.to}-fg)`,
+     anim: f.fresh && Date.now() - f.fresh < 1500 ? 'sb-in .45s ease' : 'none', open: () => t && this.openTask(t.id) }; }),
+  };
+ }
+ vBoard(tasks, D) {
+  const s = this.state, f = s.filters, dg = s.drag;
+  const base = D.empty ? [] : tasks;
+  const vis = base.filter(t => (!f.assignees.length || f.assignees.includes(t.assignee)) && (!f.priorities.length || f.priorities.includes(t.priority)) && (!f.mine || t.assignee === ME));
+  const hasFilters = f.assignees.length > 0 || f.priorities.length > 0 || f.mine;
+  const setF = p => this.setState(st => ({filters:{...st.filters, ...p}}));
+  const tog = (arr, v) => arr.includes(v) ? arr.filter(x => x !== v) : [...arr, v];
+  const src = dg.id && s.tasks.find(t => t.id === dg.id);
+  const EMPTY = { todo:['Nothing to do yet','Drag a card here or press + to add one.','inbox'], progress:['Nothing in progress','Drag a card here when work starts.','timelapse'], review:['Nothing waiting for review','Cards ready for review land here.','rate_review'], done:['Nothing done yet','Finished work shows up here.','check_circle'] };
+  const columns = ORDER.map(k => {
+   const list = vis.filter(t => t.status === k), over = dg.id && dg.over === k && src && src.status !== k;
+   return { key:k, label:ST[k].label, icon:ST[k].icon, fg:`var(--st-${k}-fg)`, count: D.loading ? '–' : list.length, aria: `${ST[k].label}, ${list.length} tasks`,
+    addLabel: `Add task to ${ST[k].label}`, add: () => this.openCreate(k), tasks: D.ready ? list : [], loading: D.loading, skels: k === 'done' ? ['70%','55%'] : ['80%','60%','72%'].slice(0, k === 'review' ? 2 : 3),
+    showDrop: !!over, zoneBg: over ? 'var(--accent-soft)' : 'var(--surface-2)', zoneOutline: over ? '2px dashed var(--accent)' : 'none',
+    empty: D.ready && list.length === 0 && !over, emptyTitle: hasFilters && base.length ? 'No matching tasks' : EMPTY[k][0], emptyBody: hasFilters && base.length ? 'Try removing a filter.' : EMPTY[k][1], emptyIcon: EMPTY[k][2],
+    onDragOver: e => { e.preventDefault(); e.dataTransfer && (e.dataTransfer.dropEffect = 'move'); if (this.state.drag.over !== k) this.setState(st => ({drag:{...st.drag, over:k, demo:false}})); },
+    onDrop: e => { e.preventDefault(); const id = this.state.drag.id || e.dataTransfer.getData('text/plain'); this.setState({drag:{id:null, over:null, demo:false}}); if (id) this.moveTask(id, k); } };
+  });
+  const sel = f.assignees.map(id => av(this.mem(id)));
+  return {
+   columns, hasFilters, boardEmpty: D.ready && D.empty, noMatch: D.ready && !D.empty && hasFilters && vis.length === 0,
+   boardCount: D.ready ? (hasFilters ? `${vis.length} of ${base.length} tasks` : `${base.length} tasks`) : '',
+   clearFilters: () => setF({assignees:[], priorities:[], mine:false}),
+   fa: { open: s.menu === 'f-assignee', toggle: () => this.setState({menu: s.menu === 'f-assignee' ? null : 'f-assignee'}), has: sel.length > 0, stack: sel.slice(0, 3),
+    border: sel.length ? 'var(--accent)' : 'var(--border-strong)', bg: sel.length ? 'var(--accent-soft)' : 'var(--surface)',
+    opts: s.members.map(m => ({ ...av(m), name: m.id === ME ? m.name + ' (you)' : m.name, checked: f.assignees.includes(m.id), count: base.filter(t => t.assignee === m.id).length, toggle: () => setF({assignees: tog(this.state.filters.assignees, m.id)}) })) },
+   fp: { open: s.menu === 'f-priority', toggle: () => this.setState({menu: s.menu === 'f-priority' ? null : 'f-priority'}),
+    label: f.priorities.length ? 'Priority: ' + f.priorities.map(p => PR[p].label).join(', ') : 'Priority',
+    border: f.priorities.length ? 'var(--accent)' : 'var(--border-strong)', bg: f.priorities.length ? 'var(--accent-soft)' : 'var(--surface)',
+    opts: ['high','medium','low'].map(p => ({ label:PR[p].label, icon:PR[p].icon, bg:`var(--pr-${p}-bg)`, fg:`var(--pr-${p}-fg)`, checked: f.priorities.includes(p), count: base.filter(t => t.priority === p).length, toggle: () => setF({priorities: tog(this.state.filters.priorities, p)}) })) },
+   mine: { on: f.mine, track: f.mine ? 'var(--accent)' : 'var(--border-strong)', thumb: f.mine ? 'translateX(12px)' : 'none', toggle: () => setF({mine: !f.mine}) },
+  };
+ }
+ vSearch(byId) {
+  const s = this.state, q = s.q, ql = q.trim().toLowerCase(), st = s.searchState, idle = !ql;
+  const ids = idle ? ['SB-142','SB-139','SB-144'] : st === 'results' ? s.results : [];
+  const rows = ids.filter(id => byId[id]).map((id, i) => { const t = byId[id]; const k = ql ? t.title.toLowerCase().indexOf(ql) : -1;
+   return { ...t, active: i === s.activeIdx, bg: i === s.activeIdx ? 'var(--surface-2)' : 'transparent',
+    pre: k >= 0 ? t.title.slice(0, k) : t.title, match: k >= 0 ? t.title.slice(k, k + ql.length) : '', post: k >= 0 ? t.title.slice(k + ql.length) : '',
+    hover: () => this.setState({activeIdx:i}), open: () => this.pickResult(id) }; });
+  this._rows = ids;
+  return {
+   q, hasQ: !!q, noQ: !q,
+   onQ: e => { const v = e.target.value; this.setState({q:v, searchOpen:true}); this.runSearch(v); },
+   onQFocus: () => this.setState({searchOpen:true, menu:null}),
+   clearQ: () => { this.setState({q:'', searchState:'idle'}); this.searchRef.current && this.searchRef.current.focus(); },
+   onQKey: e => {
+    const n = (this._rows || []).length;
+    if (e.key === 'ArrowDown') { e.preventDefault(); this.setState(x => ({activeIdx: n ? (x.activeIdx + 1) % n : 0})); }
+    else if (e.key === 'ArrowUp') { e.preventDefault(); this.setState(x => ({activeIdx: n ? (x.activeIdx - 1 + n) % n : 0})); }
+    else if (e.key === 'Enter' && n && (idle || st === 'results')) { e.preventDefault(); this.pickResult(this._rows[s.activeIdx] || this._rows[0]); }
+   },
+   sp: { open: s.searchOpen, header: idle ? 'RECENTLY VIEWED' : st === 'results' ? `${rows.length} ${rows.length === 1 ? 'TASK' : 'TASKS'}` : 'TASKS',
+    loading: !idle && st === 'searching', error: !idle && st === 'error', empty: !idle && st === 'empty', hasRows: rows.length > 0 && (idle || st === 'results'), rows,
+    retry: () => { this.setData('populated'); setTimeout(() => this.runSearch(this.state.q), 0); } },
+  };
+ }
+ pickResult(id) { this.setState({searchOpen:false, q:'', searchState:'idle'}); this.searchRef.current && this.searchRef.current.blur(); this.openTask(id); }
+ vTask(byId) {
+  const s = this.state, t = byId[s.taskId], D = s.data;
+  const busy = s.taskLoading || D === 'loading', err = !busy && D === 'error';
+  const tv = { id: s.taskId, skeleton: busy, error: err, ready: !busy && !err && !!t, missing: !busy && !err && !t };
+  if (!t) return { tv, tk: {} };
+  const id = t.id, raw = s.tasks.find(x => x.id === id);
+  const hist = [ {who:'maya', text:'created this task', time:'Sep 25'}, {who:'maya', text:'assigned it to ' + t.aName, time:'Sep 25'}, {who:'maya', text:'set priority to ' + t.prLabel, time:'Sep 26'} ];
+  if (t.status !== 'todo') hist.push({who:t.assignee, text:'moved it to In Progress', time:'Sep 29'});
+  if (t.status === 'review' || t.status === 'done') hist.push({who:t.assignee, text:'moved it to ' + t.stLabel, time:'Oct 1'});
+  const acts = [...hist, ...raw.history].reverse().map(h => ({ ...av(this.mem(h.who)), actor: h.who === ME ? 'You' : this.mem(h.who).name, text: h.text, time: h.time }));
+  tv.tabs = [['comments', `Comments (${t.comments.length})`], ['activity', 'Activity']].map(([k, label]) => { const on = s.detailTab === k; return { label, on, fw: on ? '600' : '480', fg: on ? 'var(--fg)' : 'var(--fg-3)', bar: on ? 'inset 0 -2px 0 var(--accent)' : 'none', onClick: () => this.setState({detailTab:k}) }; });
+  Object.assign(tv, {
+   onComments: s.detailTab === 'comments', onActivity: s.detailTab === 'activity', noComments: t.comments.length === 0,
+   edit: () => this.openEdit(id), copyLink: () => this.toast('Link to ' + id + ' copied', 'info'),
+   statusOpen: s.menu === 'status', toggleStatus: () => this.setState({menu: s.menu === 'status' ? null : 'status'}), statusAria: 'Status: ' + t.stLabel + '. Change status',
+   statusOpts: ORDER.map(k => ({ label:ST[k].label, icon:ST[k].icon, bg:`var(--st-${k}-bg)`, fg:`var(--st-${k}-fg)`, on: t.status === k, onClick: () => { this.setState({menu:null}); this.moveTask(id, k); } })),
+   newSub: s.newSub, onNewSub: e => this.setState({newSub:e.target.value}),
+   addSub: e => { e.preventDefault(); const v = s.newSub.trim(); if (!v) return; this.updTask(id, x => ({...x, subs:[...x.subs, {id:id+'-n'+Date.now(), text:v, done:false}]})); this.setState({newSub:''}); },
+   draft: s.draft, onDraft: e => this.setState({draft:e.target.value}), cantPost: !s.draft.trim(), postOpacity: s.draft.trim() ? '1' : '.5',
+   draftKey: e => { if (e.key === 'Enter' && (e.metaKey || e.ctrlKey)) { e.preventDefault(); this.postComment(id); } },
+   post: e => { e.preventDefault(); this.postComment(id); },
+  });
+  const tk = { ...t,
+   subRows: raw.subs.map(st => ({ ...st, fg: st.done ? 'var(--fg-3)' : 'var(--fg)', deco: st.done ? 'line-through' : 'none', removeLabel: 'Remove subtask: ' + st.text,
+    toggle: () => this.updTask(id, x => ({...x, subs: x.subs.map(y => y.id === st.id ? {...y, done:!y.done} : y)})),
+    remove: () => this.updTask(id, x => ({...x, subs: x.subs.filter(y => y.id !== st.id)})) })),
+   commentRows: t.comments.map(c => ({ ...av(this.mem(c.who)), text: c.text, time: c.time })),
+   activityRows: acts,
+   meta: [
+    { label:'Assignee', value:t.aName, avatar:true, avBg:t.avBg, avFg:t.avFg, initials:t.initials, plain:true, fg:'var(--fg)' },
+    { label:'Priority', value:t.prLabel, chip:true, chipBg:t.prBg, chipFg:t.prFg, icon:t.prIcon },
+    { label:'Due date', value:t.dueLong, iconOnly:true, icon:t.dueIcon, plain:true, fg:t.dueFg, fw:t.dueFw },
+    { label:'Sprint', value:'Sprint 14', plain:true, fg:'var(--fg)' },
+    { label:'Reporter', value:'Maya Chen', avatar:true, ...av(this.mem('maya')), plain:true, fg:'var(--fg)' },
+    { label:'Created', value:'Sep 25, 2026', plain:true, fg:'var(--fg-2)', border:'0' },
+   ].map(r => ({ border:'1px solid var(--border)', fw:'450', ...r })),
+  };
+  return { tv, tk };
+ }
+ postComment(id) {
+  const v = this.state.draft.trim(); if (!v) return;
+  const t = this.state.tasks.find(x => x.id === id);
+  this.updTask(id, x => ({...x, comments:[...x.comments, {who:ME, text:v, time:'Just now'}]}));
+  this.setState({draft:''}); this.pushFeed({verb:'commented on', task:t.title}); this.toast('Comment posted');
+ }
+ vMy(tasks, D) {
+  const s = this.state, mine = D.empty ? [] : tasks.filter(t => t.assignee === ME), dir = s.sortDir === 'asc' ? 1 : -1;
+  const key = t => s.sortBy === 'due' ? (t.due ? pd(t.due).getTime() : Infinity) : -PR[t.priority].rank;
+  const sorted = [...mine].sort((a, b) => (key(a) - key(b)) * dir);
+  const setSort = k => this.setState(st => ({sortBy:k, sortDir: st.sortBy === k ? (st.sortDir === 'asc' ? 'desc' : 'asc') : 'asc'}));
+  const dirIcon = s.sortDir === 'asc' ? 'arrow_upward' : 'arrow_downward';
+  const open = mine.filter(t => t.status !== 'done').length, od = mine.filter(t => t.overdue).length;
+  return { my: {
+   sub: D.ready ? `${open} open · ${mine.length - open} done${od ? ` · ${od} overdue` : ''}` : 'Tasks assigned to you in Sprint 14',
+   empty: D.ready && mine.length === 0, hasTable: D.loading || mine.length > 0,
+   sorts: [['due','Due date'],['priority','Priority']].map(([k, label]) => { const on = s.sortBy === k; return { label, on, dirIcon, fw: on ? '600' : '480', bg: on ? 'var(--surface)' : 'transparent', fg: on ? 'var(--fg)' : 'var(--fg-2)', sh: on ? 'var(--sh-1)' : 'none', onClick: () => setSort(k) }; }),
+   sortDue: () => setSort('due'), sortPriority: () => setSort('priority'),
+   dueHdIcon: s.sortBy === 'due' ? dirIcon : 'unfold_more', prHdIcon: s.sortBy === 'priority' ? dirIcon : 'unfold_more',
+   dueHdFg: s.sortBy === 'due' ? 'var(--fg)' : 'var(--fg-3)', prHdFg: s.sortBy === 'priority' ? 'var(--fg)' : 'var(--fg-3)',
+   ariaDue: s.sortBy === 'due' ? (s.sortDir === 'asc' ? 'ascending' : 'descending') : 'none', ariaPr: s.sortBy === 'priority' ? (s.sortDir === 'asc' ? 'ascending' : 'descending') : 'none',
+   groups: D.ready ? ORDER.map(k => ({ k, rows: sorted.filter(t => t.status === k) })).filter(g => g.rows.length).map(g => { const op = !s.collapsedGroups[g.k];
+    return { ...g, open: op, chev: op ? 'expand_more' : 'chevron_right', label: ST[g.k].label, icon: ST[g.k].icon, bg: `var(--st-${g.k}-bg)`, fg: `var(--st-${g.k}-fg)`, count: g.rows.length,
+     toggle: () => this.setState(st => ({collapsedGroups: {...st.collapsedGroups, [g.k]: op}})) }; }) : [],
+  } };
+ }
+ vTeam(tasks, D) {
+  const s = this.state, roleOf = m => m.id === ME ? (s.role === 'admin' ? 'Admin' : 'Member') : m.role;
+  const mem = D.empty ? s.members.filter(m => m.id === ME) : s.members;
+  const act = id => tasks.filter(t => t.assignee === id && t.status !== 'done').length;
+  const m = this.mem(s.memberId) || s.members[0], mt = tasks.filter(t => t.assignee === m.id);
+  return {
+   team: { sub: D.ready ? `${mem.length} members · Acme Engineering` : 'Acme Engineering', empty: D.ready && D.empty, manage: () => this.go('admin'),
+    cards: D.ready ? mem.map(x => { const a = act(x.id), r = roleOf(x); return { ...av(x), name: x.name + (x.id === ME ? ' (you)' : ''), title: x.title, role: r, roleBg: r === 'Admin' ? 'var(--accent-soft)' : 'var(--surface-2)', roleFg: r === 'Admin' ? 'var(--accent-text)' : 'var(--fg-2)', active: a, activeLabel: a === 1 ? 'active task' : 'active tasks', open: () => this.go('member', {memberId:x.id}) }; }) : [] },
+   mp: { ...av(m), name: m.name, title: m.title, role: roleOf(m), email: m.email, joined: m.joined,
+    stats: [{v: mt.filter(t => t.status === 'progress' || t.status === 'todo').length, l:'Open'}, {v: mt.filter(t => t.status === 'review').length, l:'In review'}, {v: mt.filter(t => t.status === 'done').length, l:'Done'}],
+    tasks: mt.filter(t => t.status !== 'done'), none: mt.filter(t => t.status !== 'done').length === 0 },
+  };
+ }
+ vAdmin(tasks, D) {
+  const s = this.state, sf = s.sprintForm, iv = s.invite;
+  const setSF = p => this.setState(st => ({sprintForm:{...st.sprintForm, ...p, error:''}}));
+  const tabs = [['members','Members','group'],['sprints','Sprints','event_repeat']].map(([k, label, icon]) => { const on = s.adminTab === k; return { label, icon, on, fw: on ? '600' : '480', fg: on ? 'var(--fg)' : 'var(--fg-3)', bar: on ? 'inset 0 -2px 0 var(--accent)' : 'none', onClick: () => this.setState({adminTab:k}) }; });
+  const setInv = p => this.setState(st => ({invite:{...st.invite, ...p}}));
+  return {
+   ad: { tabs, onMembers: s.adminTab === 'members', onSprints: s.adminTab === 'sprints',
+    count: `${s.members.length} members · ${s.invites.length} pending ${s.invites.length === 1 ? 'invite' : 'invites'}`,
+    openInvite: () => this.setState({invite:{email:'', role:'Member', error:''}}),
+    rows: D.ready ? s.members.map(m => { const isMe = m.id === ME, role = isMe ? (s.role === 'admin' ? 'Admin' : 'Member') : m.role; return { ...av(m), name: m.name + (isMe ? ' (you)' : ''), email: m.email, role, isMe, joined: m.joined,
+     active: tasks.filter(t => t.assignee === m.id && t.status !== 'done').length, roleAria: 'Role for ' + m.name, roleTitle: isMe ? 'You can’t change your own role' : '', selOpacity: isMe ? '.6' : '1',
+     onRole: e => { const r = e.target.value; this.setState(st => ({members: st.members.map(x => x.id === m.id ? {...x, role:r} : x)})); this.toast(`${m.name} is now ${r === 'Admin' ? 'an Admin' : 'a Member'}`); },
+     canRemove: !isMe, removeAria: 'Remove ' + m.name,
+     remove: () => { const n = tasks.filter(t => t.assignee === m.id && t.status !== 'done').length; this.ask({ title:`Remove ${m.name}?`, body:`They’ll lose access to Acme Engineering immediately.${n ? ` Their ${n} open ${n === 1 ? 'task' : 'tasks'} will become unassigned.` : ''}`, confirmLabel:'Remove member', danger:true, icon:'person_remove',
+      onConfirm: () => { this.setState(st => ({members: st.members.filter(x => x.id !== m.id)})); this.toast(m.name + ' was removed from the team'); } }); } }; }) : [],
+    invites: D.ready ? s.invites.map(x => ({ ...x, resend: () => this.toast('Invite resent to ' + x.email, 'info'), revoke: () => { this.setState(st => ({invites: st.invites.filter(y => y.email !== x.email)})); this.toast('Invite revoked'); } })) : [],
+    sprintActive: !s.sprintClosed, sprintClosed: s.sprintClosed,
+    closeSprint: () => { const n = s.tasks.filter(t => t.status !== 'done').length; this.ask({ title:'Close Sprint 14?', body:`${n} unfinished ${n === 1 ? 'task' : 'tasks'} will move to the backlog. This can’t be undone.`, confirmLabel:'Close sprint', danger:true, icon:'flag', onConfirm: () => { this.setState({sprintClosed:true}); this.toast(`Sprint 14 closed · ${n} tasks moved to backlog`); } }); },
+    sprints: [ ...s.upcoming.map(u => ({ name:u.name, dates:u.dates, meta:'Planned', state:'Upcoming', bg:'var(--accent-soft)', fg:'var(--accent-text)' })),
+     { name:'Sprint 14', dates:'Sep 28 – Oct 9', meta: s.sprintClosed ? 'Closed today' : '7 days left', state: s.sprintClosed ? 'Closed' : 'Active', bg: s.sprintClosed ? 'var(--surface-2)' : 'var(--st-progress-bg)', fg: s.sprintClosed ? 'var(--fg-2)' : 'var(--st-progress-fg)' },
+     { name:'Sprint 13', dates:'Sep 14 – Sep 27', meta:'18 of 20 done', state:'Closed', bg:'var(--surface-2)', fg:'var(--fg-2)' },
+     { name:'Sprint 12', dates:'Aug 31 – Sep 13', meta:'21 of 21 done', state:'Closed', bg:'var(--surface-2)', fg:'var(--fg-2)' } ],
+    sf, hasErr: !!sf.error, endBorder: sf.error ? 'var(--danger)' : 'var(--border-strong)',
+    onName: e => setSF({name:e.target.value}), onStart: e => setSF({start:e.target.value}), onEnd: e => setSF({end:e.target.value}), onGoal: e => setSF({goal:e.target.value}),
+    createSprint: e => { e.preventDefault();
+     if (!sf.name.trim()) return this.setState(st => ({sprintForm:{...st.sprintForm, error:'Give the sprint a name'}}));
+     if (!sf.start || !sf.end || pd(sf.end) <= pd(sf.start)) return this.setState(st => ({sprintForm:{...st.sprintForm, error:'End date must be after the start date'}}));
+     this.setState(st => ({upcoming:[{name:sf.name.trim(), dates: fmt(sf.start) + ' – ' + fmt(sf.end)}, ...st.upcoming], sprintForm:{name:'Sprint ' + (16 + st.upcoming.length), start:'', end:'', goal:'', error:''}}));
+     this.toast(sf.name.trim() + ' created'); } },
+   inv: iv ? { open:true, ...iv, hasErr: !!iv.error, border: iv.error ? 'var(--danger)' : 'var(--border-strong)', cancel: () => this.setState({invite:null}),
+    onEmail: e => setInv({email:e.target.value, error:''}), onRole: e => setInv({role:e.target.value}),
+    send: e => { e.preventDefault(); if (!/.+@.+\..+/.test(iv.email)) return setInv({error:'Enter a valid email address'});
+     if (s.members.some(m => m.email === iv.email) || s.invites.some(x => x.email === iv.email)) return setInv({error:'This person is already on the team or invited'});
+     this.setState(st => ({invite:null, invites:[...st.invites, {email:iv.email, role:iv.role, sent:'today'}]})); this.toast('Invitation sent to ' + iv.email); } } : { open:false },
+  };
+ }
+ vSettings() {
+  const s = this.state, P = s.profile, clean = JSON.stringify(P) === s.profileSaved;
+  const setP = k => e => this.setState(st => ({profile:{...st.profile, [k]: e.target.value}}));
+  const L = { a:'#f7f7fa', ink:'#2b2d3a', card:'#ffffff' }, Dk = { a:'#1f2029', ink:'#e9e9f0', card:'#2c2e3a' };
+  const prefs = [['assigned','Task assigned to me','When someone assigns you a task'],['mentions','Mentions','When someone @mentions you in a comment'],['status','Status changes','When a task you own changes status'],['due','Due date reminders','The day before and the day a task is due'],['weekly','Weekly sprint summary','An email every Monday with sprint progress'],['desktop','Desktop notifications','Show system notifications while SprintBoard is open']];
+  return { se: {
+   tabs: [['profile','Profile','person'],['appearance','Appearance','palette'],['notifications','Notifications','notifications']].map(([k, label, icon]) => { const on = s.settingsTab === k; return { label, icon, on, bg: on ? 'var(--accent-soft)' : 'transparent', hov: on ? 'var(--accent-soft)' : 'var(--surface-2)', fg: on ? 'var(--accent-text)' : 'var(--fg-2)', fw: on ? '600' : '480', onClick: () => this.setState({settingsTab:k}) }; }),
+   onProfile: s.settingsTab === 'profile', onAppearance: s.settingsTab === 'appearance', onNotif: s.settingsTab === 'notifications',
+   p: P, onName: setP('name'), onTitle: setP('title'), onEmail: setP('email'), onTz: setP('tz'),
+   clean, saving: s.profileSaving, saveDisabled: clean || s.profileSaving, btnOpacity: clean ? '.5' : '1', saveLabel: s.profileSaving ? 'Saving…' : 'Save changes',
+   reset: () => this.setState({profile: JSON.parse(s.profileSaved)}),
+   save: () => { this.setState({profileSaving:true}); setTimeout(() => { this.setState(st => ({profileSaving:false, profileSaved: JSON.stringify(st.profile)})); this.toast('Profile updated'); }, 900); },
+   themes: [['light','Light',L,L,'1'],['dark','Dark',Dk,Dk,'1'],['system','System',L,Dk,'1']].map(([k, label, A, B, split]) => { const on = s.themePref === k; return { label, on,
+    a: A.a, ink: A.ink, card: A.card, b: B.a, ink2: B.ink, card2: B.card, split: k === 'system' ? '1' : '0.0001',
+    border: on ? 'var(--accent)' : 'var(--border)', radio: on ? 'var(--accent)' : 'var(--border-strong)', dot: on ? 'var(--accent)' : 'transparent',
+    pick: () => { const sys = window.matchMedia && matchMedia('(prefers-color-scheme: dark)').matches; this.setState({themePref:k, theme: k === 'system' ? (sys ? 'dark' : 'light') : k}); } }; }),
+   prefs: prefs.map(([k, label, desc]) => { const on = s.prefs[k]; return { id:'pref-' + k, label, desc, on, track: on ? 'var(--accent)' : 'var(--border-strong)', thumb: on ? 'translateX(16px)' : 'none', toggle: () => this.setState(st => ({prefs:{...st.prefs, [k]: !on}})) }; }),
+  } };
+ }
+ vPanel() {
+  const s = this.state, p = s.panel;
+  if (!p) return { pn: { open:false } };
+  const err = p.errors || {}, tc = p.titleCheck;
+  const titleErr = err.title || (tc === 'taken' ? 'A task with this title already exists:' : '');
+  const help = err.title ? err.title : tc === 'checking' ? 'Checking for duplicate titles…' : tc === 'taken' ? 'A task with this title already exists:' : tc === 'ok' ? 'This title is available.' : 'Keep it short and specific.';
+  const asg = av(this.mem(p.assignee));
+  const y = p.calY, m = p.calM, first = new Date(y, m, 1), start = (first.getDay() + 6) % 7, dim = new Date(y, m + 1, 0).getDate(), cells = Math.ceil((start + dim) / 7) * 7;
+  const days = Array.from({length: cells}, (_, i) => { const d = new Date(y, m, 1 - start + i), sv = iso(d), inM = d.getMonth() === m, isT = sv === iso(TODAY), sel = sv === p.due, past = d < TODAY;
+   return { n: d.getDate(), sel, aria: fmt(sv) + ', ' + d.getFullYear() + (isT ? ' (today)' : '') + (past ? ' (past)' : ''), onClick: () => this.pickDue(sv),
+    bg: sel ? 'var(--accent)' : 'transparent', hov: sel ? 'var(--accent-hover)' : 'var(--surface-2)', fg: sel ? 'var(--on-accent)' : past || !inM ? 'var(--fg-3)' : 'var(--fg)',
+    ring: isT && !sel ? 'inset 0 0 0 1.5px var(--accent)' : 'none', fw: isT || sel ? '650' : '450', op: inM ? '1' : '.5' }; });
+  const busy = p.saving || tc === 'checking';
+  return { pn: {
+   open: true, isEdit: p.mode === 'edit', id: p.id, heading: p.mode === 'edit' ? 'Edit task' : 'New task',
+   title: p.title, onTitle: e => this.onTitle(e.target.value), titleInvalid: !!titleErr,
+   titleBorder: titleErr ? 'var(--danger)' : 'var(--border-strong)', checking: tc === 'checking', titleOk: tc === 'ok' && !err.title, titleBad: !!titleErr && tc !== 'checking',
+   help, helpFg: titleErr ? 'var(--danger-text)' : tc === 'ok' ? 'var(--success-text)' : 'var(--fg-3)', dupLink: tc === 'taken' && !err.title, dupId: p.dupId,
+   openDup: () => { const id = p.dupId; this.setState({panel:null}); this.openTask(id); },
+   desc: p.desc, onDesc: e => this.setP({desc:e.target.value}),
+   as: asg, assigneeOpen: s.menu === 'p-assignee', toggleAssignee: () => this.setState({menu: s.menu === 'p-assignee' ? null : 'p-assignee'}),
+   assigneeOpts: s.members.map(mm => ({ ...av(mm), name: mm.id === ME ? mm.name + ' (you)' : mm.name, title: mm.title, on: mm.id === p.assignee, bg: mm.id === p.assignee ? 'var(--accent-soft)' : 'transparent', pick: () => { this.setP({assignee:mm.id}); this.setState({menu:null}); } })),
+   dateOpen: s.menu === 'p-date', toggleDate: () => this.setState({menu: s.menu === 'p-date' ? null : 'p-date'}),
+   dueLabel: p.due ? fmt(p.due) + ', ' + pd(p.due).getFullYear() : 'Pick a date', dueFg: p.due ? 'var(--fg)' : 'var(--fg-3)',
+   dueErr: err.due || '', dueInvalid: !!err.due, dueBorder: err.due ? 'var(--danger)' : 'var(--border-strong)',
+   cal: { label: MONF[m] + ' ' + y, dow: ['Mo','Tu','We','Th','Fr','Sa','Su'], days,
+    prev: () => this.setP(q => q.calM === 0 ? {calM:11, calY:q.calY - 1} : {calM:q.calM - 1}),
+    next: () => this.setP(q => q.calM === 11 ? {calM:0, calY:q.calY + 1} : {calM:q.calM + 1}),
+    today: () => { this.setP({calY:2026, calM:9}); this.pickDue(iso(TODAY)); }, clear: () => this.pickDue('') },
+   prOpts: ['low','medium','high'].map(k => { const on = p.priority === k; return { label: PR[k].label, icon: PR[k].icon, on, fw: on ? '600' : '500',
+    border: on ? `var(--pr-${k}-fg)` : 'var(--border-strong)', bg: on ? `var(--pr-${k}-bg)` : 'var(--surface)', fg: on ? `var(--pr-${k}-fg)` : 'var(--fg-2)', pick: () => this.setP({priority:k}) }; }),
+   subs: p.subs.map(st => ({ ...st, fid: 'pf-' + st.id, fg: st.done ? 'var(--fg-3)' : 'var(--fg)', deco: st.done ? 'line-through' : 'none', removeLabel: 'Remove subtask: ' + st.text,
+    toggle: () => this.setP(q => ({subs: q.subs.map(x => x.id === st.id ? {...x, done:!x.done} : x)})), remove: () => this.setP(q => ({subs: q.subs.filter(x => x.id !== st.id)})) })),
+   hasSubs: p.subs.length > 0, subCount: p.subs.length ? `${p.subs.filter(x => x.done).length} of ${p.subs.length} done` : 'Break the work into smaller steps',
+   newSub: p.newSub, onNewSub: e => this.setP({newSub:e.target.value}), newSubKey: e => { if (e.key === 'Enter') { e.preventDefault(); this.addSub(); } }, addSub: () => this.addSub(),
+   dirty: this.dirty(p), close: () => this.closePanel(), save: () => this.save(), saving: p.saving,
+   saveDisabled: busy, saveOpacity: busy ? '.6' : '1', saveCursor: busy ? 'not-allowed' : 'pointer',
+   saveLabel: p.saving ? 'Saving…' : p.mode === 'edit' ? 'Save changes' : 'Create task',
+  } };
+ }
+ vOverlays() {
+  const s = this.state, c = s.confirm;
+  const closeC = () => this.setState({confirm:null});
+  return {
+   catcher: !!s.menu || s.searchOpen, closeMenus: () => this.setState({menu:null, searchOpen:false}),
+   cf: c ? { open:true, ...c, cancelLabel: c.cancelLabel || 'Cancel', icon: c.icon || 'help', iconBg: c.danger ? 'var(--danger-soft)' : 'var(--accent-soft)', iconFg: c.danger ? 'var(--danger-text)' : 'var(--accent-text)',
+    btnBg: c.danger ? 'var(--danger)' : 'var(--accent)', btnFg: c.danger ? 'var(--on-danger)' : 'var(--on-accent)', cancel: closeC, confirm: () => { this.setState({confirm:null}); c.onConfirm(); } } : { open:false },
+   toasts: s.toasts.map(t => ({ ...t, icon: t.kind === 'error' ? 'error' : t.kind === 'info' ? 'info' : 'check_circle', iconFg: t.kind === 'error' ? 'oklch(0.78 0.13 25)' : t.kind === 'info' ? 'var(--toast-link)' : 'var(--toast-ok)',
+    hasAction: !!t.action, actionLabel: t.action && t.action.label, act: () => { t.action.fn(); this.setState(st => ({toasts: st.toasts.filter(x => x.id !== t.id)})); },
+    close: () => this.setState(st => ({toasts: st.toasts.filter(x => x.id !== t.id)})) })),
+  };
+ }
+}
+</script>
+</body>
+</html>

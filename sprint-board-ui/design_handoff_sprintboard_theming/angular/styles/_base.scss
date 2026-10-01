@@ -1,0 +1,51 @@
+// Global base styles. @use after tokens in src/styles.scss.
+@use 'sass:map';
+
+html, body { height: 100%; margin: 0; }
+*, *::before, *::after { box-sizing: border-box; }
+
+body {
+  background: var(--bg);
+  color: var(--fg);
+  font-family: var(--font-sans);
+  font-size: 14px;
+  line-height: 1.45;
+  -webkit-font-smoothing: antialiased;
+}
+
+button, input, select, textarea { font: inherit; color: inherit; }
+::placeholder { color: var(--fg-3); }
+
+a { color: var(--accent-text); text-decoration: none; }
+a:hover { text-decoration: underline; }
+
+// Visible focus everywhere (WCAG 2.4.7). Inputs use the softer ring below instead.
+:focus-visible { outline: 2px solid var(--ring); outline-offset: 2px; }
+
+// Smooth theme switch without animating everything on first paint
+.theme-transition, .theme-transition * {
+  transition: background-color var(--dur) var(--ease), border-color var(--dur) var(--ease), color var(--dur) var(--ease) !important;
+}
+
+// Icons: Material Symbols Rounded, weight 350, optical size 20
+.sb-icon {
+  font-family: 'Material Symbols Rounded';
+  font-weight: normal; font-style: normal;
+  font-size: 20px; line-height: 1;
+  display: inline-block; white-space: nowrap; flex-shrink: 0;
+  font-feature-settings: 'liga';
+  font-variation-settings: 'wght' 350, 'opsz' 20;
+  user-select: none;
+}
+
+@keyframes sb-shimmer { 0%, 100% { opacity: .5; } 50% { opacity: 1; } }
+@keyframes sb-spin { to { transform: rotate(360deg); } }
+@keyframes sb-pulse { 0% { box-shadow: 0 0 0 0 var(--live-ring); } 70% { box-shadow: 0 0 0 6px transparent; } 100% { box-shadow: 0 0 0 0 transparent; } }
+@keyframes sb-pop { from { opacity: 0; transform: scale(.97); } to { opacity: 1; transform: none; } }
+@keyframes sb-panel { from { opacity: 0; transform: translateX(24px); } to { opacity: 1; transform: none; } }
+@keyframes sb-toast { from { opacity: 0; transform: translateY(12px) scale(.98); } to { opacity: 1; transform: none; } }
+@keyframes sb-glow { 0% { box-shadow: 0 0 0 3px var(--accent-soft-strong), var(--sh-2); } 100% { box-shadow: var(--sh-1); } }
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; }
+}

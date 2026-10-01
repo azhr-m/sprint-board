@@ -1,0 +1,150 @@
+:host {
+  display: block;
+  max-width: 760px;
+}
+
+.page-title {
+  margin: 0 0 var(--space-6);
+  font-size: 24px;
+  font-weight: 620;
+  line-height: 1.2;
+  letter-spacing: -0.015em;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  padding: var(--space-6);
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-panel);
+  box-shadow: var(--sh-1);
+}
+
+.section-title {
+  margin: 0;
+  font-size: 15px;
+  font-weight: 600;
+}
+
+.section-desc {
+  margin: var(--space-1) 0 0;
+  font-size: 13.5px;
+  color: var(--fg-2);
+}
+
+.theme-options {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-3);
+}
+
+.theme-card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 10px;
+  border: 2px solid var(--border);
+  border-radius: var(--radius-panel);
+  background: var(--surface);
+  cursor: pointer;
+
+  &:hover {
+    border-color: var(--border-strong);
+  }
+
+  &.selected {
+    border-color: var(--accent);
+  }
+
+  // The native radio is visually hidden, so show the focus ring on the card.
+  &:has(input:focus-visible) {
+    outline: 2px solid var(--ring);
+    outline-offset: 2px;
+  }
+}
+
+.preview {
+  display: flex;
+  height: 88px;
+  border-radius: var(--radius-control);
+  overflow: hidden;
+  border: 1px solid var(--border);
+}
+
+// Each pane re-scopes the tokens via [data-theme], so previews stay accurate in either app theme.
+.preview-pane {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  padding: 10px;
+  background: var(--bg);
+}
+
+.preview-ink {
+  width: 60%;
+  height: 6px;
+  border-radius: 3px;
+  background: var(--fg);
+}
+
+.preview-card {
+  width: 80%;
+  height: 18px;
+  border-radius: 4px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+}
+
+.theme-label {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  font-weight: 550;
+  color: var(--fg);
+}
+
+.radio {
+  width: 16px;
+  height: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  border: 2px solid var(--border-strong);
+
+  .selected & {
+    border-color: var(--accent);
+  }
+}
+
+.radio-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+
+  .selected & {
+    background: var(--accent);
+  }
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+@media (max-width: 560px) {
+  .theme-options {
+    grid-template-columns: 1fr;
+  }
+}

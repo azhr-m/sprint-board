@@ -1,0 +1,28 @@
+// OPTIONAL — only if the project uses Angular Material (v17+ / M3).
+// Maps SprintBoard tokens onto Material's system variables so mat-* components follow the theme
+// without a second palette. Requires a base Material theme to be included first, e.g.:
+//   @use '@angular/material' as mat;
+//   html { @include mat.theme((color: (theme-type: light, primary: mat.$violet-palette), typography: Geist, density: 0)); }
+// Then override with our tokens (these win because they are read at runtime):
+
+html {
+  --mat-sys-primary: var(--accent);
+  --mat-sys-on-primary: var(--on-accent);
+  --mat-sys-primary-container: var(--accent-soft);
+  --mat-sys-on-primary-container: var(--accent-text);
+  --mat-sys-error: var(--danger);
+  --mat-sys-on-error: var(--on-danger);
+  --mat-sys-surface: var(--surface);
+  --mat-sys-surface-container: var(--surface);
+  --mat-sys-surface-container-low: var(--surface-2);
+  --mat-sys-surface-container-high: var(--surface-2);
+  --mat-sys-surface-container-highest: var(--surface-3);
+  --mat-sys-on-surface: var(--fg);
+  --mat-sys-on-surface-variant: var(--fg-2);
+  --mat-sys-outline: var(--border-strong);
+  --mat-sys-outline-variant: var(--border);
+  --mat-sys-background: var(--bg);
+  --mat-sys-corner-small: var(--radius-control);
+  --mat-sys-corner-medium: var(--radius-panel);
+  --mat-sys-corner-large: var(--radius-dialog);
+}

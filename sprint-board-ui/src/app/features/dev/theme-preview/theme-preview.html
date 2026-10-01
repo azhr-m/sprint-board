@@ -1,0 +1,110 @@
+<h1 class="page-title">Theme preview</h1>
+<p class="intro">
+  Each column is scoped with <code>[data-theme]</code>, so it should look the same whichever app
+  theme is active. Tab through to check focus rings.
+</p>
+
+<div class="columns">
+  @for (t of themes; track t) {
+    <section class="column" [attr.data-theme]="t" [attr.aria-labelledby]="'col-' + t">
+      <h2 class="column-title" [id]="'col-' + t">{{ t === 'light' ? 'Light' : 'Dark' }}</h2>
+
+      <div class="group">
+        <h3 class="group-title">Text</h3>
+        <p>Body text uses --fg.</p>
+        <p class="t-fg-2">Secondary text uses --fg-2.</p>
+        <p class="t-fg-3">Meta and placeholder text use --fg-3.</p>
+        <p><a href="/dev/theme" (click)="$event.preventDefault()">A link uses --accent-text</a></p>
+        <p class="t-danger">
+          <span class="sb-icon" aria-hidden="true">error</span> Overdue and errors use --danger-text
+        </p>
+        <p class="t-mono">SB-142 · Oct 2</p>
+      </div>
+
+      <div class="group">
+        <h3 class="group-title">Buttons</h3>
+        <div class="row">
+          <button type="button" class="btn btn-primary">Primary</button>
+          <button type="button" class="btn btn-secondary">Secondary</button>
+          <button type="button" class="btn btn-ghost">Ghost</button>
+          <button type="button" class="btn btn-danger">Delete</button>
+        </div>
+        <div class="row">
+          <button type="button" class="btn btn-primary" disabled>Disabled</button>
+          <button type="button" class="btn btn-primary" disabled aria-busy="true">
+            <span class="spinner" aria-hidden="true"></span> Saving…
+          </button>
+          <button type="button" class="icon-btn" aria-label="More actions">
+            <span class="sb-icon" aria-hidden="true">more_horiz</span>
+          </button>
+        </div>
+      </div>
+
+      <div class="group">
+        <h3 class="group-title">Inputs</h3>
+        <div class="field">
+          <label [for]="'title-' + t">Title</label>
+          <input [id]="'title-' + t" class="input" type="text" placeholder="e.g. Update onboarding flow" />
+        </div>
+        <div class="field">
+          <label [for]="'email-' + t">Email</label>
+          <div class="input-wrap">
+            <input
+              [id]="'email-' + t"
+              class="input invalid"
+              type="email"
+              value="jane@"
+              aria-invalid="true"
+              [attr.aria-describedby]="'email-err-' + t"
+            />
+            <span class="sb-icon input-icon" aria-hidden="true">error</span>
+          </div>
+          <span class="field-error" [id]="'email-err-' + t">
+            <span class="sb-icon" aria-hidden="true">error</span> Enter a valid email address.
+          </span>
+        </div>
+        <div class="field">
+          <label [for]="'disabled-' + t">Disabled</label>
+          <input [id]="'disabled-' + t" class="input" type="text" value="Read only" disabled />
+        </div>
+      </div>
+
+      <div class="group">
+        <h3 class="group-title">Status</h3>
+        <div class="row">
+          @for (s of statuses; track s.key) {
+            <span class="sb-badge" [attr.data-status]="s.key">
+              <span class="sb-icon" aria-hidden="true">{{ s.icon }}</span>{{ s.label }}
+            </span>
+          }
+        </div>
+        <div class="row">
+          @for (s of statuses; track s.key) {
+            <span class="dot-label"><span class="sb-dot" [attr.data-status]="s.key"></span>{{ s.label }}</span>
+          }
+        </div>
+      </div>
+
+      <div class="group">
+        <h3 class="group-title">Priority</h3>
+        <div class="row">
+          @for (p of priorities; track p.key) {
+            <span class="sb-prio" [attr.data-priority]="p.key">
+              <span class="sb-icon" aria-hidden="true">{{ p.icon }}</span>{{ p.label }}
+            </span>
+          }
+        </div>
+      </div>
+
+      <div class="group">
+        <h3 class="group-title">Surfaces</h3>
+        <div class="swatches">
+          @for (s of surfaces; track s) {
+            <span class="swatch" [style.background]="'var(--' + s + ')'">{{ s }}</span>
+          }
+        </div>
+        <div class="sb-skeleton skeleton-line"></div>
+      </div>
+    </section>
+  }
+</div>

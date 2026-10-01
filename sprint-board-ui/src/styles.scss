@@ -1,0 +1,6 @@
+// Global styles entry. Order matters: tokens → base → semantic.
+// Component stylesheets must only use var(--…) tokens (enforced by `npm run lint:colors`).
+@use 'styles/tokens';
+@use 'styles/base';
+@use 'styles/semantic';
+// Only if Angular Material is added later: @use 'styles/material-bridge';

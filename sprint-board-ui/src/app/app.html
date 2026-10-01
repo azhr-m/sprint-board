@@ -1,0 +1,17 @@
+<header class="topbar">
+  <a class="brand" routerLink="/">SprintBoard</a>
+
+  <nav class="topbar-nav" aria-label="Main">
+    <a routerLink="/settings" routerLinkActive="active" ariaCurrentWhenActive="page">Settings</a>
+    @if (devMode) {
+      <a routerLink="/dev/theme" routerLinkActive="active" ariaCurrentWhenActive="page">Theme preview</a>
+    }
+  </nav>
+
+  <span class="spacer"></span>
+  <app-theme-toggle />
+</header>
+
+<main class="page">
+  <router-outlet />
+</main>

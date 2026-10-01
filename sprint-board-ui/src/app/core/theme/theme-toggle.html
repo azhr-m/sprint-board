@@ -1,0 +1,9 @@
+<button
+  type="button"
+  class="icon-btn"
+  (click)="themeService.toggle()"
+  [attr.aria-label]="label()"
+  [attr.title]="label()"
+>
+  <span class="sb-icon" aria-hidden="true">{{ icon() }}</span>
+</button>

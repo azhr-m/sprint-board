@@ -1,0 +1,16 @@
+.icon-btn {
+  width: 36px;
+  height: 36px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: 0;
+  border-radius: var(--radius-control);
+  background: transparent;
+  color: var(--fg-2);
+  cursor: pointer;
+
+  &:hover {
+    background: var(--surface-2);
+  }
+}

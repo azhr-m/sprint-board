@@ -1,0 +1,290 @@
+:host {
+  display: block;
+}
+
+.page-title {
+  margin: 0;
+  font-size: 24px;
+  font-weight: 620;
+  line-height: 1.2;
+  letter-spacing: -0.015em;
+}
+
+.intro {
+  margin: var(--space-2) 0 var(--space-6);
+  color: var(--fg-2);
+}
+
+code,
+.t-mono {
+  font-family: var(--font-mono);
+  font-size: 12px;
+}
+
+.columns {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: var(--space-4);
+
+  @media (max-width: 900px) {
+    grid-template-columns: 1fr;
+  }
+}
+
+// A [data-theme] wrapper redefines the tokens, but inherited properties (color) were
+// computed on <body>, so each column sets background and color again from its own scope.
+.column {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-6);
+  padding: var(--space-6);
+  background: var(--bg);
+  color: var(--fg);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-panel);
+}
+
+.column-title {
+  margin: 0;
+  font-size: 15px;
+  font-weight: 600;
+}
+
+.group {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+  padding: 18px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-card);
+  box-shadow: var(--sh-1);
+
+  p {
+    margin: 0;
+  }
+}
+
+.group-title {
+  margin: 0 0 var(--space-1);
+  font-size: 12px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+  color: var(--fg-3);
+}
+
+.t-fg-2 {
+  color: var(--fg-2);
+}
+
+.t-fg-3 {
+  color: var(--fg-3);
+  font-size: 12.5px;
+}
+
+.t-mono {
+  color: var(--fg-3);
+}
+
+.t-danger {
+  display: flex;
+  align-items: center;
+  gap: var(--space-1);
+  color: var(--danger-text);
+
+  .sb-icon {
+    font-size: 16px;
+  }
+}
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--space-2);
+}
+
+// Buttons
+.btn {
+  height: var(--control-h);
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 0 14px;
+  border-radius: var(--radius-control);
+  border: 1px solid transparent;
+  font-weight: 560;
+  cursor: pointer;
+
+  &:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+  }
+}
+
+.btn-primary {
+  background: var(--accent);
+  color: var(--on-accent);
+
+  &:hover:not(:disabled) {
+    background: var(--accent-hover);
+  }
+}
+
+.btn-secondary {
+  background: var(--surface);
+  border-color: var(--border-strong);
+  color: var(--fg);
+
+  &:hover:not(:disabled) {
+    background: var(--surface-2);
+  }
+}
+
+.btn-ghost {
+  background: transparent;
+  color: var(--fg-2);
+
+  &:hover:not(:disabled) {
+    background: var(--surface-2);
+  }
+}
+
+.btn-danger {
+  background: var(--danger);
+  color: var(--on-danger);
+
+  &:hover:not(:disabled) {
+    background: var(--danger-hover);
+  }
+}
+
+.icon-btn {
+  width: 36px;
+  height: 36px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: 0;
+  border-radius: var(--radius-control);
+  background: transparent;
+  color: var(--fg-2);
+  cursor: pointer;
+
+  &:hover {
+    background: var(--surface-2);
+  }
+}
+
+.spinner {
+  width: 14px;
+  height: 14px;
+  border: 2px solid currentColor;
+  border-right-color: transparent;
+  border-radius: 50%;
+  animation: sb-spin 0.7s linear infinite;
+}
+
+// Inputs
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+
+  label {
+    font-size: 13px;
+    font-weight: 560;
+  }
+}
+
+.input-wrap {
+  position: relative;
+}
+
+.input {
+  width: 100%;
+  height: var(--control-h-lg);
+  padding: 0 var(--space-3);
+  background: var(--surface);
+  border: 1px solid var(--border-strong);
+  border-radius: var(--radius-control);
+  color: var(--fg);
+
+  &:focus {
+    outline: none;
+    border-color: var(--accent);
+    box-shadow: 0 0 0 3px var(--accent-soft-strong);
+  }
+
+  &.invalid {
+    border-color: var(--danger);
+    padding-right: 36px;
+  }
+
+  &:disabled {
+    background: var(--surface-2);
+    color: var(--fg-3);
+    cursor: not-allowed;
+  }
+}
+
+.input-icon {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 18px;
+  color: var(--danger-text);
+}
+
+.field-error {
+  display: flex;
+  align-items: center;
+  gap: var(--space-1);
+  font-size: 12.5px;
+  color: var(--danger-text);
+
+  .sb-icon {
+    font-size: 15px;
+  }
+}
+
+// Status dots
+.dot-label {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 12.5px;
+  color: var(--fg-2);
+}
+
+.sb-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+}
+
+// Surfaces
+.swatches {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+}
+
+.swatch {
+  min-width: 76px;
+  padding: var(--space-3) var(--space-2);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-chip);
+  font-family: var(--font-mono);
+  font-size: 11.5px;
+  color: var(--fg-2);
+  text-align: center;
+}
+
+.skeleton-line {
+  height: 12px;
+  width: 60%;
+  margin-top: var(--space-2);
+}
